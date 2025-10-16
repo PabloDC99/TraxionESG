@@ -1,1 +1,1 @@
-web: gunicorn traxion.wsgi
+web: gunicorn cydsa.wsgi
