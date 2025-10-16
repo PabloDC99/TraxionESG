@@ -1103,7 +1103,7 @@ h1.tc-blue {
 }
 
 .page_footer.s-parallax {
-    /*background-image: url("../images/parallax/parallax-bg.jpg");*/
+    background-image: url("../images/parallax/parallax-bg.jpg");
 }
 
 @media (min-width: 576px) {
