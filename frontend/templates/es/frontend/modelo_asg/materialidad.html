@@ -1,0 +1,951 @@
+{% extends 'layouts/interior.html' %}
+{% load static %}
+{% block otherstyles %}
+    <style>
+    /* ===== Flip cards para las ODS (sin cambiar tu HTML) ===== */
+#contribucion_ods .card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  perspective: 1000px;            /* Profundidad 3D */
+  height: 200px;
+  /* Garantiza que el alto se mantenga uniforme en grids */
+  display: block;
+}
+#contribucion_ods .container {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+/* Frente (la imagen) y reverso (el body) ocupan todo el card */
+#contribucion_ods .card img.card-img-top,
+#contribucion_ods .card .card-body {
+  position: absolute;
+  inset: 0;                       /* top:0; right:0; bottom:0; left:0 */
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  transition: transform .6s ease;
+}
+
+/* Frente (imagen) visible por defecto */
+#contribucion_ods .card img.card-img-top {
+  object-fit: cover;              /* Evita deformaciones de imagen */
+  transform: rotateY(0deg);
+}
+
+/* Reverso (texto) de la ODS: inicia oculto volteado */
+#contribucion_ods .card .card-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  padding: 16px;
+  transform: rotateY(180deg);
+  /* Si usas colores por ODS inline, se respetan; solo añade contraste del texto si necesitas */
+  color: #fff;
+}
+
+/* Hover/focus: voltear */
+#contribucion_ods .card:hover img.card-img-top,
+#contribucion_ods .card:focus-within img.card-img-top {
+  transform: rotateY(180deg);
+}
+
+#contribucion_ods .card:hover .card-body,
+#contribucion_ods .card:focus-within .card-body {
+  transform: rotateY(0deg);
+}
+
+/* Accesibilidad: si el usuario prefiere menos animación, reducir movimiento */
+@media (prefers-reduced-motion: reduce) {
+  #contribucion_ods .card img.card-img-top,
+  #contribucion_ods .card .card-body {
+    transition: none;
+  }
+}
+
+/* Opcional: asegurar relación cuadrada de las cards en la grilla de ODS */
+#contribucion_ods .card {
+  aspect-ratio: 1 / 1;
+}
+
+/* Si alguna card se deforma por contenido largo en el reverso,
+   limita el texto y permite scroll sutil dentro del reverso */
+#contribucion_ods .card .card-body {
+  overflow: hidden;
+}
+#contribucion_ods .card .card-body p {
+  margin: 0;
+  line-height: 1.3;
+  max-height: 80%;
+  overflow: auto;
+}
+
+        .owl-carousel.for-carousel .item{
+            min-height: 200px;
+            background-color: #2792ec;
+        }
+
+        .owl-carousel.for-carousel .item h1{
+            line-height: 1;
+        }
+        .owl-carousel.for-carousel .owl-stage{
+            padding: 0;
+        }
+        
+        .owl-carousel .owl-stage {
+            display: flex;
+            align-items: center;
+          }
+
+        .ulcard > li:before{
+            content: "•";
+        }
+        .modal-event{
+            cursor: pointer;
+        }
+        .btn-modal-close {
+            background-color: #4A88E6;
+            transition: background-color 1s ease;
+            color: #fff;
+        }
+        .btn-modal-close:hover {
+            background-color: #4A88E6;
+            color: #fff;
+        }
+        .image_wrapper {
+            position: relative;
+            overflow: hidden;
+            height: 200px; /* Altura fija del contenedor de la imagen */
+            width: 280px;
+        }
+
+        .image_wrapper img {
+            display: block;
+            object-fit: cover; /* Esto asegura que la imagen cubra completamente el contenedor sin distorsionarse */
+            width: 100%; /* La imagen ocupará todo el ancho del contenedor */
+            height: 100%; /* La imagen ocupará toda la altura del contenedor */
+        }
+
+        .image_wrapper .overlay {
+            position: absolute;
+            display: flex;
+            align-items: end;
+            justify-content: center;
+
+            overflow: hidden;
+        }
+
+        .image_wrapper .overlay_2 {
+            height: 100px;
+            width: 100%;
+            text-align: center;
+            padding-top:20px;
+            /*display: none;*/
+            opacity: 0;
+            -webkit-transform: translate3d(0, 100%, 0);
+            transform: translate3d(0, 100%, 0);
+            transition: all .23s ease;
+        }
+
+        .image_wrapper:hover img {
+            -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+            opacity: 0.7;
+            transition: all .23s ease;
+        }
+
+        .image_wrapper:hover .overlay_2 {
+            display: flex;
+            background: #98979A;
+            align-items: center;
+            justify-content: center;
+            opacity: 1;
+            -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+        }
+
+        .icon {
+            width: 100px;
+            cursor: pointer;
+        }
+    
+        .bullet {
+            width: 50px;
+            margin-right: 10px;
+        }
+    
+        .list-styled1 li {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+    
+        .tab-pane {
+            display: none;
+        }
+    
+        .tab-pane.active {
+            display: block;
+        }
+
+        .icon-container {
+            display: inline-block;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+          }
+          
+        .icon-container:hover {
+            transform: scale(1.1); /* Aumenta el tamaño al 110% */
+        }
+
+        #ejes .icon-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #ejes .icon {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            margin-bottom: 0;
+        }
+        
+        /* SECCION ODS */
+        .ods-cont {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+            width: 80%;
+            margin: 30px auto;
+        }
+
+        .card {
+            margin: auto;
+        }
+
+        .card:nth-child(n+11) {
+            grid-column: span 1;
+        }
+
+        .card:nth-child(11) {
+            grid-column: 2;
+        }
+
+        @media (max-width: 1250px) {
+            .ods-cont {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .card:nth-child(13) {
+                grid-column: 2;
+            }
+        }
+
+        @media (max-width: 740px) {
+            .ods-cont {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .card:nth-child(11) {
+                grid-column: 1;
+            }
+
+            .card:nth-child(12) {
+                grid-column: 2;
+            }
+            .card:nth-child(13) {
+                grid-column: 1 / 3;
+                /* width: 50%; */
+                justify-self: center;
+            }
+        }
+    </style>
+{% endblock %}
+
+{% block wrapper %}
+    <div class="">
+        
+        <div class="content-wrap" style="background-color: white;">
+            
+            <section id="acciones" class="py-1" data-wow-duration="2s" data-wow-delay="2s" style="padding-bottom: 30px!important;">
+                <div class="container">
+                    <h1 class="text-center mt-5 tc-blue" style="margin-bottom: 0;">Modelo de Sostenibilidad</h1>
+                </div>
+                <div class="container">
+                    <figure class="d-flex" style="margin: auto; width: 70%;">
+                        <img src= "{% static 'images/talento-esquema.png' %}" style="object-fit: contain; width: 100%;">
+                    </figure>
+                </div>
+            </section>
+        </div>
+        <div class="modal fade popup" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+               <div class="modal-content">
+                   <div class="card">
+                       <div class="card-body">
+                           <h1 class="event-title card-title mb-0 text-center text-bold tc-blue mt-2 mb-2">
+                           </h1>
+                           <p class="event-description card-text mt-4 text-justify" style="font-size: 22px">
+                           </p>
+                           <img class="cover event-img" src="">
+                       </div>
+                   </div>
+                   <div class="text-center py-3">
+                       <button type="button" class="btn btn-secondary close-btn card-link" data-mdb-dismiss="modal">
+                           Cerrar
+                       </button>
+                   </div>
+               </div>
+            </div>
+        </div>
+
+      <div class="content-wrap p-2">
+    <section id="ejes">
+        <div class="container">
+            <h1 class="text-center tc-blue" style="margin-top: 30px;">Modelo de Gestión</h1>
+            <div class="row text-center mb-2">
+                <!-- Botón 1 -->
+                <div class="col-md icon-container wow fadeInUp">
+                    <img src="/static/images/asg/Iconos-20-01.png" alt="Gestión de Riesgos" class="icon img-fluid" data-target="#tab1">
+                    <h3 class="m-0">Gestión de Riesgos</h3>
+                </div>
+                <!-- Botón 2 -->
+                <div class="col-md icon-container wow fadeInUp">
+                    <img src="/static/images/asg/Iconos-20-02.png" alt="Innovación" class="icon img-fluid" data-target="#tab2">
+                    <h3 class="m-0">Innovación</h3>
+                </div>
+                <!-- Botón 3 -->
+                <div class="col-md icon-container wow fadeInUp">
+                    <img src="/static/images/asg/Iconos-20-03.png" alt="Responsabilidad y Resiliencia" class="icon img-fluid" data-target="#tab3">
+                    <h3 class="m-0">Responsabilidad y Resiliencia</h3>
+                </div>
+                <!-- Botón 4 -->
+                <div class="col-md icon-container wow fadeInUp">
+                    <img src="/static/images/asg/Iconos-20-04.png" alt="Compromiso y Cadena de Valor" class="icon img-fluid" data-target="#tab4">
+                    <h3 class="m-0">Compromiso y Cadena de Valor</h3>
+                </div>
+                <!-- Botón 5 -->
+                <div class="col-md icon-container wow fadeInUp">
+                    <img src="/static/images/asg/Iconos-20-05.png" alt="Negocio Sostenible" class="icon img-fluid" data-target="#tab5">
+                    <h3 class="m-0">Negocio Sostenible</h3>
+                </div>
+            </div>
+            <div class="content-wrap">
+        </div>
+            <!-- Contenido dinámico --> 
+            <div id="tab-content">
+                <div id="tab1" class="tab-pane">
+                    <div class="row d-flex align-items-center">
+                        <div class="col-md-6">
+                            <ul class="list-styled1 text-justify">
+                                <li><img src="/static/images/asg/Iconos-30-05.png" alt="bullet" class="bullet"> Aminorar los impactos mediante la gestión y prevención de riesgos (de cumplimiento, estratégicos, financieros y operacionales).</li>
+                                <li><img src="/static/images/asg/Iconos-30-05.png" alt="bullet" class="bullet"> Mejorar la gestión de riesgos y el desempeño de forma eficiente y costo efectiva.</li>
+                                <li><img src="/static/images/asg/Iconos-30-05.png" alt="bullet" class="bullet"> Promover la inversión responsable.</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6 text-center">
+                            <figure class="d-flex" style="width: 70%; margin: auto;">
+                                <img class="img-fluid" src="/static/images/modelo_asg/gestion-riesgo-01.png" alt="Gestión de Riesgos" style="object-fit: contain; width: 100%;">
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+                <div id="tab2" class="tab-pane d-none">
+                    <div class="row d-flex align-items-center">
+                        <div class="col-md-6 text-center">
+                            <figure class="d-flex" style="width: 70%; margin: auto;">
+                                <img class="img-fluid" src="/static/images/modelo_asg/innovacion.png" alt="Gestión de Riesgos" style="object-fit: contain; width: 100%;">
+                            </figure>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="list-styled1 text-justify">
+                                <li><img src="/static/images/asg/Iconos-30-04.png" alt="bullet" class="bullet"> Responder a las exigencias del sector con proyectos sostenibles.</li>
+                                <li><img src="/static/images/asg/Iconos-30-04.png" alt="bullet" class="bullet"> Cumplir con los retos y tendencias del mercado.</li>
+                                <li><img src="/static/images/asg/Iconos-30-04.png" alt="bullet" class="bullet"> Utilizar nuevas tecnologías para la gestión sostenible.</li>
+                                <li><img src="/static/images/asg/Iconos-30-04.png" alt="bullet" class="bullet"> Impulsar la estrategia con la colaboración de distintas áreas para fomentar la innovación, empleando las capacidades del talento.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="tab3" class="tab-pane d-none">
+                    <div class="row d-flex align-items-center">
+                        <div class="col-md-6">
+                            <ul class="list-styled1 text-justify">
+                                <li><img src="/static/images/asg/Iconos-30-03.png" alt="bullet" class="bullet"> Ser responsables social y ambientalmente.</li>
+                                <li><img src="/static/images/asg/Iconos-30-03.png" alt="bullet" class="bullet"> Desarrollar operaciones resilientes y sostenibles.</li>
+                                <li><img src="/static/images/asg/Iconos-30-03.png" alt="bullet" class="bullet"> Implementar prácticas ASG para elevar el liderazgo y formar una organización más resiliente.</li>
+                                <li><img src="/static/images/asg/Iconos-30-03.png" alt="bullet" class="bullet"> Contemplar los escenarios climáticos para comprender la exposición a posibles riesgos y mejorar los esfuerzos de mitigación.</li>
+                                <li><img src="/static/images/asg/Iconos-30-03.png" alt="bullet" class="bullet"> Identificar las emisiones GEI (alcances 1, 2 y 3), para seguir la ruta a la descarbonización.</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6 text-center">
+                            <figure class="d-flex" style="width: 70%; margin: auto;">
+                                <img class="img-fluid" src="/static/images/modelo_asg/resiliencia.png" alt="Gestión de Riesgos" style="object-fit: contain; width: 100%;">
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+                <div id="tab4" class="tab-pane d-none">
+                    <div class="row d-flex align-items-center">
+                        <div class="col-md-6 text-center">
+                            <figure class="d-flex" style="width: 70%; margin: auto;">
+                                <img class="img-fluid" src="/static/images/modelo_asg/cadenavalor.png" alt="Gestión de Riesgos" style="object-fit: contain; width: 100%;">
+                            </figure>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="list-styled1 text-justify">
+                                <li><img src="/static/images/asg/Iconos-30-02.png" alt="bullet" class="bullet"> Mejorar la satisfacción de los grupos de interés.</li>
+                                <li><img src="/static/images/asg/Iconos-30-02.png" alt="bullet" class="bullet"> Identificar tendencias y asuntos relevantes, así como riesgos y oportunidades.</li>
+                                <li><img src="/static/images/asg/Iconos-30-02.png" alt="bullet" class="bullet"> Mejorar e innovar los procesos y servicios dentro de la cadena de valor.</li>
+                                <li><img src="/static/images/asg/Iconos-30-02.png" alt="bullet" class="bullet"> Crear confianza y credibilidad en los grupos de interés.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="tab5" class="tab-pane d-none">
+                    <div class="row d-flex align-items-center">
+                        <div class="col-md-6">
+                            <ul class="list-styled1 text-justify">
+                                <li><img src="/static/images/asg/Iconos-30-01.png" alt="bullet" class="bullet"> Optimizar procesos y reducir costos operativos.</li>
+                                <li><img src="/static/images/asg/Iconos-30-01.png" alt="bullet" class="bullet"> Aumentar el NOI (<i>Net Operating Income</i>).</li>
+                                <li><img src="/static/images/asg/Iconos-30-01.png" alt="bullet" class="bullet"> Contribuir a frenar el cambio climático y tener un portafolio más resiliente.</li>
+                                <li><img src="/static/images/asg/Iconos-30-01.png" alt="bullet" class="bullet"> Mejorar las condiciones laborales en temas de salud, seguridad, bienestar, diversidad, inclusión, equidad, igualdad y Derechos Humanos.</li>
+                                <li><img src="/static/images/asg/Iconos-30-01.png" alt="bullet" class="bullet"> Implementar prácticas ASG como ventaja competitiva.</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6 text-center">
+                            <figure class="d-flex" style="width: 70%; margin: auto;">
+                                <img class="img-fluid" src="/static/images/modelo_asg/sostenible.png" alt="Gestión de Riesgos" style="object-fit: contain; width: 100%;">
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div id="objetivos" class="wow fadeInUp" data-wow-duration="1s">
+                    <br>
+                    <div class="text-center d-flex">
+                        <img src="{% static 'images/asg/asg-finsa.png' %}" class="wow fadeInUp mb-4" style="width:100%; object-fit: cover;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+        <div class="container">
+            <div id="modelo-sus" class="wow fadeInUp" data-wow-duration="1s">
+                <h1 class="text-center mt-5 mb-5" style="color: #012E81;">Estrategia de Sostenibilidad</h1>      
+                            
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6 col-sm-1 col-lg-6 m-0 p-0">
+                    <img src="/static/images/ambiental/estrategia-integrada_Mesa de trabajo1.png" alt="" class="img_fluid">
+                </div>
+                <div class="col-md-6 col-sm-1 col-lg-6 p-5 d-flex flex-column justify-content-center">
+                    <h1 class="tc-blue text-center" style="color: #1BC2AE">
+                        Estrategia integrada: ejes y ASG
+                    </h1>
+                    <div class="d-flex justify-content-center">
+                        <p class="text-justify">
+                            Orientamos nuestra estrategia a partir de los cuatro ejes del Modelo de Sostenibilidad, integrando de forma transversal los criterios ambientales, sociales y de gobernanza en la toma de decisiones y en la operación diaria.
+                        </p>
+                    </div>
+
+                </div>
+                <div class="col-md-6 col-sm-1 col-lg-6 p-5 text-white d-flex flex-column justify-content-center"
+                         style="background-color: #1BC2AE">
+                        <h1 class="text-white text-center" style="color: #E3B94A">
+                            Acciones 2024 y valor compartido
+                        </h1>
+                        <p class="text-justify">
+                            A lo largo de 2024 llevamos a cabo acciones concretas orientadas a elevar nuestro desempeño y crear valor compartido con nuestros colaboradores, nuestra comunidad y nuestros grupos de interés.
+                        </p>
+
+                    </div>
+                <div class="col-md-6 col-sm-1 col-lg-6 m-0 p-0">
+                        <img src="/static/images/ambiental/estrategia-integrada-02.png" alt="" class="img_fluid">
+                    </div>
+            </div>
+        </div>
+        <section id="grupos" class="py-1" data-wow-duration="2s" data-wow-delay="2s" style="padding-bottom: 30px!important;">
+            <div class="container">
+                <h1 class="text-center mt-5 tc-blue" style="margin-bottom: 0;">Grupos de interés</h1>
+                <div class="container">
+            <p class="text-justify" style="padding-top: 30px">Escuchamos de forma sistemática a nuestros grupos de interés para entender sus <strong>necesidades y expectativas</strong> respecto a nuestro desempeño; es parte esencial de nuestro compromiso como empresa sostenible.</p>
+        </div>
+                <div class="owl-carousel owl-carousel-full image-carousel carousel-widget my-3 carousel2"
+                        data-margin="" data-loop="true" data-nav="true" data-autoplay="3000" data-items="8"
+                        data-pagi="true" data-items-xs="1"
+                        data-items-sm="2" data-items-md="2" data-items-lg="4" data-items-xl="4"
+                        data-auto-play-hover-pause="true">
+                        <div class="oc-item">
+                            <div class="image_wrapper">
+                                <a class="h4 text-white text-center modal-event"
+
+                                    data-toggle="modal"
+                                    data-target="#myModal"
+                                    data-title="Colaboradores"
+                                    data-img="{% static 'images/modelo_asg/colaboradoresp2-01.png' %}"
+                                    data-description="<strong>Información a compartir:</strong> Cambios organizacionales, Nuevos negocios, Logros importantes, Temas ASG, Comunicados de prensa y Convocatorias a eventos y concursos."
+                                >
+                                    <img src="{% static 'images/modelo_asg/colaboradoresp2-02.png' %}">
+                                    <div class="overlay">
+                                        <div class=" overlay_2">
+                                            <h3 class="text-white">Colaboradores</h3>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="oc-item">
+                            <div class="image_wrapper">
+                                <a class="h4 text-white text-center modal-event"
+
+                                    data-toggle="modal"
+                                    data-target="#myModal"
+                                    data-title="Clientes"
+                                    data-img="{% static 'images/modelo_asg/colaboradoresp2-03.png' %}"
+                                    data-description="<strong>Información a compartir:</strong> Presentación de espacios disponibles, Reportes de avance de proyecto, Acontecimientos relevantes, Información comercial, Información técnica e Invitaciones a conferencias."
+                                >
+                                    <img src="{% static 'images/modelo_asg/colaboradoresp2-04.png' %}">
+                                    <div class="overlay">
+                                        <div class=" overlay_2">
+                                            <h3 class="text-white">Clientes</h3>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="oc-item">
+                            <div class="image_wrapper">
+                                <a class="h4 text-white text-center modal-event"
+                                    data-toggle="modal"
+                                    data-target="#myModal"
+                                    data-title="Proveedores"
+                                    data-img="{% static 'images/modelo_asg/colaboradoresp2-05.png' %}"
+                                    data-description="<strong>Información a compartir:</strong> Nuevos procesos, Licitaciones, Información técnica, Información comercial, Trámites de pago e Invitaciones a conferencias."
+                                >
+                                    <img src="{% static 'images/modelo_asg/colaboradoresp2-06.png' %}">
+                                    <div class="overlay">
+                                        <div class=" overlay_2">
+                                            <h3 class="text-white">Proveedores</h3>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="oc-item">
+                            <div class="image_wrapper">
+                                <a class="h4 text-white text-center modal-event"
+
+                                    data-toggle="modal"
+                                    data-target="#myModal"
+                                    data-title="Inversionistas"
+                                    data-img="{% static 'images/modelo_asg/colaboradoresp2-07.png' %}"
+                                    data-description="<strong>Información a compartir:</strong> Acontecimientos relevantes, Comunicados de prensa, Reportes financieros y Cuestionarios ASG"
+                                >
+                                    <img src="{% static 'images/modelo_asg/colaboradoresp2-08.png' %}">
+                                    <div class="overlay">
+                                        <div class=" overlay_2">
+                                            <h3 class="text-white">Inversionistas</h3>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+
+                        <div class="oc-item">
+                            <div class="image_wrapper">
+                                <a class="h4 text-white text-center modal-event"
+
+                                    data-toggle="modal"
+                                    data-target="#myModal"
+                                    data-title="Comunidades"
+                                    data-img="{% static 'images/modelo_asg/colaboradoresp2-09.png' %}"
+                                    data-description="<strong>Información a compartir:</strong> Información relevante e Invitaciones a eventos."
+                                >
+                                    <img src="{% static 'images/modelo_asg/colaboradoresp2-10.png' %}">
+                                    <div class="overlay">
+                                        <div class=" overlay_2">
+                                            <h3 class="text-white">Comunidades</h3>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="oc-item">
+                            <div class="image_wrapper">
+                                <a class="h4 text-white text-center modal-event"
+
+                                    data-toggle="modal"
+                                    data-target="#myModal"
+                                    data-title="Gobierno"
+                                    data-img="{% static 'images/modelo_asg/colaboradoresp2-11.png' %}"
+                                    data-description="<strong>Información a compartir:</strong> Reportes de cumplimiento regulatorio, Comunicados de prensa y Documentos para la emisión de permisos."
+                                >
+                                    <img src="{% static 'images/modelo_asg/colaboradoresp2-12.png' %}">
+                                    <div class="overlay">
+                                        <div class=" overlay_2">
+                                            <h3 class="text-white">Gobierno</h3>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="oc-item">
+                            <div class="image_wrapper">
+                                <a class="h4 text-white text-center modal-event"
+
+                                    data-toggle="modal"
+                                    data-target="#myModal"
+                                    data-title="Competidores"
+                                    data-img="{% static 'images/modelo_asg/colaboradoresp2-14.png' %}"
+                                    data-description="<strong>Información a compartir:</strong> Aspectos relevantes de la industria y Comunicados de prensa."
+                                >
+                                    <img src="{% static 'images/modelo_asg/colaboradoresp2-13.png' %}">
+                                    <div class="overlay">
+                                        <div class=" overlay_2">
+                                            <h3 class="text-white">Competidores</h3>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="oc-item">
+                            <div class="image_wrapper">
+                                <a class="h4 text-white text-center modal-event"
+
+                                    data-toggle="modal"
+                                    data-target="#myModal"
+                                    data-title="Cámaras y Asociaciones"
+                                    data-img="{% static 'images/modelo_asg/colaboradoresp2-15.png' %}"
+                                    data-description="<strong>Información a compartir:</strong> Presentación corporativa, Información comercial, Acontecimientos relevantes y Desempeño ASG."
+                                >
+                                    <img src="{% static 'images/modelo_asg/colaboradoresp2-16.png' %}">
+                                    <div class="overlay">
+                                        <div class=" overlay_2">
+                                            <h3 class="text-white">Cámaras y Asociaciones</h3>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="oc-item">
+                            <div class="image_wrapper">
+                                <a class="h4 text-white text-center modal-event"
+
+                                    data-toggle="modal"
+                                    data-target="#myModal"
+                                    data-title="Medios de Comunicación"
+                                    data-img="{% static 'images/modelo_asg/colaboradoresp2-18.png' %}"
+                                    data-description="<strong>Información a compartir:</strong> Acontecimientos relevantes, Comunicados de prensa, Información comercial, Datos estadísticos y Entrevistas."
+                                >
+                                    <img src="{% static 'images/modelo_asg/colaboradoresp2-17.png' %}">
+                                    <div class="overlay">
+                                        <div class=" overlay_2">
+                                            <h3 class="text-white">Medios de Comunicación</h3>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </section>
+        
+        <div class="container-fluid" style="background-color: #efefef;">
+            <div id="actualizacion-sus" class="wow fadeInUp" data-wow-duration="1s">
+                <h1 class="text-center mt-5 mb-5" style="color: #012E81; padding-top: 50px;">Materialidad</h1>
+                <p class="text-justify" >
+                    Para atender las expectativas de nuestros grupos de interés y priorizar los temas relevantes y estratégicos para la empresa, llevamos a cabo un <strong>análisis de doble materialidad: financiera y de impacto</strong>, que guía la definición de nuestras acciones.
+                </p>
+            </div>
+            <div class="container">
+                <div id="actualizacion-estudio">
+                    
+                    
+                    <div class=" wow fadeInLeft text-center d-flex" >
+                        <img src="{% static 'images/asg/matriz-finsa.png' %}" style="object-fit: cover; width: 100%;">
+                    </div>
+                                
+                    
+                </div>
+            </div>
+        </div>        
+        <div class="modal fade popup" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content d-flex justify-content-center align-items-center">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="event-title card-title mb-0 text-center text-bold tc-blue mb-5">
+                            </h2>
+                            <p class="event-description card-text mt-5 text-justify">
+                            </p>
+                            <div class="row justify-content-center">
+                                <img class="cover event-img col-md-6" src="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center py-3">
+                        <button type="button" class="btn btn-modal-close close-btn card-link" data-mdb-dismiss="modal">
+                            Cerrar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade popup" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="event-title card-title mb-0 text-center text-bold tc-gray mt-5 mb-5">
+                        </h2>
+                        <p class="event-description card-text mt-5 text-justify">
+                        </p>
+                        <img class="cover event-img" src="">
+                    </div>
+                </div>
+                <div class="text-center py-3">
+                    <button type="button" class="btn btn-secondary close-btn card-link" data-mdb-dismiss="modal">
+                        Cerrar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<section id="contribucion_ods">
+    <h1 class="text-center tc-blue" style="margin-top: 30px;">Contribución a los ODS</h1>
+    <p style="text-align: justify; margin: 0 30px;">La Agenda 2030 define <strong>17 Objetivos de Desarrollo Sostenible</strong> con metas a cumplir hacia 2030. En FINSA hemos incorporado varios de estos objetivos a nuestra operación cotidiana para contribuir de manera concreta a su cumplimiento, a través de nuestra aportación a 13 de ellos:</p>
+    <div class="row">
+        <div class="ods-cont">
+            <div class="card">
+                <img src="/static/images/ods_3.png" alt="ODS 3">
+                <div class="card-body" style="background-color:#4c9f38">Garantizar una vida sana y promover el bienestar para todos en todas las edades.</div>
+            </div>
+            <div class="card">
+                <img src="/static/images/ods_4.png" alt="ODS 4">
+                <div class="card-body" style="background-color:#c5192d">Garantizar una educación inclusiva, equitativa y de calidad y promover oportunidades de aprendizaje durante toda la vida para todos.</div>
+            </div>
+            <div class="card">
+                <img src="/static/images/ods_5.png" alt="ODS 5">
+                <div class="card-body" style="background-color:#ff3a21">Lograr la igualdad entre los géneros y empoderar a todas las mujeres y las niñas.</div>
+            </div>
+            <div class="card">
+                <img src="/static/images/ods_6.png" alt="ODS 6">
+                <div class="card-body" style="background-color:#26bde2">Garantizar la disponibilidad de agua y su gestión sostenible y el saneamiento para todos.</div>
+            </div>
+            <div class="card">
+                <img src="/static/images/ods_7.png" alt="ODS 7">
+                <div class="card-body" style="background-color:#fcc30b">Garantizar el acceso a una energía asequible, segura, sostenible y moderna.</div>
+            </div>
+            <div class="card">
+                <img src="/static/images/ods_9.png" alt="ODS 9">
+                <div class="card-body" style="background-color:#fd6925">Construir infraestructuras resilientes, promover la industrialización sostenible y fomentar la innovación.</div>
+            </div>
+            <div class="card">
+                <img src="/static/images/ods_10.png" alt="ODS 10">
+                <div class="card-body" style="background-color:#d9035e">Reducir la desigualdad en y entre los países.</div>
+            </div>
+            <div class="card">
+                <img src="/static/images/ods_11.png" alt="ODS 11">
+                <div class="card-body" style="background-color:#f49c10"> Lograr que las ciudades sean más inclusivas, seguras, resilientes y sostenibles.</div>
+            </div>
+            <div class="card">
+                <img src="/static/images/ods_13.png" alt="ODS 13">
+                <div class="card-body" style="background-color:#3f7c3c">Adoptar medidas urgentes para combatir el cambio climático y sus efectos.</div>
+            </div>
+            <div class="card">
+                <img src="/static/images/ods_14.png" alt="ODS 14">
+                <div class="card-body" style="background-color:#2294d2">Conservar y utilizar sosteniblemente los océanos, los mares y los recursos marinos.</div>
+            </div>
+            <div class="card">
+                <img src="/static/images/ods_15.png" alt="ODS 15">
+                <div class="card-body" style="background-color:#5eb030; font-size: 14px;">Gestionar sosteniblemente los bosques, luchar contra la desertificación, detener e invertir la degradación de las tierras, detener la pérdida de biodiversidad.</div>
+            </div>
+            <div class="card">
+                <img src="/static/images/ods_16.png" alt="ODS 16">
+                <div class="card-body" style="background-color:#00629a"> Promover sociedades justas, pacíficas e inclusivas.</div>
+            </div>
+            <div class="card">
+                <img src="/static/images/ods_17.png" alt="ODS 16">
+                <div class="card-body" style="background-color:#1d4467"> Revitalizar la Alianza Mundial para el Desarrollo Sostenible.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% comment %}
+    <div class="container">
+        <div class="row">
+            <div class="col-12 pt-5 pb-5">
+                <article id="boxes" class="pt-5" style="background-color: white!important;">
+                    <div class="container">
+                        <div class="card">
+                        <img src="/static/images/ods_1.png" alt="ODS 3">
+                        <div class="card-body" style="background-color:#e5243b">Garantizar una vida sana y promover el bienestar para todos en todas las edades.</div>
+                        </div>
+                        <div class="card">
+                        <img src="/static/images/ods_2.png" alt="ODS 4">
+                        <div class="card-body" style="background-color:#dda63a">Garantizar una educación inclusiva, equitativa y de calidad y promover oportunidades de aprendizaje durante toda la vida para todos.</div>
+                        </div>
+                        <div class="card">
+                        <img src="/static/images/ods_3.png" alt="ODS 5">
+                        <div class="card-body" style="background-color:#4c9f38">Lograr la igualdad entre los géneros y empoderar a todas las mujeres y las niñas.</div>
+                        </div>
+                        <div class="card">
+                        <img src="/static/images/ods_4.png" alt="ODS 6">
+                        <div class="card-body" style="background-color:#c5192d">Garantizar la disponibilidad de agua y su gestión sostenible y el saneamiento para todos.</div>
+                        </div>
+                        <div class="card">
+                        <img src="/static/images/ods_5.png" alt="ODS 7">
+                        <div class="card-body" style="background-color:#ff3a21"> Garantizar el acceso a una energía asequible, segura, sostenible y moderna.</div>
+                        </div>
+                        <div class="card">
+                        <img src="/static/images/ods_6.png" alt="ODS 9">
+                        <div class="card-body" style="background-color:#26bde2">Construir infraestructuras resilientes, promover la industrialización sostenible y fomentar la innovación.</div>
+                        </div>
+                        <div class="card">
+                        <img src="/static/images/ods_7.png" alt="ODS 10">
+                        <div class="card-body" style="background-color:#fcc30b"> Reducir la desigualdad en y entre los países.</div>
+                        </div>
+                        <div class="card">
+                        <img src="/static/images/ods_8.png" alt="ODS 11">
+                        <div class="card-body" style="background-color:#a21942">Lograr que las ciudades sean más inclusivas, seguras, resilientes y sostenibles.</div>
+                        </div>
+                        <div class="card">
+                        <img src="/static/images/ods_9.png" alt="ODS 13">
+                        <div class="card-body" style="background-color:#fd6925">Adoptar medidas urgentes para combatir el cambio climático y sus efectos.</div>
+                        </div>
+                        <div class="card">
+                        <img src="/static/images/ods_10.png" alt="ODS 14">
+                        <div class="card-body" style="background-color:#dd1367">Conservar y utilizar sosteniblemente los océanos, los mares y los recursos marinos.</div>
+                        </div>
+                        <div class="card">
+                        <img src="/static/images/ods_11.png" alt="ODS 15">
+                        <div class="card-body" style="background-color:#fd9d24">Gestionar sosteniblemente los bosques, luchar contra la desertificación, detener e invertir la degradación de las tierras, detener la pérdida de biodiversidad.</div>
+                        </div>
+                        <div class="card">
+                        <img src="/static/images/ods_12.png" alt="ODS 16">
+                        <div class="card-body" style="background-color:#bf8b2e">Promover sociedades justas, pacíficas e inclusivas.</div>
+                        </div>
+                        <div class="card">
+                        <img src="/static/images/ods_13.png" alt="ODS 17">
+                        <div class="card-body" style="background-color:#3f7e44">Revitalizar la Alianza Mundial para el Desarrollo Sostenible.</div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+{% endcomment %}
+
+    <div class="content-wrap">
+        <div class="container">
+            <div id="descargable" class="wow fadeInUp pt-5 pb-5" data-wow-duration="1s"
+                 style="visibility: visible; animation-duration: 1s; animation-name: fadeInUp;">
+                <div id="menu1_6"></div>
+                <h1 class="text-center mb-5" style="color: #012E81;">Contenido Descargable</h1>
+                <div class="row justify-content-center wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
+                    <div class="col-md-3 mb-4">
+                        <a class="d-flex flex-column"
+                           href="https://cdn.investorcloud.net/finsa/reportes/IAS_Finsa_2022.pdf "
+                           target="_blank">
+                            <img class="mb-3" src="/static/images/modelo_asg/portadas-finsa-02.png" alt="">
+                            <button class="btn btn-default btn-primary">Informe de Sustentabilidad 2022</button>
+                        </a>
+                    </div>
+                    <div class="col-md-3 mb-4">
+                        <a class="d-flex flex-column"
+                           href="https://cdn.investorcloud.net/finsa/reportes/IAS_Finsa_2023.pdf "
+                           target="_blank">
+                            <img class="mb-3" src="/static/images/modelo_asg/portadas-finsa-23.png" alt="">
+                            <button class="btn btn-default btn-primary">Informe de Sustentabilidad 2023</button>
+                        </a>
+                    </div>
+                     <div class="col-md-3 mb-4">
+                        <a class="d-flex flex-column"
+                           href="https://cdn.investorcloud.net/finsa/reportes/IAS_Finsa_2024_EvolucionEstrategica.pdf "
+                           target="_blank">
+                            <img class="mb-3" src="/static/images/modelo_asg/portadas-finsa-03.png" alt="">
+                            <button class="btn btn-default btn-primary">Informe de Sustentabilidad 2024</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block otherscripts %}
+    <script>
+        // Lógica de sección comites
+        document.querySelectorAll('.icon').forEach(icon => {
+            icon.addEventListener('click', function () {
+                // Ocultar todas las pestañas
+                document.querySelectorAll('.tab-pane').forEach(tab => tab.classList.remove('active', 'd-none'));
+                // Mostrar la pestaña seleccionada
+                const target = document.querySelector(this.dataset.target);
+                target.classList.add('active');
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function() {
+            $(".modal-event").click(function (e) {
+                e.preventDefault();
+                console.log('entro');
+                let target = $(e.currentTarget);
+                {#console.log(target);#}
+
+                $("#myModal .event-title").text(target.data('title'));
+                $("#myModal .event-description").html(target.data('description'));
+                $("#myModal .event-img").attr('src', target.data('img'));
+
+                $("#myModal").modal('show');
+            });
+            $("#myModal .close-btn").click(function (e) {
+                $("#myModal").modal('hide');
+            });
+            $('.up-arrow, .down-arrow').click(function(){
+                var $this = $(this);
+                var direction = $this.data('direction');
+                var $contentContainer = $this.closest('.elementEsquema').find('.content-container');
+                var $currentContent = $contentContainer.find('.content.active');
+                var $nextContent = (direction === 'up') ? $currentContent.prev('.content') : $currentContent.next('.content');
+        
+                if($nextContent.length){
+                    $currentContent.removeClass('active').css('left', (direction === 'up') ? '100%' : '-100%');
+                    $nextContent.addClass('active').css('left', '0');
+        
+                    // Set a timeout to reset the left position of the current content
+                    setTimeout(function() {
+                        $currentContent.css('left', '100%'); // Reset to original off-screen position
+                    }, 500); // This should match the duration of the transition
+                }
+            });
+        });
+
+    </script>
+{% endblock %}

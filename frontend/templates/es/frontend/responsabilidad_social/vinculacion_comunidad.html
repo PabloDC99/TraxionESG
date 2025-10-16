@@ -1,0 +1,57 @@
+{% extends 'layouts/interior.html' %}
+{% load static %}
+{% block otherstyles %}
+
+{% endblock %}
+
+{% block wrapper %}
+    <div class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <p class="text-justify">En el caso de la vinculación con la comunidad, nos involucramos en proyectos y colaboraciones que contribuyen al 
+                        desarrollo sostenible de las comunidades en las que operamos. Desde programas de voluntariado hasta proyectos de mejora de 
+                        infraestructuras y apoyo a causas sociales y medioambientales, trabajamos en estrecha colaboración con las comunidades para 
+                        generar un impacto positivo y duradero.</p>
+
+                   
+
+                    <div style="text-align:center;">
+                        <img src="{% static 'images/iniciativas_comunidad1.png' %}"
+                             style="display:block; width:100%; height: 400px;"
+                             alt=""><br>
+                    </div>
+
+                    <p class="text-justify">Nuestro compromiso con la comunidad nos ha permitido en ocasiones ser un
+                        puente entre el entidades
+                        gubernamentales y asociaciones civiles que buscan promover o proporcionar recursos o
+                        actividades, con lo que hemos generado
+                        importantes sinergias dentro de las entidades en las que se ubican nuestras plazas
+                        comerciales.</p>
+                </div>
+            </div>
+        </div>
+        {#{% include 'partials/carousel_eventos_soc.html' %}#}
+        <div class="container">
+            <a class="btn bg-danger text-white" href="{% url 'responsabilidad_social' %}">
+                volver
+            </a>
+        </div>
+
+    </div>
+{% endblock %}
+{% block otherscripts %}
+    <script src="{% static 'javascripts/js/jquery.twbsPagination.min.js' %}"></script>
+    <script src="{% static 'javascripts/carousel.eventos.js' %}"></script>
+    <script>
+        $('.owl-carousel').owlCarousel({
+            loop: true,
+            margin: 30,
+            nav: true,
+            autoplay: true,
+            autoplayTimeout: 5000,
+            autoplayHoverPause: true,
+            items: 1,
+        });
+    </script>
+{% endblock %}
