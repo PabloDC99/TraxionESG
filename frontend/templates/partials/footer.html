@@ -1,0 +1,80 @@
+{% load i18n %}
+{% load static %}
+<style>
+    .fondo {
+        background-image: url({% static 'images/world-map.png' %});
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+</style>
+<footer id="site-footer" class="site-footer pt-2 pb-1 position-relative rs-footer">
+    {#    <a id="denuncia" href="#" class="octf-btn d-flex align-items-center"><i#}
+    {#            role="presentation" role="presentation"#}
+    {#            class="fa fa-commenting-o text-white"></i> {% trans 'Canal de denuncias' %}</a>#}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 mb-1">
+                <div class="about-widget text-white">
+                    <h3 class="footer-title">Acerca de finsa</h3>
+                    <div class="ml-1 mb-1 text-justify d-flex flex-column justify-content-between align-items-baseline">
+                        <img src="{% static 'images/finsa-logo_BN.png' %}" alt="Logo"
+                             style="padding-bottom: 0; width: 200px; height: 30%"></a>
+                    </div>
+                    <article style="max-width: 70%;">
+                        <p style="text-align: justify;">Desarrollamos y administramos naves y parques industriales bajo un enfoque innovador, sostenible y con los más altos estándares internacionales.</p>
+                    </article>
+                </div>
+            </div>
+            <div class="col-md-4 cont mb-1">
+                <h3 class="footer-title">Contacto</h3>
+                <p class="mb-1">
+
+                    <a target="_blank" class="news-note text-white" href="https://www.finsa.net/"
+                       ><i class="fa fa-globe" aria-hidden="true"></i>
+                       www.finsa.net</a>
+                </p><br>
+                <p class="news-note mb-1"><i class="fa fa-map-marker" aria-hidden="true"></i> Av. Ricardo Margáin 444 | Torre Sur, Piso 12 Col. Valle del Campestre CP 66265 San Pedro Garza García, N.L. México.</p>
+<br>
+                <p class="news-note mb-1"><i class="fa fa-phone" aria-hidden="true"></i> Tel: +52 (81) 8152 4200</p>
+<br>
+                <p class="mb-1">
+                    <a class="news-note text-white" href="mailto:info@finsa.net"
+                        ><i
+                            class="fa fa-envelope" aria-hidden="true"></i>
+                            info@finsa.net
+                    </a></p><br>
+
+
+            </div>
+            <div class="col-md-4 mb-1 fondo">
+                <h3 class="footer-title">Más información</h3>
+                <div class="d-flex flex-column justify-content-around align-items-baseline">
+                    <p class="mb-1">
+                        Reciba periódicamente información ASG relacionada con nuestra compañía.
+                    </p>
+                    <form class="form mb-2 pt-2 text-center was-validated" method="post" id="newsletter-form-footer">
+                        <div class="form-group mb-1">
+                            <input class="col-md-8 col-sm-7 col-8" id="fieldEmail" name="email"
+                                   type="email" placeholder="{% trans 'Correo electrónico' %}" required
+                                   data-msg-required="" data-msg-email=""/>
+                            <button id="newsletter-submit-footer" type="submit" class="btn">Suscribirse</button>
+                        </div>
+                        <div class="alert-message-footer"></div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-lg-12 text-center">
+                <p class="copyright my-0">
+                    © {% now 'Y' %} {% trans 'Finsa - Diseñado y generado por' %}
+                    <a href="http://www.irdesign.mx/">
+                        <img src="{% static 'images/ir-design-white.svg' %}" alt="IRDesign" width="90px">
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>

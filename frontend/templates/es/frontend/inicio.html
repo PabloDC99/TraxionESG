@@ -1,0 +1,909 @@
+{% extends 'layouts/base.html' %}
+{% load static i18n %}
+{% block otherstyles %}
+    <link rel="stylesheet" href="{% static 'stylesheets/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'javascripts/fullcalendar/lib/main.css' %}">
+    <link rel="stylesheet" href="{% static 'stylesheets/carousel.eventos.min.css' %}">
+    <link rel="stylesheet" href="{% static 'stylesheets/swiper.min.css' %}">
+    <link rel="stylesheet" href="{% static 'stylesheets/timeline.min.css' %}">
+    <style>
+        .fc td, .fc th {
+            border-style: none !important;
+        }
+
+        .fc-theme-standard .fc-scrollgrid {
+            border: none;
+        }
+
+        .repo-left {
+            /* background-color: #f2f2f2; */
+            padding: 100px;
+            border-top: 4px solid #939598;
+            height: 350px;
+        }
+
+        .calendar-right {
+            background-color: #f2f2f2;
+            border-top: 4px solid #d0df00;
+            border-left: 2px solid #fff;
+            height: 350px;
+        }
+
+        table {
+            margin-bottom: unset;
+            overflow: hidden !important;
+        }
+
+        .fc-daygrid-day-events {
+            min-height: initial !important;
+        }
+
+        #calendar > .fc-header-toolbar {
+            margin-bottom: 0.5em;
+        }
+
+        #calendar {
+            width: 70%;
+            margin: 0 auto;
+            font-size: 10px;
+        }
+
+        #calendar .fc-scroller.fc-scroller-liquid-absolute {
+            overflow: hidden !important;
+        }
+
+        #calendar a.fc-daygrid-day-number {
+            z-index: 0 !important;
+        }
+
+        @media (min-width: 320px) and (max-width: 480px) {
+            #calendar {
+                width: 100%;
+            }
+
+            #calendar .fc-col-header {
+                width: 100% !important;
+            }
+
+            .calendar-right {
+                margin-top: 15px;
+            }
+
+            #integracion .col-md-4 {
+                height: 350px;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            
+            #integracion .col-md-4:hover .layer {
+                height: 350px;
+            }
+        }
+        .honeycomb-wrapper .tile .honeycomb {
+            height: 150px;
+        }
+
+        .honeycomb-wrapper .count {
+            background-color: transparent;
+        }
+        
+       .marquee {
+            margin: 0px auto;
+            white-space: nowrap;
+            overflow: hidden;
+            background-color: #d0df00;
+            position: relative;
+            width: 100%;
+        }
+        
+       .marquee span {
+           display: inline-block;
+           animation: marquee 50s linear infinite;
+       }
+        @keyframes marquee {
+            from {
+                transform: translateX(30%);
+            }
+            to {
+                transform: translateX(-100%);
+            }
+        }
+        @media(min-width: 550px) and (max-width: 991px){
+            .honeycomb img{
+                max-width: 50%;
+            }
+        }
+        .card {
+            border: 0 solid rgba(0, 0, 0, 0);
+        }
+    </style>
+{% endblock %}
+
+{% block wrapper %}
+    {% include 'partials/slider_index.html' %}
+    <div class="marquee"><br>
+        <div class="container">
+            <h2 class="text-center mt-2">
+                <span style="color: #fff;">- Una de nuestras fortalezas es vivir nuestra
+                        cultura corporativa, buscando siempre la
+                        excelencia en todas nuestras actividades,
+                        satisfacer las necesidades de nuestros clientes
+                        y desarrollando las mejores prácticas laborales
+                        y ambientales. -</span>
+                        </h2>
+                    </div>
+                </div>
+                <section id="" class="py-5 bc-gray pb-5">
+                    <div class="container">
+                        <h1 class="title-effect tc-blue text-center">
+                            Nuestro Enfoque de Sostenibilidad
+                        </h1>
+                        <ul class="nav nav-tabs d-flex flex-wrap justify-content-around plan-accion" id="cadena" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active w-100" id="tab1-tab" data-toggle="tab" data-target="#tab1" type="button" role="tab" aria-controls="home" aria-selected="true">
+                        Talento y Cultura Corporativa
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link w-100" id="tab2-tab" data-toggle="tab" data-target="#tab2" type="button" role="tab" aria-controls="profile" aria-selected="false">
+                        Comunidad
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link w-100" id="tab3-tab" data-toggle="tab" data-target="#tab3" type="button" role="tab" aria-controls="profile" aria-selected="false">
+                        Medio Ambiente
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link w-100" id="tab4-tab" data-toggle="tab" data-target="#tab4" type="button" role="tab" aria-controls="profile" aria-selected="false">
+                        Ética, Legalidad y Anticorrupción
+                    </button>
+                </li>
+            </ul>
+
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
+                    <div class="row d-flex align-items-center flex-wrap">
+                        <div class="col-md-6">
+                            <p class="text-justify">
+                                Impulsamos el crecimiento de nuestro talento con capacitación continua, seguridad y salud en el trabajo, y un ambiente inclusivo. Fomentamos una cultura de desempeño, aprendizaje y liderazgo ético.  
+                            </p>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="text-center">
+                                <img class="img-fluid" src="/static/images/talento-diseno-02.png" width="800" height="1000">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
+                    <div class="row d-flex align-items-center flex-wrap">
+                        <div class="col-md-6">
+                            <div class="text-center">
+                                <img class="img-fluid" src="/static/images/talento-diseno-03.png" width="800" height="1000">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="text-justify">
+                                Colaboramos con las comunidades donde operamos mediante programas de educación, empleo local y voluntariado. Escuchamos, medimos impacto y tejemos alianzas para generar valor social sostenible. 
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="tab3-tab">
+                    <div class="row d-flex align-items-center flex-wrap">
+                        <div class="col-md-6">
+                            <p class="text-justify">
+                                Gestionamos de forma eficiente energía, agua y residuos, reducimos emisiones y cumplimos la normativa. Integramos buenas prácticas y certificaciones para minimizar impactos y avanzar hacia la economía circular. 
+                            </p>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="text-center">
+                                <img class="img-fluid" src="/static/images/talento-diseno-04.png" width="800" height="1000">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="tab4" role="tabpanel" aria-labelledby="tab4-tab">
+                    <div class="row d-flex align-items-center flex-wrap">
+                        <div class="col-md-6">
+                            <div class="text-center">
+                                <img class="img-fluid" src="/static/images/talento-diseno_01.png" width="800" height="1000">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="text-justify">
+                                Actuamos con integridad: aplicamos nuestro Código de Ética, capacitamos en cumplimiento y operamos con controles internos y canales de denuncia. Construimos, junto con proveedores y aliados, una comunidad anticorrupción de cero tolerancia al soborno.  
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="sec_consumo" class="content-wrap py-3 parallax" style="background-image: url({% static 'images/parallax_cydsa.jpg' %})">
+        <div class="container-fluid">
+            <div id="consumo" class="finn-counto">
+                <div class="container">
+                    <div class="section-title text-center">
+                        <h1 class="title-effect text-white pt-2 pb-5">
+                            Nuestras Cifras más Destacadas
+                        </h1>
+                    </div>
+                    <div class="row honeycomb-wrapper justify-content-center pb-5">
+                        <div class="col-md-6 col-lg-3 tile">
+                            <div class="honeycomb">
+                                <div class="content">
+                                    <img src="/static/images/logo_energia-01.png" alt="" style="width: 100px;">
+                                    <h2 class="text-white count-index py-1" data-speed="2500" data-to="5454180" data-in-viewport="yes" data-decimals="0">5454180</h2>
+                                    <span class="title-effect "></span>
+                                    <h4 class="text-white">Consumo eléctrico <sup>1</sup></h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3 tile">
+                            <div class="honeycomb">
+                                <div class="content">
+                                    <img src="/static/images/logo_eagua.png" alt="" style="width: 100px;">
+                                    <h2 class="text-white count-index py-1" data-speed="2500" data-to="125131" data-in-viewport="yes" data-decimals="0">125131</h2>
+                                    <span class="title-effect "></span>
+                                    <h4 class="text-white">Consumo de agua <sup>2</sup></h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3 tile">
+                            <div class="honeycomb">
+                                <div class="content">
+                                    <img src="/static/images/logo_coolaboradores.png" alt="" style="width: 100px;">
+                                    <h2 class="text-white count-index py-1" data-speed="2500" data-to="774" data-in-viewport="yes" data-decimals="0">774</h2>
+                                    <span class="title-effect "></span>
+                                     <h4 class="text-white">Colaboradores</h4><br>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3 tile">
+                            <div class="honeycomb" style="margin-top: 10px;">
+                                <div class="content">
+                                    <img src="/static/images/logo_capacitacion.png" alt="" style="width: 100px;">
+                                    <h2 class="text-white count-index py-1" data-speed="2500" data-to="2939" data-in-viewport="yes" data-decimals="0">2939</h2><span class="title-effect "></span>
+                                    <h4 class="text-white">Horas de capacitación</h4><br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-white text-right mb-0" style="font-size: 12px; text-decoration: underline;"><sup>1</sup> Cifra en kWh</p>
+                    <p class="text-white text-right mb-0" style="font-size: 12px; text-decoration: underline;"><sup>2</sup> Cifra en m<sup>3</sup></p>
+                </div>
+            </div>
+        </div>
+    </section>
+ <section id="agenda-2030">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 pt-5 pb-5">
+                        <h1 class="text-center tc-blue">Progreso hacia la Agenda 2030 (ODS)</h1>
+                        <p class="text-center">
+                            <strong>En FINSA integramos los ODS a la estrategia y la operación, con metas medibles, seguimiento continuo y alianzas que amplían nuestro impacto conforme a la Agenda 2030. Para nosotros, los ODS son un marco que orienta nuestras decisiones, fortaleciendo la confianza de nuestros grupos de interés.</strong>
+                        </p>
+                      <figure class="d-flex justify-content-center align-items-center" style="margin-top: 0 !important;">
+                            <img src="{% static 'images/home-finsa/finsa-ods-1.png' %}" class="obj-cov" style="height: 550px; margin-top: 0 !important;">
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </section>
+    <div class="row justify-content-center align-items-center row-eq-height">
+            <div class=" col-md-6 repo-left" style="background-size: cover; background-repeat: no-repeat; background-position: center; background-image: url({% static 'images/portada-finsa.png' %})">
+                <h3 class="text-center text-dark mb-2 text-uppercase font-weight-bold" style="color: white !important;">Descargar Informe
+                    Anual</h3>
+                <div class="d-flex flex-column pt-1">
+                    <a target= "_blank" href = "https://cdn.investorcloud.net/finsa/reportes/IAS_Finsa_2024_EvolucionEstrategica.pdf" class="text-center">
+                        <i class="fa fa-file-text fa-3x mb-3" style="color: white !important;"></i>
+                        <p class="mb-0" style="color: white !important;">Informe Anual de Sostenibilidad 2024</p>
+                    </a>
+                </div>
+            </div>
+            <div class=" col-md-6 calendar-right">
+                <h3 class="text-center mb-3 text-dark text-uppercase font-weight-bold">Calendario</h3>
+                <div id='calendar'></div>
+            </div>
+        </div>
+    
+    <!--modals-->
+
+    <div class="modal fade popup" id="modalCuestionario" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered justify-content-center"
+             role="document">
+            <div class="modal-content">
+                <!--            <button type="button" class="close" data-dismiss="modal" aria-label="Close">-->
+                <!--                <span aria-hidden="true">&times;</span>-->
+                <!--            </button>-->
+                <div class="modal-body">
+                    <div class="container pb-3 pt-3">
+                        <h3 class="text-dark">Si usted desea obtener información ASG de nuestra parte, favor de
+                            compartirnos sus datos.</h3>
+                        <form action="" class="mb-0 was-validated" method="post" id="cuestionario_esg">
+                            <div class="form-group">
+                                <label for="nombre" class="col-form-label text-capitalize">Nombre:</label>
+                                <input type="text" name="nombre" id="nombre" required class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="empresa"
+                                       class="col-form-label text-capitalize">Empresa:</label>
+                                <input type="text" name="empresa" id="empresa" required class="form-control">
+                            </div>
+                            <div class="form-group mb-5">
+                                <label for="presentation-email" class="col-form-label text-capitalize">Correo:</label>
+                                <input type="email" name="correo" required class="form-control">
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between">
+                                <button id="buzon-quejas" class="btn btn-info">Buzón de quejas <br>¡Quéremos escucharte!
+                                </button>
+                                <div>
+                                    <button type="button" class="btn btn-light mr-3 mb-0" data-dismiss="modal"
+                                            aria-label="Close">
+                                        Cerrar
+                                    </button>
+                                    <button id="cuestionario-submit" type="submit" class="btn btn-primary mb-0">
+                                        Solicitar
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="modal fade popup" id="modalBuzonQuejas" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered justify-content-center"
+             role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="container pb-3 pt-3">
+                        <h3 class="text-dark">Para poder atender tu inquietud, favor de compartirnos tu información de
+                            contacto.</h3>
+                        <form action="" class="mb-0 was-validated" method="post" id="buzon_quejas_esg">
+                            <div class="form-group">
+                                <label for="nombre" class="col-form-label text-capitalize">Nombre:</label>
+                                <input type="text" name="nombre" id="nombre" required class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="apellido" class="col-form-label text-capitalize">Apellido:</label>
+                                <input type="text" name="apellido" id="apellido" required class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="apellido2" class="col-form-label text-capitalize">Segundo Apellido:</label>
+                                <input type="text" name="apellido2" id="apellido2" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="telefono"
+                                       class="col-form-label text-capitalize">Teléfono:</label>
+                                <input type="tel" name="telefono" id="telefono" required class="form-control">
+                            </div>
+                            <div class="form-group mb-5">
+                                <label for="presentation-email" class="col-form-label text-capitalize">Correo:</label>
+                                <input type="email" name="correo" required class="form-control">
+                            </div>
+                            <div class="text-right">
+                                <button type="button" class="btn btn-light mr-3 mb-0" data-dismiss="modal"
+                                        aria-label="Close">
+                                    Cerrar
+                                </button>
+                                <button id="buzon-quejas-submit" type="submit" class="btn btn-primary mb-0">
+                                    Enviar
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+  
+{% endblock %}
+{% block otherscripts %}
+    <script src="{% static 'javascripts/js/jquery.twbsPagination.min.js' %}"></script>
+    <script src="{% static 'javascripts/carousel.eventos.js' %}"></script>
+    <script src="{% static 'javascripts/swiper.min.js' %}"></script>
+    <script src="{% static 'javascripts/jquery.waypoints.min.js' %}"></script>
+    <script src="{% static 'javascripts/countTo.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'stylesheets/css/index_comp.min.css' %}?v=1.0.1"/>
+
+
+    <script src="{% static 'javascripts/amcharts/animate.js' %}"></script>
+
+    <script src="{% static 'javascripts/js/rs-plugin/jquery.themepunch.tools.min.js' %}"></script>
+    <script src="{% static 'javascripts/js/rs-plugin/jquery.themepunch.tools.min.js' %}"></script>
+    <script src="{% static 'javascripts/js/rs-plugin/jquery.themepunch.revolution.min.js' %}"></script>
+    <script src="{% static 'javascripts/js/rs-plugin/extensions/revolution.extension.video.min.js' %}"></script>
+    <script src="{% static 'javascripts/js/rs-plugin/extensions/revolution.extension.slideanims.min.js' %}"></script>
+    <script src="{% static 'javascripts/js/rs-plugin/extensions/revolution.extension.actions.min.js' %}"></script>
+    <script src="{% static 'javascripts/js/rs-plugin/extensions/revolution.extension.layeranimation.min.js' %}"></script>
+    <script src="{% static 'javascripts/js/rs-plugin/extensions/revolution.extension.kenburn.min.js' %}"></script>
+    <script src="{% static 'javascripts/js/rs-plugin/extensions/revolution.extension.navigation.min.js' %}"></script>
+    <script src="{% static 'javascripts/js/rs-plugin/extensions/revolution.extension.migration.min.js' %}"></script>
+    <script src="{% static 'javascripts/js/rs-plugin/extensions/revolution.extension.parallax.min.js' %}"></script>
+
+    <script src='{% static 'javascripts/fullcalendar/lib/main.js' %}'></script>
+    <script src='{% static 'javascripts/fullcalendar/lib/locales-all.js' %}'></script>
+
+    <script src="{% static 'javascripts/jquery.waypoints.min.js' %}"></script>
+    <script src="{% static 'javascripts/countTo.js' %}"></script>
+    <script>
+        $(window).on('load', function () {
+            $("#modalCuestionario").modal('show');
+        });
+
+        $(document).ready(function () {
+            // Function to format number with commas
+            function numberWithCommas(x) {
+                return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            }
+        
+             // Initialize counters with waypoints
+            $('.finn-counto .count-index').each(function() {
+                var $this = $(this);
+                var isPercent = $this.data('porcent') === true || $this.data('porcent') === "true";
+                {#var $button = $this.closest('button');#}
+        
+                // Start the honeycomb animation by adding a class to the SVG element
+                var animateHoneycomb = function($element) {
+                    $element.closest('.honeycomb').find('svg.honeycomb-path').addClass('honeycomb-animated');
+                };
+        
+                $this.waypoint(function() {
+                    // Delay the counting to ensure it's visible
+                    setTimeout(function(){
+                        // Trigger the honeycomb animation
+                        animateHoneycomb($this);
+                        $button.addClass('animation-trigger');
+        
+                        $this.countTo({
+                            from: 0,
+                            to: $this.data('to'),
+                            speed: $this.data('speed'),
+                            decimals: $this.data('decimals'),
+                            formatter: function (value, options) {
+                                var formattedValue = value.toFixed(options.decimals).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+                                return isPercent ? formattedValue + '%' : formattedValue;
+                            },
+                            onComplete: function (value) {
+                                var formattedValue = value.toFixed($this.data('decimals')).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+                                $this.text(isPercent ? formattedValue + '%' : formattedValue);
+                            }
+                          });
+                    }, $this.data('delay') || 0);
+        
+                    this.destroy(); // Ensures the animation and counting occur only once
+                }, {
+                    offset: '80%', // Triggers when the element is 75% from the top of the viewport
+                    triggerOnce: true // Counting should only happen once
+                });
+            });
+             
+             // Inicialización al cargar la página
+            $('.finn-counto').each(function () {
+                finn_waypoint('#' + $(this).attr('id')); // Agrega los waypoints
+                finn_counto('#' + $(this).attr('id'));   // Inicializa los contadores
+            });
+            $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+                // Recorre los elementos con la clase .finn-counto y los inicializa de nuevo
+                $('.finn-counto').each(function () {
+                    finn_waypoint('#' + $(this).attr('id'));
+                    finn_counto('#' + $(this).attr('id'));
+                });
+
+            });
+             
+             
+            
+
+            function finn_waypoint(elemento) {
+                var waypoint = new Waypoint({
+                    element: $(elemento),
+                    handler: function (direction) {
+                        $(elemento + ' .count-index').trigger('on-appear');
+                    },
+                    offset: '75%',
+                    triggerOnce: true
+                })
+            }
+
+            function finn_counto(elemento) {
+                if ($().countTo) {
+                    $(elemento + ' .count-index').on('on-appear', function () {
+                        $(elemento + ' .honeycomb-path.honeycomb-1').addClass('honeycomb-animated');
+
+                        $(this).each(function () {
+                            var to = parseFloat($(this).data('to')),
+                                speed = parseInt($(this).data('speed')),
+                                decimals = parseInt($(this).data('decimals'));
+
+                            $(this).countTo({
+                                to: to,
+                                speen: speed,
+                                decimals: decimals,
+                                formatter: function (value, options) {
+                                    return value.toFixed(options.decimals).replace(/\B(?=(?:\d{3})+(?!\d))/g, ',');
+                                },
+                                onComplete: function (value) {
+                                    if (value === -10)
+                                        return this.innerHTML += '%';
+                                    if (value === 26)
+                                        return this.innerHTML += '%';
+                                    if (value === -62)
+                                        return this.innerHTML += '%';
+                                }
+
+                            });
+                        });
+                    }); //counter
+                }
+            }
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var calendarEl = document.getElementById('calendar');
+            if (calendarEl != null) {
+                var calendar = new FullCalendar.Calendar(calendarEl, {
+                    eventDidMount: function (info) {
+                        info.el.setAttribute("data-toggle", 'tooltip');
+                        info.el.setAttribute("data-placement", 'top');
+                        info.el.setAttribute("data-title", info.event.extendedProps.description);
+                    },
+                    locale: 'es',
+                    height: 270,
+                    eventMouseEnter: function (mouseEnterInfo) {
+                        $(mouseEnterInfo.el).tooltip('show')
+                    }, eventMouseLeave: function (mouseEnterInfo) {
+                        $(mouseEnterInfo.el).tooltip('hide')
+                    },
+
+                    handleWindowResize: true,
+                    events: [
+                        {
+                            {#title: 'Reporte 3T21',#}
+                            description: 'Reporte 3T21',
+                            start: '2021-10-28',
+                            display: 'background',
+                            backgroundColor: '#EB8705'
+                        }, {
+                            {#title: 'Conferencia Telefónica 3T21 ',#}
+                            description: 'Conferencia Telefónica 3T21 ',
+                            start: '2021-10-29',
+                            display: 'background',
+                            backgroundColor: '#3DAE2B'
+                        }
+
+                    ]
+                });
+                calendar.render();
+            }
+        });
+    </script>
+
+    <script>
+        var tpj = jQuery;
+
+        var revapi202;
+        tpj(document).ready(function () {
+
+            $(".ot-testimonial-s2").owlCarousel({
+                autoplay: true,
+                autoplayTimeout: 5000,
+                autoplayHoverPause: true,
+                loop: true,
+                responsiveClass: true,
+                dotsClass: 'owl-dots ot-custom-dots',
+                dots: false,
+                nav: true,
+                navText: ['<i role="presentation" class="icon-angle-left"></i>', '<i role="presentation" class="icon-angle-right"></i>'],
+                responsive: {
+                    0: {
+                        items: 1,
+                        margin: 30,
+                        autoplay: true,
+                    },
+                    768: {
+                        items: 1,
+                        margin: 30,
+                    },
+                    1024: {
+                        items: 1,
+                        margin: 30,
+                    }
+                }
+            });
+
+
+            if (tpj("#rev_slider_579_1").revolution == undefined) {
+                revslider_showDoubleJqueryError("#rev_slider_579_1");
+            } else {
+                revapi202 = tpj("#rev_slider_579_1").show().revolution({
+                    sliderType: "standard",
+                    jsFileLocation: "/static/javscripts/js/rs-plugin/js/",
+                    {#sliderLayout: "fullscreen",#}
+                    dottedOverlay: "none",
+                    delay: 16000,
+                    responsiveLevels: [4096, 1200, 992, 500],
+                    visibilityLevels: [1140, 992, 768, 480],
+                    gridwidth: [1140, 900, 760, 500],
+                    gridheight: [500, 500, 500, 650],
+                    hideThumbs: 200,
+
+                    thumbWidth: 100,
+                    thumbHeight: 50,
+                    thumbAmount: 5,
+                    fallbacks: {
+                        simplifyAll: "off",
+                        disableFocusListener: false,
+                    },
+                    {#parallax: {#}
+                    {#    type: "mouse",#}
+                    {#    origo: "slidercenter",#}
+                    {#    speed: 300,#}
+                    {#    levels: [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 49, 50, 51, 55],#}
+                    {# },#}
+                    navigation: {
+                        keyboardNavigation: "off",
+                        keyboard_direction: "horizontal",
+                        mouseScrollNavigation: "off",
+                        onHoverStop: "off",
+                        touch: {
+                            touchenabled: "on",
+                            swipe_threshold: 75,
+                            swipe_min_touches: 1,
+                            swipe_direction: "horizontal",
+                            drag_block_vertical: false
+                        },
+                        arrows: {
+                            style: "persephone",//HEPHAISTOS,HERMES,HESPERIDEN,METIS,PERSEPHONE
+                            enable: true,
+                            {#    hide_onmobile: false,#}
+                            {#    hide_onleave: false,#}
+                            {#    tmp: '<div class="tp-arr-allwrapper">	<div class="tp-arr-imgholder"></div>	<div class="tp-arr-titleholder">{{title}}</div>	</div>',#}
+                            {#    left: {#}
+                            {#        h_align: "left",#}
+                            {#        v_align: "center",#}
+                            {#        h_offset: 10,#}
+                            {#        v_offset: 0#}
+                            {#    },#}
+                            {#    right: {#}
+                            {#        h_align: "right",#}
+                            {#        v_align: "center",#}
+                            {#        h_offset: 10,#}
+                            {#        v_offset: 0#}
+                            {#    }#}
+                        }
+                    },
+                    touchenabled: "on",
+                    onHoverStop: "on",
+
+                    swipe_velocity: 0.7,
+                    swipe_min_touches: 1,
+                    swipe_max_touches: 1,
+                    drag_block_vertical: false,
+
+                    keyboardNavigation: "off",
+
+                    shadow: 0,
+                    fullWidth: "off",
+                    fullScreen: "on",
+
+                    spinner: "spinner4",
+
+                    stopLoop: "off",
+                    stopAfterLoops: -1,
+                    stopAtSlide: -1,
+
+                    shuffle: "off",
+
+                    autoHeight: "off",
+                    forceFullWidth: "off",
+
+                    hideThumbsOnMobile: "off",
+                    hideNavDelayOnMobile: 1500,
+                    hideBulletsOnMobile: "off",
+                    hideArrowsOnMobile: "off",
+                    hideThumbsUnderResolution: 0,
+
+                    hideSliderAtLimit: 0,
+                    hideCaptionAtLimit: 0,
+                    hideAllCaptionAtLilmit: 0,
+                    startWithSlide: 0,
+                });
+                revapi202.bind("revolution.slide.onloaded", function (e) {
+                    setTimeout(function () {
+                        SEMICOLON.slider.sliderParallaxDimensions();
+                    }, 200);
+                });
+
+                revapi202.bind("revolution.slide.onchange", function (e, data) {
+                    SEMICOLON.slider.revolutionSliderMenu();
+                });
+            }
+
+            $(".g_btnRight").click(function () {
+                if ($("#vertuo").hasClass("extended")) {
+                    $("#original").animate({
+                        width: '50%'
+                    }, "slow");
+                    $("#vertuo").animate({
+                        width: "50%"
+                    }, "slow");
+                    $("#vertuo").removeClass("extended");
+                } else {
+                    $("#original").animate({
+                        width: '95%'
+                    }, "slow");
+                    $("#vertuo").animate({
+                        width: "5%"
+                    }, "slow");
+                    $("#original").addClass("extended");
+                    $("#vertuo").removeClass("extended");
+                }
+            });
+            $(".g_btnLeft").click(function () {
+                if ($("#original").hasClass("extended")) {
+                    $("#original").animate({
+                        width: '50%'
+                    }, "slow");
+                    $("#vertuo").animate({
+                        width: "50%"
+                    }, "slow");
+                    $("#original").removeClass("extended");
+                } else {
+                    $("#vertuo").animate({
+                        width: '95%'
+                    }, "slow");
+                    $("#original").animate({
+                        width: "5%"
+                    }, "slow");
+                    $("#original").removeClass("extended");
+                    $("#vertuo").addClass("extended");
+                }
+            });
+
+
+        });
+        {#setTimeout(function () {#}
+        {#    SEMICOLON.carouselContainer["oc-clients"].trigger('refresh.owl.carousel')#}
+        {# }, 200, {});#}
+
+        /*ready*/
+    </script>
+
+
+    <script>
+        if ($('#cuestionario_esg').length) {
+            var cuestionario_esg = $('#cuestionario_esg');
+            cuestionario_esg.validate({
+                highlight: function (element) {
+                    $(element)
+                        .addClass('is-invalid')
+                        .removeClass('is-valid')
+                        .parent()
+                        .removeClass('has-success')
+                        .addClass('has-danger');
+                },
+                success: function (label, element) {
+                    $(element)
+                        .removeClass('is-invalid')
+                        .addClass('is-valid')
+                        .parent()
+                        .removeClass('has-danger')
+                        .addClass('has-success')
+                        .find('label.error')
+                        .remove();
+                },
+                errorPlacement: function (error, element) {
+                    if (element.attr('type') == 'radio' || element.attr('type') == 'checkbox') {
+                        error.appendTo(element.parent().parent());
+                    } else {
+                        error.insertAfter(element);
+                    }
+                }
+            });
+
+            var text_success_suscrb = (locale === 'es') ? 'Correo enviado satisfactoriamente.' : 'Mail sent successfully.';
+            var text_danger_suscrb = (locale === 'es') ? 'Hubo un error al enviar su correo.' : 'There was an error sending your email.';
+
+            cuestionario_esg.submit(function (e) {
+                e.preventDefault();
+                if (cuestionario_esg.valid()) {
+                    button_loading('#cuestionario-submit', '<i class="fa fa-spinner fa-spin mr-2"></i>');
+                    $.ajax({
+                        type: 'POST',
+                        url: '{% url 'send-cuestionario' %}',
+                        data: cuestionario_esg.serialize(),
+                        success: function (response) {
+                            if (response.success === 'true') {
+                                $('input').val('');
+                                $('input').removeClass('is-valid valid');
+                                $('#modalCuestionario').modal('hide');
+                                setTimeout(function () {
+                                    $('#cuestionario-submit').addClass('loading');
+                                }, 50);
+                            } else {
+                                {#alert_animations('.alert-message-footer', 'danger', text_danger_suscrb);#}
+                            }
+                            button_loading('#cuestionario-submit', '<i class="fa fa-spinner fa-spin mr-2"></i>', true);
+                        }
+                    });
+                }
+            });
+        }
+
+        if ($('#buzon_quejas_esg').length) {
+            var buzon_quejas_esg = $('#buzon_quejas_esg');
+            buzon_quejas_esg.validate({
+                highlight: function (element) {
+                    $(element)
+                        .addClass('is-invalid')
+                        .removeClass('is-valid')
+                        .parent()
+                        .removeClass('has-success')
+                        .addClass('has-danger');
+                },
+                success: function (label, element) {
+                    $(element)
+                        .removeClass('is-invalid')
+                        .addClass('is-valid')
+                        .parent()
+                        .removeClass('has-danger')
+                        .addClass('has-success')
+                        .find('label.error')
+                        .remove();
+                },
+                errorPlacement: function (error, element) {
+                    if (element.attr('type') == 'radio' || element.attr('type') == 'checkbox') {
+                        error.appendTo(element.parent().parent());
+                    } else {
+                        error.insertAfter(element);
+                    }
+                }
+            });
+
+            var text_success_suscrb = (locale === 'es') ? 'Correo enviado satisfactoriamente.' : 'Mail sent successfully.';
+            var text_danger_suscrb = (locale === 'es') ? 'Hubo un error al enviar su correo.' : 'There was an error sending your email.';
+
+            buzon_quejas_esg.submit(function (e) {
+                e.preventDefault();
+                if (buzon_quejas_esg.valid()) {
+                    button_loading('#buzon-quejas-submit', '<i class="fa fa-spinner fa-spin mr-2"></i>');
+                    $.ajax({
+                        type: 'POST',
+                        url: '{% url 'send-buzon-quejas' %}',
+                        data: buzon_quejas_esg.serialize(),
+                        success: function (response) {
+                            if (response.success === 'true') {
+                                $('input').val('');
+                                $('input').removeClass('is-valid valid');
+                                $('#modalBuzonQuejas').modal('hide');
+                                setTimeout(function () {
+                                    $('#buzon-quejas-submit').addClass('loading');
+                                }, 50);
+                            } else {
+                                {#alert_animations('.alert-message-footer', 'danger', text_danger_suscrb);#}
+                            }
+                            button_loading('#buzon-quejas-submit', '<i class="fa fa-spinner fa-spin mr-2"></i>', true);
+                        }
+                    });
+                }
+            });
+        }
+
+        $('#buzon-quejas').click(function () {
+            $('#modalCuestionario').modal('hide');
+            setTimeout(function () {
+                $('#modalBuzonQuejas').modal('show');
+            }, 350);
+        });
+    </script>
+{% endblock %}

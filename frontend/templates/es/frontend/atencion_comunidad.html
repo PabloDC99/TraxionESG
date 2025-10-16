@@ -1,0 +1,690 @@
+{% extends 'layouts/interior.html' %}
+{% load static %}
+
+{% block otherstyles %}
+    <style>
+:root {
+  --azulclaro: #0081c9;
+  --gris: #646468;
+  --azul: #022855;
+  --turquesa: #09c9b6;
+  --naranja: #ff8f43;
+}
+
+    /* MAPA */
+    .st0 {
+        fill: #212B59;
+        stroke: #FFFF;
+        stroke-width: 0.5;
+        content: "\f041";
+        cursor: pointer;
+    }
+
+    #MEX2714, #MEX2708, #MEX2716 {
+        fill: var(--naranja);
+        stroke: #FFFF;
+        stroke-width: 0.5;
+        content: "\f041";
+        cursor: pointer;
+    }
+
+    #MEX2706, #MEX2712, #MEX2709, #MEX2710, #MEX2713 {
+        fill: var(--turquesa);
+        stroke: #FFFF;
+        stroke-width: 0.5;
+        content: "\f041";
+        cursor: pointer;
+    }
+
+    #MEX2719, #MEX2717, #MEX2728, #MEX2733 {
+        fill: var(--gris);
+        stroke: #FFFF;
+        stroke-width: 0.5;
+        content: "\f041";
+        cursor: pointer;
+    }
+
+    #MEX2724, #MEX2732, #MEX2727, #MEX2731 {
+        fill: var(--azulclaro);
+        stroke: #FFFF;
+        stroke-width: 0.5;
+        content: "\f041";
+        cursor: pointer;
+    }
+
+    /* .mapa .active {
+        fill: #91BF1F;
+        stroke: #A6C96B;
+        stroke-width: 0.9;
+    } */
+    .st1 {
+        fill:  #ebedf0;
+        stroke-width: 0.5;
+        stroke:  #a3a3a3;
+    }
+    .st2 {
+        fill: #E0E0E0;
+        stroke: #FFFFFF;
+        stroke-width: 0.75;
+    }
+    .st4 {
+        stroke-width: 0.75;
+    }
+    .st3 {
+        stroke: #fff;
+        fill: none;
+        cursor: pointer;
+    }
+
+    /* Seccion info del mapa */
+
+    #propiedades-circle {
+        background-color: white;
+        border-radius: 20px;
+        box-shadow: #b2b2b2 0px 0px 15px;
+        padding: 20px;
+        text-align: left;
+    }
+
+    #propiedades-circle:hover {
+        transform: translateY(-7px);
+    }
+
+    #propiedades-circle h4, #propiedades-circle h3 {
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+    #propiedades-circle ul {
+        margin-bottom: 0.5rem;
+    }
+    #propiedades-state{
+        background-color: white;
+        font-size: 2em;
+        color: var(--naranja);
+    }
+    #propiedades-text h2 {
+        font-weight: bold;
+        font-size: 2em;
+    }
+
+    svg.mapa{
+        max-width: 95%;
+    }
+
+    .naranja { color: var(--naranja); }
+    .gris { color: var(--gris); }
+    .azulclaro { color: var(--azulclaro); }
+    .turquesa { color: var(--turquesa); }
+
+    /* Seccion total del mapa */
+
+    .btn-total {
+        border: 2px var(--azulclaro) solid;
+        color: var(--azulclaro);
+        background-color: white;
+        font-size: 1.2em;
+        border-radius: 30px;
+        padding: 3px 30px;
+        font-weight: bold;
+        transition: all .6s ease;
+    }
+
+    .btn-total:hover {
+        scale: 110%;
+    }
+
+    #infoDiv {
+        /* opacity: 0;
+        transform: translateY(-10px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        margin-top: 30px; */
+        background-color: white;
+        border-radius: 20px;
+        box-shadow: #b2b2b2 0px 0px 15px;
+        padding: 20px;
+        text-align: left;
+    }
+    #infoDiv h3 {
+        margin-bottom: 0;
+    }
+        .title {
+            text-align: center;
+            color: #2792ec;
+        }
+
+        body {
+            overflow: hidden !important;
+        }
+
+        .st0 {
+            fill: #2792ec;
+            stroke: #FFFF;
+            stroke-width: 0.5;
+            content: "\f041";
+            cursor: pointer;
+
+        }
+
+        .mapa .active {
+            fill: #012E81;
+            stroke: #012E81;
+            stroke-width: 0.9;
+        }
+
+        .st1 {
+            fill: #E0E0E0;
+        {#stroke: #2792ec;#} stroke-width: 0.5;
+        }
+
+        .st2 {
+            fill: #E0E0E0;
+            stroke: #FFFFFF;
+            stroke-width: 0.75;
+        }
+
+        .st4 {
+        {#fill: #2792ec;#}{#stroke: #2792ec;#} stroke-width: 0.75;
+        }
+
+        .st3 {
+            stroke: #fff;
+            fill: none;
+            cursor: pointer;
+        }
+
+        .propiedades-circle {
+            border-style: dashed;
+            border-color: #012E81;
+            padding: 0.5rem;
+            text-align: center;
+        }
+
+        #propiedades-circle h4, #propiedades-circle h3 {
+            margin-bottom: 0;
+            margin-top: 0;
+        }
+
+        #propiedades-circle ul {
+            margin-bottom: 0.5rem;
+        }
+        .consejo-administracion .miembro:hover .mas {
+            top: 0;
+        }
+        .miembro {
+            overflow: hidden;
+            position: relative;
+        }
+        .consejo-administracion .mas {
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            top: -40px;
+            right: 0;
+            background-color: #2892EC;
+            transition: all .2s;
+        }
+        .accordion-cadena .card-header.show a, .accordion-cadena .card-header:hover a {
+            color: #fff !important;
+            background-color: #2892EC !important;
+        }
+        
+        .btn-primary, .btn-primary:hover {
+            color: #fff;
+            background-color: #2892EC;
+            border-color: #2892EC;
+        }
+        .accordion-cadena .card-header {
+            padding: 0;
+            border-bottom: none;
+        }
+        
+        .accordion-cadena .card-header a {
+            display: block;
+            padding: 10px;
+            color: inherit;
+            text-decoration: none;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        .accordion-cadena .card-header a:hover,
+        .accordion-cadena .card-header a.collapsed:hover,
+        .accordion-cadena .card-header a[aria-expanded="true"] {
+            color: #fff !important;
+            background-color: #79B928 !important;
+        }
+        .back-color {
+                border-color: #79B928;
+        }
+        
+    </style>
+{% endblock %}
+
+{% block wrapper %}
+    <div class="content-wrap">
+        <div class="container pt-5 pb-5">
+            <h1 id="gobierno" class="text-center wow fadeInUp" data-wow-duration="2s"
+                style="color: #012E81;">
+                Nuestras Comunidades y Responsabilidad Social</h1>
+            <p class="text-justify wow fadeInUp" data-wow-duration="2s">En FINSA, contribuir al desarrollo de la comunidad es un elemento esencial de nuestra <strong>cultura de responsabilidad social</strong>. Entendemos que nuestro crecimiento empresarial va de la mano del bienestar de las comunidades donde operamos, por lo que impulsamos iniciativas que generan un <strong>impacto positivo y sostenible en la sociedad</strong>. A nivel nacional, nuestras acciones se articulan en torno a <strong>tres ejes fundamentales</strong>, los cuales guían los proyectos y programas que llevamos a cabo con el propósito de fortalecer el tejido social, promover el desarrollo económico local y fomentar la sostenibilidad.
+            </p>
+        </div>
+        <section id="" class="">
+            <div class="container">
+                <div class="row">
+                    <div class="section-title text-center w-100">
+                    </div>
+                    <div class="col-12 consejo-administracion">
+                        <div class="d-flex flex-row justify-content-around">
+                            <div class="col-4 item cadusel miembro px-5">
+                                <h3 class="text-bold" style="color:#232323">Cuidado del Medio Ambiente</h3>
+                                <div class="font-weight-bold mb-2"></div>
+                                <h6></h6>
+                                <a class="mas modal-directivo d-flex align-items-center justify-content-center align-content-center"
+                                   href="#" data-toggle="modal" data-mdb-toggle="modal" data-mdb-target="#DirectiveModal1"
+                                   data-img="/static/images/comunidad/medioambiente.png" data-name="Cuidado del Medio Ambiente"
+                                   data-position=""
+                                   data-description="En FINSA entendemos que el cuidado del medio ambiente es también una forma de apoyar a las comunidades donde operamos. Por ello, impulsamos prácticas sostenibles que reducen nuestro impacto, fomentan la eficiencia en el uso de los recursos y promueven un entorno más saludable y seguro para las personas.">
+                                    <div class=" d-flex align-items-center justify-content-center"><i
+                                            class="fa fa-plus text-white"></i></div>
+                                </a>
+                            </div>
+                            <div class="col-4 item cadusel miembro px-5">
+                                <h3 class="text-bold" style="color:#232323">Educación</h3>
+                                <div class="font-weight-bold mb-2"></div>
+                                <h6></h6>
+                                <a class="mas modal-directivo d-flex align-items-center justify-content-center align-content-center"
+                                   href="#" data-toggle="modal" data-mdb-toggle="modal" data-mdb-target="#DirectiveModal1"
+                                   data-img="/static/images/comunidad/educacion-fin.png" data-name="Educación"
+                                   data-position=""
+                                   data-description="En FINSA creemos que la educación es la base del progreso de las comunidades. Por ello, apoyamos a niñas, niños y jóvenes a través de becas y programas formativos que les brindan herramientas para crecer profesional y personalmente, contribuyendo al desarrollo de su entorno y a la construcción de un mejor futuro.">
+                                    <div class=" d-flex align-items-center justify-content-center"><i
+                                            class="fa fa-plus text-white"></i></div>
+                                </a>
+                            </div>
+                            <div class="col-4 item cadusel miembro px-5">
+                                <h2 class="text-center text-bold" style="color:#232323; font-size: 24px!important;">Apoyo a Causas Sociales</h2>
+                                <div class="font-weight-bold mb-2"></div>
+                                <h6></h6>
+                                <a class="mas modal-directivo d-flex align-items-center justify-content-center align-content-center"
+                                   href="#" data-toggle="modal" data-mdb-toggle="modal" data-mdb-target="#DirectiveModal1"
+                                   data-img="/static/images/comunidad/causas-sociales-03.png" data-name="Apoyo a Causas Sociales"
+                                   data-position=""
+                                   data-description="En FINSA asumimos la responsabilidad de contribuir al bienestar de las comunidades mediante el apoyo a diversas causas sociales. Impulsamos iniciativas que promueven la inclusión, la salud y la equidad, buscando generar un impacto positivo que fortalezca el tejido social y mejore la calidad de vida de las personas.">
+                                    <div class=" d-flex align-items-center justify-content-center"><i
+                                            class="fa fa-plus text-white"></i></div>
+                                </a>
+                            </div>
+                            
+                        </div>
+                    </div>
+                <div style="width: 90%; margin: auto;">
+                    <p class="text-justify wow fadeInUp" data-wow-duration="2s">Como parte de nuestro compromiso con la responsabilidad social, durante 2024 <strong>beneficiamos a más de 9 mil personas</strong>, a través de los 20 programas en los que participamos durante el año. A continuación se enlistan los más importantes de ellos:
+            </p>
+            <div id="accordion" class="accordion-cadena">
+                <div class="row">
+                    <div class="card back-color col-md-6">
+                        <div class="card-header">
+                            <a class="card-link collapsed" data-toggle="collapse" href="#tap1" aria-expanded="false">
+                                <div class="text-bold" style="width: 100%;">
+                                    Día de la Tierra
+                                </div>
+                            </a>
+                        </div>
+                        <div id="tap1" class="collapse" data-parent="#accordion" style="">
+                            <div style="width: 100%; margin-top: 30px;">
+                                <p style="width: 90%; margin: auto;">Con motivo del Día de la Tierra, cada año llevamos a cabo actividades ambientales en diversas escuelas del país, con la finalidad de sensibilizar a niñas y niños en edad escolar sobre la importancia de cuidar y proteger los recursos naturales.</p>
+                            </div>
+                            <div class="card-body d-flex flex-column justify-content-center align-content-center">
+                                <div class="justify-content-center align-content-center">
+                                    <div class="row d-flex  justify-content-center align-content-center">
+                                        <div class=" col-8">
+                                            <img class="img-fluid" src="/static/images/comunidad/cydsa_mantiene.png">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card back-color col-md-6">
+                        <div class="card-header">
+                            <a class="card-link collapsed" data-toggle="collapse" href="#tap1" aria-expanded="false">
+                                <div class="text-bold" style="width: 100%;">
+                                    Reciclatón
+                                </div>
+                            </a>
+                        </div>
+                        <div id="tap1" class="collapse" data-parent="#accordion" style="">
+                            <div style="width: 100%; margin-top: 30px;">
+                                <p style="width: 90%; margin: auto;">Conscientes de la importancia de proteger el medio ambiente y de fomentar una cultura de responsabilidad en torno a la disposición de los residuos electrónicos, impulsamos esta campaña orientada a la recolección de dispositivos, asegurando su manejo adecuado.</p>
+                            </div>
+                            <div class="card-body d-flex flex-column justify-content-center align-content-center">
+                                <div class="justify-content-center align-content-center">
+                                    <div class="row d-flex  justify-content-center align-content-center">
+                                        <div class=" col-8">
+                                            <img class="img-fluid" src="/static/images/comunidad/cydsa_mantiene.png">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                                <div class="row">
+                    <div class="card back-color col-md-6">
+                        <div class="card-header">
+                            <a class="card-link collapsed" data-toggle="collapse" href="#tap2" aria-expanded="false">
+                                <div class="text-bold" style="width: 100%;">
+                                    Pintar sonrisas
+                                </div>
+                            </a>
+                        </div>
+                        <div id="tap2" class="collapse" data-parent="#accordion" style="">
+                            <div style="width: 100%; margin-top: 30px;">
+                                <p style="width: 90%; margin: auto;">Conscientes de la importancia de proteger el medio ambiente y de fomentar una cultura de responsabilidad en torno a la disposición de los residuos electrónicos, impulsamos esta campaña orientada a la recolección de dispositivos, asegurando su manejo adecuado.</p>
+                            </div>
+                            <div class="card-body d-flex flex-column justify-content-center align-content-center">
+                                <div class="justify-content-center align-content-center">
+                                    <div class="row d-flex  justify-content-center align-content-center">
+                                        <div class=" col-8">
+                                            <img class="img-fluid" src="/static/images/comunidad/cydsa_mantiene.png">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card back-color col-md-6">
+                        <div class="card-header">
+                            <a class="card-link collapsed" data-toggle="collapse" href="#tap2" aria-expanded="false">
+                                <div class="text-bold" style="width: 100%;">
+                                     Mujeres inspirando mujeres
+                                </div>
+                            </a>
+                        </div>
+                        <div id="tap2" class="collapse" data-parent="#accordion" style="">
+                            <div style="width: 100%; margin-top: 30px;">
+                            <p style="width: 90%; margin: auto;">Este año realizamos la primera edición del programa de charlas “Mujeres inspirando a mujeres”, una iniciativa diseñada para motivar e impulsar a niñas y jóvenes a continuar con su formación académica, brindándoles referentes positivos que fortalezcan su confianza y aspiraciones.</p>
+                            </div>
+                            <div class="card-body d-flex flex-column justify-content-center align-content-center">
+                                <div class="justify-content-center align-content-center">
+                                    <div class="row d-flex  justify-content-center align-content-center">
+                                        <div class=" col-8">
+                                            <img class="img-fluid" src="/static/images/comunidad/cydsa_mantiene.png">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="card back-color col-md-6">
+                        <div class="card-header">
+                            <a class="card-link collapsed" data-toggle="collapse" href="#tap3" aria-expanded="false">
+                                <div class="text-bold" style="width: 100%;">
+                                    Recaudación de tapitas
+                                </div>
+                            </a>
+                        </div>
+                        <div id="tap3" class="collapse" data-parent="#accordion" style="">
+                            <div style="width: 100%; margin-top: 30px;">
+                            <p style="width: 90%; margin: auto;">Con el propósito de apoyar a niñas, niños y jóvenes diagnosticados con cáncer, hemos instalado dos contenedores en los parques industriales FINSA Matamoros del Norte y Guadalupe. En ellos se recolectan taparroscas de plástico que son entregadas al Banco de Tapitas, A.C., organización que destina estos recursos a cubrir parte de los gastos de tratamientos médicos.</p>
+                            </div>
+                            <div class="card-body d-flex flex-column justify-content-center align-content-center">
+                                <div class="justify-content-center align-content-center">
+                                    <div class="row d-flex  justify-content-center align-content-center">
+                                        <div class=" col-8">
+                                            <img class="img-fluid" src="/static/images/comunidad/cydsa_mantiene.png">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card back-color col-md-6">
+                        <div class="card-header">
+                            <a class="card-link collapsed" data-toggle="collapse" href="#tap3" aria-expanded="false">
+                                <div class="text-bold" style="width: 100%;">
+                                      Donación de juguetes
+                                </div>
+                            </a>
+                        </div>
+                        <div id="tap3" class="collapse" data-parent="#accordion" style="">
+                            <div style="width: 100%; margin-top: 30px;">
+                            <p style="width: 90%; margin: auto;">Entregamos 4,368 juguetes a niñas y niños en situación vulnerable, a través de 16 organismos públicos municipales y estatales, los cuales se encargaron de distribuirlos durante las celebraciones navideñas para llevar alegría en esas fechas especiales.</p>
+                            </div>
+                            <div class="card-body d-flex flex-column justify-content-center align-content-center">
+                                <div class="justify-content-center align-content-center">
+                                    <div class="row d-flex  justify-content-center align-content-center">
+                                        <div class=" col-8">
+                                            <img class="img-fluid" src="/static/images/comunidad/cydsa_mantiene.png">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal -->
+            <div class="modal fade" id="DirectiveModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header d-flex justify-content-center align-items-center" style="background-color: #2892EC;">
+                            <h3 class="modal-title directivo-name text-bold mb-0 text-white text-center" style="color: #232323; font-size: 24px">
+                                Título del modal
+                            </h3>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body text-center">
+                            <p class="directivo-description">Descripción del modal</p>
+                            <img class="directivo-img img-fluid mb-3" style="width: 70%" src="" alt="">
+                        </div>
+                        <div class="modal-footer d-flex justify-content-center align-items-center">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div id="comunidad">
+        <div class="container pt-5">
+            <h1 id="" class="text-center wow fadeInUp" data-wow-duration="2s"
+                style="color: #012E81;">
+                Apoyo a la comunidad</h1>
+            <p class="text-justify wow fadeInUp" data-wow-duration="2s">En FINSA mantenemos un firme compromiso con el <strong>bienestar y desarrollo de las comunidades</strong> donde operamos. A través de nuestra Fundación y de alianzas clave, impulsamos iniciativas que generan un impacto positivo y duradero, contribuyendo a <strong>mejorar la calidad de vida</strong> de las personas y promoviendo un crecimiento sostenible e incluyente.</p>
+        </div>
+    </div>
+    <section id="boxes-index" style="">
+        <div class="card-group">
+            <div class="card">
+                <h3 class="text-white text-bold">FUNDACIÓN FINSA</h3>
+                <img class="card-img-top" src="{% static 'images/comunidad/fundacion-1.png' %}" alt="Card image cap">
+                <div class="card-body d-flex text-center justify-content-center align-items-center" style="background-color: #314597 !important;">
+                    <p>
+                        <strong>Desde hace 15 años, en la Fundación FINSA hemos asumido el compromiso de contribuir a la educación de niñas, niños y jóvenes. A través de nuestro programa de becas, apoyamos a estudiantes con destacado desempeño académico que enfrentan condiciones económicas desfavorables en las comunidades donde tenemos presencia.</strong>
+                    </p>
+                </div>
+            </div>
+            <div class="card">
+                <h3 class="text-white text-bold">ALIANZA CON FUNDACIONES</h3>
+                <img class="card-img-top" src="{% static 'images/comunidad/alianza-finsa.png' %}" alt="Card image cap">
+                <div class="card-body d-flex text-center justify-content-center align-items-center" style="background-color: #314597 !important;">
+                    <p>
+                        <strong>Mediante la colaboración con Fundación BBVA y Fundación Dibujando un Mañana, hemos fortalecido nuestro compromiso con la educación al otorgar becas a 108 estudiantes universitarios. Gracias a estas alianzas estratégicas, no solo contribuimos a que los jóvenes continúen con su formación profesional, sino que también fomentamos la igualdad de oportunidades y abrimos camino para que desarrollen su potencial en beneficio de sus comunidades y del país.</strong>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="ml-5 mr-5 mb-50">
+        <div class="row wow fadeInUp mb-30" data-wow-delay=".4s">
+            <h2 class=" font-weight-bold" style="color:#0081C9; margin: auto;">NUESTRAS PROPIEDADES</h2>
+        </div>
+        <div class=" row wow fadeInDown text-center" data-wow-delay=".4s">
+            <div class="col-md-3" style="display: flex; align-items: center;">
+                <div id="propiedades-circle" class="propiedades-circle wow fadeInLeft">
+                    <h3 id="propiedades-state" ></h3>
+                    <div id="propiedades-text"></div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="wow fadeInRight" data-wow-duration="1.5s">
+                    <?xml version="1.0" encoding="utf-8"?>
+                    <!-- Generator: Adobe Illustrator 25.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+                    {% include 'partials/mapa.html' %}
+                </div>
+            </div>
+            <div class="col-md-3" style="display: flex; align-items: center;">
+                <div id="infoDiv" style=" margin-top: 10px;">
+                   <h2 style="color: var(--azulclaro); font-weight: bold;">TOTAL</h2>
+                   <h3>22</h3>
+                   <p>PARQUES INDUSTRIALES</p>
+                   <h3>3,417,647.53 m<sup>2</sup></h3>
+                   <p>ÁREA BRUTA RENTABLE (GLA m<sup>2</sup>)</p>
+                   <h3>3,293,062.73 m<sup>2</sup></h3>
+                   <p>ÁREA OCUPADA (m<sup>2</sup>)</p>
+                   <h3>96.35%</h3>
+                   <p>PORCENTAJE DE OCUPACIÓN</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    </div>
+{% endblock %}
+
+{% block otherscripts %}
+    <script src="{% static 'javascripts/jquery.waypoints.min.js' %}"></script>
+    <script src="{% static 'javascripts/countTo.js' %}"></script>
+    <script src="{% static 'javascripts/js/jquery.twbsPagination.min.js' %}"></script>
+    <script src="{% static 'javascripts/carousel.eventos.js' %}"></script>
+    <script src="{% static 'javascripts/maps-states-mx.js' %}"></script>
+    <script>
+        $(window).on('load', function () {
+
+            $("path.st0, path.st3")
+                .click(function () {
+                    let id = $(this).attr("id") ?? $(this).data("id");
+
+                    {#activo css#}
+                    $('path.active').removeClass('active');
+                    $("#" + id).attr("class", "st0 active");
+
+                    $("#propiedades-circle").attr("style", "opacity:1;left:-40px");
+                    {#$("#propiedades-state").text($(this).attr("name"));#}
+                    $("#propiedades-state").text(mxStates[id].name);
+
+                    let divText = $("#propiedades-text");
+                    divText.empty();
+                    let list = mxStates[id].list;
+                    if (list.length) {
+                        for (let i of list) {
+                            divText.append('<h4>' + i.title + '</h4>');
+                            if (i.items.length) {
+                                let ul = '<ul class="list-group list-unstyled">';
+                                for (let j of i.items) {
+                                    ul += '<li class="list-unstyled">' + j + '</li>';
+                                }
+                                ul += '</ul>';
+                                divText.append(ul);
+                            }
+                        }
+                    }
+                });
+
+            $("[id='MEX2712']").click();
+        });
+        $(document).ready(function () {
+            // Function to format number with commas
+            function numberWithCommas(x) {
+                return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            }
+        
+            // Initialize counters with waypoints
+            $('.finn-counto .count').each(function() {
+                var $this = $(this);
+                var $button = $this.closest('button');
+        
+                // Start the honeycomb animation by adding a class to the SVG element
+                var animateHoneycomb = function($element) {
+                    $element.closest('.honeycomb').find('svg.honeycomb-path').addClass('honeycomb-animated');
+                };
+        
+                $this.waypoint(function() {
+                    // Delay the counting to ensure it's visible
+                    setTimeout(function(){
+                        // Trigger the honeycomb animation
+                        animateHoneycomb($this);
+                        $button.addClass('animation-trigger');
+        
+                        $this.countTo({
+                            from: 0,
+                            to: $this.data('to'),
+                            speed: $this.data('speed'),
+                            decimals: $this.data('decimals'),
+                            onUpdate: function(value) {
+                              var prefix = $this.data('prefix') ? $this.data('prefix') + ' ' : '';
+                              var isPercent = $this.data('porcent') === true || $this.data('porcent') === "true";
+                              var displayValue = isPercent ? value.toFixed($this.data('decimals')) + '%' :
+                                numberWithCommas(value.toFixed($this.data('decimals')));
+                              $this.text(prefix + displayValue);
+                            },
+                            onComplete: function(value) {
+                              // This ensures the class is only added once at the beginning of counting
+                              var prefix = $this.data('prefix') ? $this.data('prefix') + ' ' : '';
+                              var isPercent = $this.data('porcent') === true || $this.data('porcent') === "true";
+                              var displayValue = isPercent ? value.toFixed($this.data('decimals')) + '%' :
+                                numberWithCommas(value.toFixed($this.data('decimals')));
+                              $this.text(prefix + displayValue);
+                            }
+                          });
+                    }, $this.data('delay') || 0);
+        
+                    this.destroy(); // Ensures the animation and counting occur only once
+                }, {
+                    offset: '80%', // Triggers when the element is 75% from the top of the viewport
+                    triggerOnce: true // Counting should only happen once
+                });
+            });
+            $(".modal-directivo").click(function (e) {
+                e.preventDefault();
+                let target = $(e.currentTarget);
+                $("#DirectiveModal1 .directivo-img").attr('src', target.data('img'));
+                $("#DirectiveModal1 .directivo-name").text(target.data('name'));
+                $("#DirectiveModal1 .directivo-description").text(target.data('description'));
+                $("#DirectiveModal1 .directivo-position").text(target.data('position'));
+                $("#DirectiveModal1").modal('show');
+            });
+            $("#DirectiveModal1 .close-btn").click(function (e) {
+                $("#DirectiveModal1").modal('hide');
+            });
+        });
+
+        
+    </script>
+
+    <script>
+        $('.owl-carousel').owlCarousel({
+            loop: true,
+            margin: 30,
+            nav: true,
+            autoplay: true,
+            autoplayTimeout: 45000,
+            autoplayHoverPause: true,
+            items: 1,
+        });
+    </script>
+
+    {#    <script src="{% static 'javascripts/amcharts/amcharts.js' %}"></script>#}
+    {#    <script src="{% static 'javascripts/amcharts/serial.js' %}"></script>#}
+    {#    <script src="{% static 'javascripts/amcharts/pie.js' %}"></script>#}
+    {#    <script src="{% static 'javascripts/amcharts/contenido/ambiental.min.js' %}{{ css_js_version }}"></script>#}
+{% endblock %}

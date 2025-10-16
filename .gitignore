@@ -1,0 +1,13 @@
+venv
+env.bat
+run.bat
+*.pyc
+staticfiles
+.env
+*.idea/
+/.idea
+/.idea/*
+.DS_Store
+env
+*.icloud
+*.icloud/

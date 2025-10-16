@@ -1,0 +1,988 @@
+{% extends 'layouts/interior.html' %}
+{% load static %}
+
+{% block otherstyles %}
+    <link rel="stylesheet" href="{% static 'stylesheets/david.css' %}">
+    <link rel="stylesheet" href="{% static 'stylesheets/tania.css' %}">
+    <link rel="stylesheet" href="{% static 'stylesheets/swiper.min.css' %}">
+    <link rel="stylesheet" href="{% static 'stylesheets/timeline.css' %}">
+    <link rel="stylesheet" href="{% static 'stylesheets/css/rs-plugin/settings.css' %}">
+    <link rel="stylesheet" href="{% static 'stylesheets/css/rs-plugin/layers.css' %}">
+    <link rel="stylesheet" href="{% static 'stylesheets/css/rs-plugin/navigation.css' %}">
+
+    <style>
+        
+        #cadena button {
+            transition: all 0.4s ease;
+        }
+        #cadena button:hover {
+            transform: scale(1.15);
+            z-index: 999;
+        }
+        .table td {
+            border-top: none;
+            padding: 5px;
+        }
+        :root {
+            --cyan: #18C9C9;
+            --blue: #2142D0;
+            --purple: #A272FF;
+            --pink: #CA0995;
+            --orange: #FF5D23;
+        }
+        button.draw h3 {
+            color: #69A64D;
+            font-size: 20px;
+        }
+        button.draw p {
+            font-size: 30px;
+            font-weight: bold;
+        }
+        button.draw img {
+            max-width: 100px;
+        }
+        button {
+            background: none;
+            border: 0;
+            box-sizing: border-box;
+            margin: 1em;
+            padding: 1em 2em;
+            box-shadow: inset 0 0 0 2px transparent;
+            font-size: inherit;
+            font-weight: 700;
+            position: relative;
+            vertical-align: middle;
+            cursor: default;
+        }
+        button:not(:disabled) {
+            cursor: default;
+        }
+        button::before, button::after {
+            box-sizing: inherit;
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+        }
+        .draw {
+            transition: color 0.25s;
+        }
+        .draw::before, .draw::after {
+            border: 5px solid transparent;
+            width: 0;
+            height: 0;
+        }
+        .draw::before {
+            top: 0;
+            left: 0;
+          }
+          
+          .draw::after {
+            bottom: 0;
+            right: 0;
+          }
+          
+          .draw.animation-trigger::before,
+          .draw.animation-trigger::after {
+            width: 100%;
+            height: 100%;
+          }
+          
+          .draw-cyan.animation-trigger::before {
+            border-top-color: var(--cyan);
+            border-right-color: var(--cyan);
+            transition:
+              width 0.25s ease-out,
+              height 0.25s ease-out 0.25s;
+          }
+          
+          .draw-cyan.animation-trigger::after {
+            border-bottom-color: var(--cyan);
+            border-left-color: var(--cyan);
+            transition:
+              border-color 0s ease-out 0.5s,
+              width 0.25s ease-out 0.5s,
+              height 0.25s ease-out 0.75s;
+          }
+
+          .draw-blue.animation-trigger::before {
+            border-top-color: var(--blue);
+            border-right-color: var(--blue);
+            transition:
+              width 0.25s ease-out,
+              height 0.25s ease-out 0.25s;
+          }
+          
+          .draw-blue.animation-trigger::after {
+            border-bottom-color: var(--blue);
+            border-left-color: var(--blue);
+            transition:
+              border-color 0s ease-out 0.5s,
+              width 0.25s ease-out 0.5s,
+              height 0.25s ease-out 0.75s;
+          }
+
+          .draw-purple.animation-trigger::before {
+            border-top-color: #0081C9;
+            border-right-color: #0081C9;
+            transition:
+              width 0.25s ease-out,
+              height 0.25s ease-out 0.25s;
+          }
+          
+          .draw-purple.animation-trigger::after {
+            border-bottom-color: #0081C9;
+            border-left-color: #0081C9;
+            transition:
+              border-color 0s ease-out 0.5s,
+              width 0.25s ease-out 0.5s,
+              height 0.25s ease-out 0.75s;
+          }
+
+          .draw-pink.animation-trigger::before {
+            border-top-color: var(--pink);
+            border-right-color: var(--pink);
+            transition:
+              width 0.25s ease-out,
+              height 0.25s ease-out 0.25s;
+          }
+          
+          .draw-pink.animation-trigger::after {
+            border-bottom-color: var(--pink);
+            border-left-color: var(--pink);
+            transition:
+              border-color 0s ease-out 0.5s,
+              width 0.25s ease-out 0.5s,
+              height 0.25s ease-out 0.75s;
+          }
+
+          .draw-orange.animation-trigger::before {
+            border-top-color: #2D4972;
+            border-right-color: #2D4972;
+            transition:
+              width 0.25s ease-out,
+              height 0.25s ease-out 0.25s;
+          }
+          
+          .draw-orange.animation-trigger::after {
+             border-bottom-color: #2D4972;
+            border-left-color: #2D4972;
+            transition:
+              border-color 0s ease-out 0.5s,
+              width 0.25s ease-out 0.5s,
+              height 0.25s ease-out 0.75s;
+          }
+          
+          .draw-green.animation-trigger::before {
+             border-top-color: #002855;
+            border-right-color: #002855;
+            transition:
+              width 0.25s ease-out,
+              height 0.25s ease-out 0.25s;
+          }
+          
+          .draw-green.animation-trigger::after {
+            border-bottom-color: #002855;
+            border-left-color: #002855;
+            transition:
+              border-color 0s ease-out 0.5s,
+              width 0.25s ease-out 0.5s,
+              height 0.25s ease-out 0.75s;
+          }
+
+        .p-0 {
+            padding: 0 !important;
+        }
+
+        .container-time {
+            position: relative;
+        }
+
+        .fixed-title {
+            position: absolute;
+            top: 21px;
+            left: 15px;
+            z-index: 10;
+        }
+
+        h3 .text-center {
+            margin-bottom: .5rem;
+            font-family: inherit;
+            font-weight: 500;
+            line-height: 1.2;
+            color: inherit;
+        }
+
+        .card {
+            position: relative;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            min-width: 0;
+            word-wrap: break-word;
+            background-color: #fff;
+            background-clip: border-box;
+            border: 1px solid rgba(0, 0, 0, .125);
+            border-radius: .25rem;
+        }
+
+        .boton {
+            color: #0b0b0b;
+            background-color: #D1D1D1;
+            border-color: #D1D1D1;
+        }
+        .boton:hover {
+            color: #ffffff;
+            background-color: #232323;
+            border-color: #232323;
+        }
+        img {
+            max-width: 100%;
+            border-style: none;
+        }
+
+        img, svg {
+            vertical-align: middle;
+        }
+        
+        .card-title {
+            margin-bottom: .75rem;
+        }
+
+        #consec .cards:hover {
+            -webkit-transform: translateY(-10px);
+            -ms-transform: translateY(-10px);
+            transform: translateY(-10px);
+            background-color: #1bc2ae;
+        }
+
+        #consec .cards {
+            -webkit-transition: 0.1s ease-in;
+            -o-transition: 0.1s ease-in;
+            transition: 0.1s ease-in;
+        }
+
+        {#HISTORIA#}
+        .honeycomb-wrapper .tile .honeycomb {
+            height: 150px;
+        }
+
+        .honeycomb-wrapper .count {
+            background-color: transparent;
+        }
+
+        {#AGUAS#}
+        .downloadv2 {
+            background-position: center;
+            background-size: cover;
+            min-height: 400px;
+            width: 100%;
+            padding: 30px;
+        }
+        .border-radius-30 {
+            border-radius: 30px;
+        }
+        .texto-animacion {
+            text-align: center;
+            color: white;
+            margin: 0;
+        }
+        .item-hover .img-bg {
+            transition: all 1s ease-out;
+        }
+
+        .item-hover .show-desc {
+            -webkit-transition: opacity 0.5s ease;
+            opacity: 0;
+            height: 0;
+            overflow: hidden;
+            padding-top: 0;
+            min-height: unset;
+
+        }
+
+        .item-hover .show-desc img {
+            width: 30%;
+        }
+
+        .item-hover:hover .show-desc {
+            opacity: 1;
+            height: auto;
+            padding-top: 0px;
+            min-height: 150px;
+
+        }
+        .item-hover:hover .img-bg {
+            opacity: 0;
+            display: block;
+            height: 0;
+            width: 0;
+            padding: 0;
+            min-height: unset;
+
+        }
+        .icon_container {
+            background-position: top center;
+            background-size: 10rem;
+            min-height: 150px;
+            background-repeat: no-repeat;
+            padding-top: 120px;
+
+        }
+        .icon_container h4 {
+            padding-top: 4rem;
+        }
+
+        {#QUIENES SOMOS?#}
+
+        .square1 {
+            background-image: url({% static 'images/ambiental/Elaboramos_una_matriz.png' %});
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .square2 {
+            background-image: url({% static 'images/ambiental/Adoptamos_medidas_preventivas.png' %});
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .square4 {
+            background-image: url({% static 'images/ambiental/Analizamos_de_manera_detallada.png' %});
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .item-content {
+            position: absolute;
+            top: 10%;
+            left: 10%;
+            width: 80%;
+            height: 80%;
+            background-color: rgba(0, 0, 0, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: white;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.5s ease-out;
+            border-radius: 8px;
+        }
+
+        .square1, .square2, .square4 {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            aspect-ratio: 1 / 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            background-size: cover;
+            background-position: center;
+            padding: 20px;
+            max-height: 235.5px;
+        }
+
+        .square1:hover .item-content,
+        .square2:hover .item-content,
+        .square4:hover .item-content {
+            opacity: 1;
+        }
+        .timeline-year {
+            font-size: 40px;
+            text-align: center;
+            line-height: 1.2; /* Ajusta la separación de líneas */
+        }
+        .swiper-slide-content {
+            position: relative;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+         #cifras_relevantes_energia .honeycomb-wrapper .tile .honeycomb .honeycomb-path circle {
+            stroke: #1bc2ae !important;
+        }
+         h1{
+             font-weight: 600!important;
+         }
+         
+    </style>
+{% endblock %}
+
+{% block wrapper %}
+<div class="content-wrap">
+    <div class="container-fluid" style="background-color: white;">
+        <div class="container" style=" padding-bottom: 30px !important;">
+            <div id="gestion_ambiental" class="wow fadeInUp" data-wow-duration="1s">
+                <h1 class="text-center pt-5 mb-5" style="color: #012E81;">Gestión Ambiental</h1>
+                <p class="text-justify wow fadeInUp pb-5" data-wow-duration="1s">
+                    Emprendimos el <strong>camino hacia la sostenibilidad</strong> convencidos de que el verdadero liderazgo se ejerce con responsabilidad y conciencia sobre los valiosos servicios que brinda el medio ambiente. En FINSA entendemos que nuestra operación depende de estos recursos, por lo que impulsamos su uso responsable y buscamos generar un impacto positivo que trascienda, contribuyendo a la <strong>preservación de los ecosistemas y al bienestar de las comunidades</strong> donde estamos presentes.
+                </p>
+                <img class="mx-auto d-block" src="/static/images/gestion-ambiental.png" style="margin-bottom: 30px;">
+            </div>
+        </div>
+    </div>
+    <section id= "negociosos"class="container-fluid" style="background-color: #efefef;">
+        <div class="container">
+            <h1 class="text-center mt-3 wow fadeInUp" style="color: #012E81; padding-top: 30px;">Negocio Sostenible</h1>
+            <div id="consec" class="row m-t-40 justify-content-between my-4">
+                <div class="col-md-6 col-sm-12 card cards mb-3 card-shadow" data-aos="zoom-in" data-aos-duration="1200">
+                    <div class="row no-gutters">
+                        <div class="col-md-4 d-flex align-items-center">
+                            <img src="/static/images/gestion-recursos-01.png" class="card-img" alt="Inversion">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="">
+                                <h2 class="card-title tc-black text-center">Gestión responsable <br>de los recursos</h2>
+                                <p class="font-medium text-justify">En FINSA utilizamos los recursos de forma eficiente para reducir o evitar impactos ambientales en nuestras operaciones.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12 card cards mb-3 card-shadow" data-aos="zoom-in" data-aos-duration="1200">
+                    <div class="row no-gutters">
+                        <div class="col-md-4 d-flex align-items-center">
+                            <img src="/static/images/gestion-recursos-02.png" class="card-img" alt="Inversion">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="">
+                                <h2 class="card-title tc-black text-center">Filosofía y <br>sostenibilidad</h2>
+                                <p class="font-medium text-justify">Nuestra filosofía corporativa guía una cultura ambiental sólida, alineada a la Política ASG y la normativa vigente.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12 card cards mb-3 card-shadow" data-aos="zoom-in" data-aos-duration="1200">
+                    <div class="row no-gutters">
+                        <div class="col-md-4 d-flex align-items-center">
+                            <img src="/static/images/gestion-recursos-03.png" class="card-img" alt="Inversion">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="">
+                                <h2 class="card-title tc-black text-center">Participación de colaboradores</h2>
+                                <p class="font-medium text-justify">Nuestros colaboradores participan en reforestación, conservación y restauración de ecosistemas en las comunidades.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12 card cards mb-3 card-shadow" data-aos="zoom-in" data-aos-duration="1200">
+                    <div class="row no-gutters">
+                        <div class="col-md-4 d-flex align-items-center">
+                            <img src="/static/images/gestion-recursos-04.png" class="card-img" alt="Inversion Concession">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="">
+                                <h2 class="card-title tc-black text-center">Alianzas con <br> inquilinos</h2>
+                                    <p class="font-medium text-justify">En FINSA colaboramos con nuestros inquilinos en campañas de reciclaje, limpieza y ahorro de recursos para reducir impactos ambientales.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+   <div id="ihistoria">
+        <div class="container-time">
+            <h1 class="text-white ml-3 fixed-title" style="font-size: 50px">Parques sostenibles y gestión de ciclo de vida</h1>
+            <div class="timeline">
+                <div class="swiper-container swiper-container-vertical">
+                    <div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(0px, 0px, 0px);">
+                        <div class="swiper-slide swiper-slide-active" style="background-image: url({% static 'images/ambiental/nave-industrial.png' %});  height: 600px;" data-year="Construcción</br>y operación</br> sostenible">
+                            <div class="swiper-slide-content">
+                                <span class="timeline-year"><strong>Construcción y operación sostenible</strong></span>
+                                <p style="font-size: 24px">En FINSA diseñamos y construimos nuestras naves industriales bajo la metodología LEED, controlando consumos y residuos. Así, garantizamos que la operación y mantenimiento de nuestros Parques Industriales cumpla con nuestra Política ASG.</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide swiper-slide-next" style="background-image: url({% static 'images/ambiental/incineracion_gases.jpg' %}); height: 600px;" data-year="Mejora continua</br>y cumplimiento</br> ambiental">
+                            <div class="swiper-slide-content">
+                                <span class="timeline-year"><strong>Mejora continua y cumplimiento ambiental</strong></span>
+                                <p style="font-size: 24px">Realizamos auditorías internas de manera constante para optimizar el uso de recursos, mitigar impactos y asegurar el cumplimiento de las regulaciones ambientales estatales y federales.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-button-prev swiper-button-disabled"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"><span class="swiper-pagination-bullet swiper-pagination-bullet-active">2024</span><span class="swiper-pagination-bullet">2024</span></div>
+                </div>
+            </div>
+        </div>
+   </div> 
+</div>
+    <div id="desempeño" class="container">
+        <div id="desempeño_ambiental" class="wow fadeInUp" data-wow-duration="1s">
+            <h1 class="text-center mt-5 mb-5" style="color: #012E81;">Desempeño Ambiental</h1>
+            <h1 class="text-center mt-5 mb-5" style="color: #1BC2AE;">Emisiones de C0<sub>2</sub></h1>
+            <p class="text-justify wow fadeInUp pb-5" data-wow-duration="1s">
+                En FINSA, reafirmamos nuestro compromiso con la sostenibilidad mediante la implementación de acciones estratégicas orientadas a <strong>reducir las emisiones</strong> generadas por nuestras operaciones y aportar a la mitigación del cambio climático. Realizamos un <strong>monitoreo constante del consumo eléctrico</strong> en todas nuestras instalaciones y mantenemos registros detallados que nos ayudan a identificar áreas de oportunidad para mejorar nuestra eficiencia.
+            </p>
+            <div class="col-md-12 col-sm-12 px-5 d-flex justify-content-center">
+                <div id="chart1" style="height: 500px;width:1000px;left: 0.5px;"></div>
+            </div>
+            <p class="text-justify wow fadeInUp pt-3 pb-3" data-wow-duration="1s">
+                La medición de nuestras emisiones de gases de efecto invernadero nos permite evaluar el desempeño ambiental y establecer porcentajes de reducción. Con esta información <strong>tomamos decisiones adecuadas que contribuyen a la conservación del planeta</strong> y al objetivo global de mantener el aumento de la temperatura por debajo de 1.5 °C.
+            </p>
+            <div class="row s-block pt-3">
+            <div class="col-12">
+                <a rel="noreferrer" href="{% static 'files/Tabla_GEI_Finsa.xlsx' %}" download
+                   class="btn btn-lg pull-right boton" target="_blank"><i class="fa fa-download"></i>
+                    Descargar en formato xlsx</a>
+            </div>
+        </div>
+    </div>
+
+    <section id="emisiones">
+        <div class="container py-5">
+            <h1 class="text-center mt-5 mb-5" style="color: #1BC2AE;">Gestión Energética</h1>
+            <p class="text-justify">En FINSA reconocemos que el uso de energía eléctrica y combustibles como gasolina y diésel en nuestras actividades de operación, construcción y administración genera impactos en el medio ambiente. Dado que la energía es un insumo esencial para nuestro funcionamiento, <strong>hemos implementado diversas medidas orientadas a optimizar su consumo</strong> y promover un uso más eficiente y responsable.</p>
+
+            <div id="cifras_relevantes_energia" class="pt-3 pb-3 finn-counto">
+                <div class="container">
+                    <div class="section-title mb-3 text-center">
+                        <h3 class="title-effect" style="color: #FE8243;">Consumo energético (Gigajoules)</h3>
+                    </div>
+                    <div class="row honeycomb-wrapper justify-content-center">
+                        <div class="col-md-3 tile">
+                            <div class="honeycomb">
+                                <svg class="honeycomb-path honeycomb-1" xmlns="http://www.w3.org/2000/svg"
+                                     width="150" viewBox="0 0 160 160">
+                                    <circle cx="80" cy="80" r="75" stroke-width="5" fill="none"></circle>
+                                </svg>
+                                <div class="content">
+                                    <h3 style="transform: translate(-50%, -50%) !important;" class="count"
+                                        data-speed="1500" data-to="16796.45" data-in-viewport="yes"
+                                        data-decimals="0">16,796.45</h3><span class="title-effect "></span>
+                                </div>
+                            </div>
+                            <h5 class="text-center"><b>Parques industriales</b></h5>
+                        </div>
+                        <div class="col-md-3 tile">
+                            <div class="honeycomb">
+                                <svg class="honeycomb-path honeycomb-1" xmlns="http://www.w3.org/2000/svg"
+                                     width="150" viewBox="0 0 160 160">
+                                    <circle cx="80" cy="80" r="75" stroke-width="5" fill="none"></circle>
+                                </svg>
+                                <div class="content">
+                                    <h3 class="count" style="transform: translate(-50%, -50%) !important;"
+                                        data-speed="1500" data-to="1543.60" data-in-viewport="yes"
+                                        data-decimals="0">1,543.60</h3><span class="title-effect "></span>
+                                </div>
+                            </div>
+                            <h5 class="text-center"><b>Oficinas corporativas</b></h5><br>
+                        </div>
+                        <div class="col-md-3 tile">
+                            <div class="honeycomb">
+                                <svg class="honeycomb-path honeycomb-1" xmlns="http://www.w3.org/2000/svg"
+                                     width="150" viewBox="0 0 160 160">
+                                    <circle cx="80" cy="80" r="75" stroke-width="5" fill="none"></circle>
+                                </svg>
+                                <div class="content">
+                                    <h3 class="count" style="transform: translate(-50%, -50%) !important;"
+                                        data-speed="1500" data-to="1294.99" data-in-viewport="yes"
+                                        data-decimals="0">1,294.99</h3><span class="title-effect "></span>
+                                </div>
+                            </div>
+                            <h5 class="text-center"><b>Casetas móviles</b><br></h5>
+                        </div>
+                        <div class="col-md-3 tile">
+                            <div class="honeycomb">
+                                <svg class="honeycomb-path honeycomb-1" xmlns="http://www.w3.org/2000/svg"
+                                     width="300" viewBox="0 0 160 160">
+                                    <circle cx="80" cy="80" r="75" stroke-width="5" stroke-dasharray="10,10" fill="none"></circle>
+                                </svg>
+                                <div class="content">
+                                    <h3 class="count font-weight-bolder"
+                                        style="color:#2892EC; transform: translate(-50%, -50%) !important;"
+                                        data-speed="1500" data-to="19635.04"
+                                        data-in-viewport="yes"
+                                        data-decimals="2">19,635.04</h3><span
+                                        class="title-effect "></span>
+                                </div>
+                            </div>
+                            <h5 class="text-center"><b>Total</b></h5>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+             <div class="col-12">
+                <a rel="noreferrer" href="{% static 'files/Tabla_Consumo_Energetico_Finsa.xlsx' %}" download
+                   class="btn btn-lg pull-right boton" target="_blank"><i class="fa fa-download"></i>
+                    Descargar en formato xlsx</a>
+            </div>
+        </div>
+    </section>
+
+<div class="container">
+    <div id="gestion_agua" class="wow fadeInUp" data-wow-duration="1s">
+        <h1 class="text-center mt-5 mb-5" style="color: #1BC2AE;">Gestión del Agua</h1>
+        <p class="text-justify wow fadeInUp" data-wow-duration="1s">
+            El agua es un recurso esencial para la vida y uno de los insumos más relevantes para FINSA. Por ello, hemos puesto en marcha un plan de acción que nos permite <strong>supervisar y atender de manera oportuna</strong> cualquier situación que pudiera comprometer su suministro o consumo en nuestras instalaciones. Entre las mejoras implementadas destacan el <strong>uso de agua tratada, la modernización de la infraestructura hidráulica, la promoción de consumos responsables y una adecuada gestión de descargas</strong>.
+        </p>
+        <article id="downloadv2">
+            <div class="container resized pl-0">
+                <div class="row">
+                    <div class="col-12 pt-4 pr-0">
+                        <div class="downloadv2 border-radius-30"
+                             style="background-image: url({% static 'images/ambiental/agua_elemento.jpg' %}) ">
+                            <div class="row d-flex justify-content-center align-content-center">
+                                <div class="col-md-4 brw bbw p-0">
+                                    <div class="content p-3 item-hover">
+                                        <div class="icon_container img-bg" style="
+                                                width: 100%;
+                                                background-image: url({% static 'images/ambiental/agua_extraida.png' %})">
+                                            <h4 class="text-white text-center">
+                                                Agua consumida
+                                            </h4>
+                                        </div>
+                                        <div class="icon_container show-desc text-center">
+                                            <img src="/static/images/ambiental/agua_extraida.png"
+                                                 alt="eventos relevantes">
+                                            <p class="texto-animacion text-white">
+                                                125,130.58 m<sup>3</sup>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 brw bbw p-0">
+                                    <div class="content p-3 item-hover">
+                                        <div class="icon_container img-bg"
+                                             style="width: 100%;background-image: url({% static 'images/ambiental/agua_recirculada.png' %})">
+                                            <h4 class="text-white text-center">
+                                                Agua vertida - descargada
+                                            </h4>
+                                        </div>
+                                        <div class="icon_container show-desc text-center">
+                                            <img src="/static/images/ambiental/agua_recirculada.png"
+                                                 alt="eventos relevantes">
+                                            <p class="texto-animacion text-white">
+                                                114,804.12 m<sup>3</sup>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 bbw p-0">
+                                    <div class="content p-3 item-hover">
+                                        <div class="icon_container img-bg"
+                                             style="width: 100%;background-image: url({% static 'images/ambiental/agua_vertida.png' %})">
+                                            <h4 class="text-white text-center">
+                                                Agua extraída
+                                            </h4>
+                                        </div>
+                                        <div class="icon_container show-desc text-center">
+                                            <img src="/static/images/ambiental/agua_vertida.png"
+                                                 alt="eventos relevantes">
+                                            <p class="texto-animacion text-white">
+                                                125,130.58 m<sup>3</sup>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 brw p-0">
+                                    <div class="content p-3 item-hover">
+                                        <div class="icon_container img-bg"
+                                             style="width: 100%;background-image: url({% static 'images/ambiental/agua_estres_hidrico.png' %})">
+                                            <h4 class="text-white text-center">
+                                                Agua extraída en zonas de estrés hídrico
+                                            </h4>
+                                        </div>
+                                        <div class="icon_container show-desc text-center">
+                                            <img src="/static/images/ambiental/agua_estres_hidrico.png"
+                                                 alt="eventos relevantes">
+                                            <p class="texto-animacion text-white">
+                                                114,389.19 m<sup>3</sup>
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-4 brw p-0">
+                                    <div class="content p-3 item-hover">
+                                        <div class="icon_container img-bg"
+                                             style="width: 100%;background-image: url({% static 'images/ambiental/agua_recirculada_2018.png' %})">
+                                            <h4 class="text-white text-center">
+                                                Agua tratada
+                                            </h4>
+                                        </div>
+                                        <div class="icon_container show-desc text-center">
+                                            <img src="/static/images/ambiental/agua_recirculada_2018.png"
+                                                 alt="eventos relevantes">
+                                            <p class="texto-animacion text-white">
+                                               53,098.44 m<sup>3</sup>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </div>
+</div>
+    <div class="container">
+        <div id="consumo_agua" class="wow fadeInUp mt-5" data-wow-duration="1s">
+            <h2 class="text-center wow fadeInUp mb-0" data-wow-duration="1s" style="color: #FE8243;"><b>
+                Consumo total de agua</b></h2>
+            <div class="row justify-content-center"  >
+                <div class="d-flex justify-content-center col-md-12"style="gap:57px;">
+                    <button class="d-block draw draw-purple finn-counto">
+                        <img src="{% static 'images/ambiental/iconoAgua.png' %}">
+                        <h1 style="color: #2792ec;" class="text-center mb-0">2022</h1>
+                        <p class="count mb-0 feature-card-desc number" data-to="1248882.96" data-speed="1500"
+                           data-decimals="0" data-delay="1500" data-porcent="false">0
+                        </p>
+                    </button>
+                    <button class="d-block draw draw-orange finn-counto">
+                        <img src="{% static 'images/ambiental/iconoAgua.png' %}">
+                        <h1 style="color: #2792ec;" class="text-center mb-0">2023</h1>
+                        <p class="count mb-0 feature-card-desc number" data-to="1567345.55" data-speed="1500"
+                           data-decimals="0" data-delay="1500" data-porcent="false">0
+                        </p>
+                    </button>
+                    <button class="d-block draw draw-green finn-counto" style="padding-left: 45px; padding-right: 45px;">
+                        <img src="{% static 'images/ambiental/iconoAgua.png' %}">
+                        <h1 style="color: #2792ec;" class="text-center mb-0">2024</h1>
+                        <p class="count mb-0 feature-card-desc number" data-to="120130.58" data-speed="1500"
+                           data-decimals="0" data-delay="1500" data-porcent="false">0
+                        </p>
+                    </button>
+                </div>
+                <h2 class="text-center wow fadeInUp mb-3" data-wow-duration="1s" style="color: #FE8243;"><b>
+                Variación % 2024 vs. 2023: <span style="color: #444;">-92%</span></b></h2>
+            </div>
+            
+            <div class="col-12 pt-5 pb-5">
+                <a rel="noreferrer" href="{% static 'files/Tabla_Gestion_Agua_Finsa.xlsx' %}" download
+                   class="btn btn-lg pull-right boton" target="_blank"><i class="fa fa-download"></i>
+                    Descargar en formato xlsx</a>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="container">
+        <div id="residuos" class="wow fadeInUp" data-wow-duration="1s">
+            <h1 class="text-center mt-5 mb-5" style="color: #1BC2AE;">Gestión de Residuos</h1>
+            <p class="text-justify wow fadeInUp" data-wow-duration="1s">
+                En nuestras oficinas corporativas y parques industriales aseguramos una gestión responsable de todos los residuos que generamos, destinándolos a procesos de valorización, reciclaje, reutilización o confinamiento adecuado. Durante 2024, registramos un total de <strong>118.46 toneladas de residuos</strong>, entre peligrosos, de manejo especial y sólidos urbanos.
+            </p>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-sm-12 px-5 d-flex justify-content-center">
+                <p class="wow fadeInUp" style="font-size: 28px; text-align: center!important; color: #FE8243;">Residuos generados en parques industriales</p>
+            </div>
+            <div class="col-md-4 col-sm-12 px-5 d-flex justify-content-center">
+                <div id="chart2" style="height: 400px; width: 100%;"></div>
+            </div>
+            <div class="col-md-4 col-sm-12 px-5 d-flex justify-content-center">
+                <div id="chart3" style="height: 400px; width: 100%;"></div>
+            </div>
+            <div class="col-md-4 col-sm-12 px-5 d-flex justify-content-center">
+                <div id="chart4" style="height: 400px; width: 100%;"></div>
+            </div>
+{#            <div class="col-md-3 col-sm-12 px-5 d-flex justify-content-center">#}
+{#                <div id="chart5" style="height: 300px; width: 100%;"></div>#}
+{#            </div>#}
+            <div class="col-12 pt-5 pb-5">
+                    <a rel="noreferrer" href="{% static 'files/Tabla_Residuos_Finsa.xlsx' %}" download
+               class="btn btn-lg pull-right boton" target="_blank"><i class="fa fa-download"></i>
+                Descargar en formato xlsx</a>
+            </div>
+        </div>
+    </div>
+     <section id = "cambio_climatico" class="content-wrap">
+            <div id="otras_actividades" class="container" style="padding: 50px 0">
+                <div class="row">
+                    <div class="col-lg-6 wow fadeInUp d-flex mt-3 mt-lg-0  p-4 d-flex flex-column align-items-center justify-content-center text-center" data-wow-duration="2s" data-wow-delay="0.2s" style="background-color: #2D4972; visibility: visible; animation-duration: 2s; animation-delay: 0.2s; animation-name: fadeInUp;">
+                        <h1 class="text-white">
+                            Cambio climático
+                        </h1>
+                        <p class="text-white">
+                            Las alteraciones en los patrones climáticos pueden representar amenazas para nuestros activos y operaciones, es por ello que, monitoreamos los riesgos físicos y de transición a los que estamos expuestos, con el propósito de tomar decisiones informadas que aumenten la resiliencia de nuestras propiedades.  
+                        </p>
+                    </div>
+                    <div class="col-lg-6 pl-0 pl-lg-3 pr-0 pr-lg-3">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 wow fadeInUp pl-0 pl-md-3 pl-lg-0 mb-3 mb-sm-0 pr-0 pr-sm-3" data-wow-duration="2s" data-wow-delay="0.2s" style="visibility: visible; animation-duration: 2s; animation-delay: 0.2s; animation-name: fadeInUp;">
+                                <div class="square1">
+                                    <span class="item-content">
+                                        <strong class="item-title text-center">Elaboramos una matriz de riesgos climáticos como herramienta para identificar amenazas, tanto a nivel de portafolio como de cada activo en particular</strong>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 wow fadeInUp pr-0 pr-md-3 pl-lg-0 pl-0 pl-sm-3" data-wow-duration="2s" data-wow-delay="0.2s" style="visibility: visible; animation-duration: 2s; animation-delay: 0.2s; animation-name: fadeInUp;">
+                                <div class="square2">
+                                    <span class="item-content">
+                                        <strong class="item-title text-center">Adoptamos medidas preventivas y de adaptación orientadas a disminuir la vulnerabilidad y garantizar la protección de nuestros activos</strong>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row pt-3">
+                            <div class="col-lg-12 col-xs-12 wow fadeInUp pr-0 pr-md-3 pl-lg-0 pl-0 pl-sm-3" data-wow-duration="2s" data-wow-delay="0.2s" style="visibility: visible; animation-duration: 2s; animation-delay: 0.2s; animation-name: fadeInUp;">
+                                <div class="square4">
+                                    <span class="item-content text-center">
+                                        <strong class="item-title">Analizamos de manera detallada la ocurrencia de los riesgos considerando su probabilidad e impacto a lo largo de un horizonte de tiempo</strong>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% comment %}
+                    <div class="col-12 pt-5">
+                        <a rel="noreferrer" href="https://investorcloud.s3.amazonaws.com/Cydsa/Tabla_Produccion_Vivero.xlsx"
+                           class="btn btn-lg pull-right boton" target="_blank"><i class="fa fa-download"></i>
+                            Descargar en formato xlsx</a>
+                    </div>
+                    {% endcomment %}
+                </div>
+            </div>
+     </section>
+    
+{% endblock %}
+
+{% block otherscripts %}
+    <script src="{% static 'javascripts/amcharts/amcharts.js' %}"></script>
+    <script src="{% static 'javascripts/amcharts/serial.js' %}"></script>
+    <script src="{% static 'javascripts/amcharts/pie.js' %}"></script>
+    <script src="{% static 'javascripts/swiper.min.js' %}"></script>
+    <script src="{% static 'javascripts/wow.min.js' %}"></script>
+    <script src="{% static 'javascripts/jquery.waypoints.min.js' %}"></script>
+    <script src="{% static 'javascripts/countTo.js' %}"></script>
+    <script src="{% static 'javascripts/carousel.eventos.js' %}"></script>
+    <script src="{% static 'javascripts/amcharts/contenido/ambiental.js' %}"></script>
+
+    
+    <script>
+        $(document).ready(function () {
+             var timelineSwiper = new Swiper('.timeline .swiper-container', {
+                direction: 'vertical',
+                loop: false,
+                speed: 1600,
+                pagination: '.swiper-pagination',
+                paginationBulletRender: function (swiper, index, className) {
+                    var year = document.querySelectorAll('.swiper-slide')[index].getAttribute('data-year');
+                    return '<span class="' + className + '">' + year + '</span>';
+                },
+                paginationClickable: true,
+                nextButton: '.swiper-button-next',
+                prevButton: '.swiper-button-prev',
+                breakpoints: {
+                    768: {
+                        direction: 'horizontal',
+                    }
+                }
+            });
+            
+             function numberWithCommas(x) {
+                return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            }
+        
+            // Initialize counters with waypoints
+            $('.finn-counto .count').each(function() {
+                var $this = $(this);
+                var $button = $this.closest('button');
+        
+                // Start the honeycomb animation by adding a class to the SVG element
+                var animateHoneycomb = function($element) {
+                    $element.closest('.honeycomb').find('svg.honeycomb-path').addClass('honeycomb-animated');
+                };
+        
+                $this.waypoint(function() {
+                    // Delay the counting to ensure it's visible
+                    setTimeout(function(){
+                        // Trigger the honeycomb animation
+                        animateHoneycomb($this);
+                        $button.addClass('animation-trigger');
+        
+                        $this.countTo({
+                            from: 0,
+                            to: $this.data('to'),
+                            speed: $this.data('speed'),
+                            decimals: $this.data('decimals'),
+                            onUpdate: function(value) {
+                              var prefix = $this.data('prefix') ? $this.data('prefix') + ' ' : '';
+                              var isPercent = $this.data('porcent') === true || $this.data('porcent') === "true";
+                              var displayValue = isPercent ? value.toFixed($this.data('decimals')) + '%' :
+                                numberWithCommas(value.toFixed($this.data('decimals')));
+                              $this.text(prefix + displayValue);
+                            },
+                            onComplete: function(value) {
+                              // This ensures the class is only added once at the beginning of counting
+                              var prefix = $this.data('prefix') ? $this.data('prefix') + ' ' : '';
+                              var isPercent = $this.data('porcent') === true || $this.data('porcent') === "true";
+                              var displayValue = isPercent ? value.toFixed($this.data('decimals')) + '%' :
+                                numberWithCommas(value.toFixed($this.data('decimals')));
+                              $this.text(prefix + displayValue);
+                            }
+                          });
+                    }, $this.data('delay') || 0);
+        
+                    this.destroy(); // Ensures the animation and counting occur only once
+                }, {
+                    offset: '80%', // Triggers when the element is 75% from the top of the viewport
+                    triggerOnce: true // Counting should only happen once
+                });
+            });
+             
+             // Inicialización al cargar la página
+            $('.finn-counto').each(function () {
+                finn_waypoint('#' + $(this).attr('id')); // Agrega los waypoints
+                finn_counto('#' + $(this).attr('id'));   // Inicializa los contadores
+            });
+            $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+                // Recorre los elementos con la clase .finn-counto y los inicializa de nuevo
+                $('.finn-counto').each(function () {
+                    finn_waypoint('#' + $(this).attr('id'));
+                    finn_counto('#' + $(this).attr('id'));
+                });
+
+            });
+             
+             
+            
+
+            function finn_waypoint(elemento) {
+                var waypoint = new Waypoint({
+                    element: $(elemento),
+                    handler: function (direction) {
+                        $(elemento + ' .count').trigger('on-appear');
+                    },
+                    offset: '75%',
+                    triggerOnce: true
+                })
+            }
+
+            function finn_counto(elemento) {
+                if ($().countTo) {
+                    $(elemento + ' .count').on('on-appear', function () {
+                        $(elemento + ' .honeycomb-path.honeycomb-1').addClass('honeycomb-animated');
+
+                        $(this).each(function () {
+                            var to = parseFloat($(this).data('to')),
+                                speed = parseInt($(this).data('speed')),
+                                decimals = parseInt($(this).data('decimals'));
+
+                            $(this).countTo({
+                                to: to,
+                                speen: speed,
+                                decimals: decimals,
+                                formatter: function (value, options) {
+                                    return value.toFixed(options.decimals).replace(/\B(?=(?:\d{3})+(?!\d))/g, ',');
+                                },
+                                onComplete: function (value) {
+                                    if (value === 1.9)
+                                        return this.innerHTML += '%';
+                                }
+
+                            });
+                        });
+                    }); //counter
+                }
+            }
+        });
+</script>
+{% endblock %}

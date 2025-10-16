@@ -1,0 +1,25 @@
+{% load static %}
+
+<header id="header" class="transparent-header sticky-header">
+    <div id="header-wrap" class="not-dark">
+        <div class="container clearfix">
+            <div id="primary-menu-trigger"><i role="presentation" class="icon-reorder"></i></div>
+            <div class="top-header" style="z-index: 9999;">
+                {% include 'partials/top-header.html' %}
+            </div>
+            <div id="logo" style="max-width: 250px; top: 7px;">
+                
+                    <a href="{% url 'inicio' %}" class="" data-dark-logo="{% static 'images/finsa-logo_BN.png' %}"
+                       title="cydsa">
+                        <img src="{% static 'images/finsa-logo_BN.png' %}" alt="Logo"
+                             style="padding-bottom: 18px;"></a>
+                
+            </div>
+            <div class="container">
+                <nav id="primary-menu">
+                    {% include 'partials/menu.html' %}
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>

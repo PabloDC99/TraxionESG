@@ -1,0 +1,29 @@
+{% extends 'layouts/baseDemo.html' %}
+{% load static i18n %}
+{% block otherstyles %}
+
+{% endblock %}
+
+{% block wrapper %}
+    <div class ="main">
+            <div class="modal" id="modal">
+                <a href = "{% url 'inicio'%}">
+                    <div class ="index-button">
+                        <h1>Accede al demo ESG</h1>
+                    </div>
+                </a>
+            </div>
+    </div>
+
+
+{% endblock %}
+{% block otherscripts %}
+    <script>
+        document.addEventListener("DOMContentLoaded", (event) => {
+            modal = document.getElementById("modal");
+            modal.style.display = 'block';
+          });
+
+        
+    </script>
+{% endblock %}

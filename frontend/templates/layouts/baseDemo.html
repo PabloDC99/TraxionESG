@@ -1,0 +1,73 @@
+{% load static %}
+{% load i18n %}
+
+<!DOCTYPE html>
+<html lang="es" class="js" style="overflow-x: hidden">
+
+<head>
+    <title>FINSA ESG</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    {% comment %} <link rel="icon" type="image/png" href="{% static 'images/favicon.png' %}"/> {% endcomment %}
+    <style>
+        a{
+            text-decoration: none;
+        }
+        body{
+            background-color: #4E4F51;
+        }
+        h1{
+            color: #fff;
+        }
+        .main{
+            display: flex;
+            justify-content: center;
+        }
+        .modal{
+            margin-top: 200px;
+            background-color: #cac3c3;
+            border-radius: 10px;
+            width: 90%;
+            box-shadow: 0 0 20px #000;
+            text-align: center;
+            margin-bottom: 300px;
+        }
+
+        .index-button{
+            padding: 50px;
+        }
+        .modal:hover{
+            animation: flicker 2s infinite;
+        }
+
+        @keyframes flicker {
+            0%, 100% {
+                box-shadow: 0 0 20px #000; /* Starting and ending with the default shadow for a smooth loop */
+            }
+            50% {
+                box-shadow: 0 0 0px #000; /* Midway through the animation, the shadow disappears */
+            }
+        }
+    </style>
+</head>
+
+<body id="body" class="stretched" style="overflow-x: hidden">
+<div class="preloader text-center">
+    {#    <img src="{% static 'images/utils/preloader.gif' %}" alt="alternative text">#}
+</div>
+<div id="wrapper" class="clearfix">
+    {% block wrapper %}
+    {% endblock %}
+</div>
+
+
+
+<script>var locale = '{{ request.LANGUAGE_CODE }}'</script>
+
+{% block otherstyles %}
+
+{% endblock %}
+
+{% block otherscripts %}
+{% endblock %}
+</body>
+</html>
