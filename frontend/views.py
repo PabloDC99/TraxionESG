@@ -164,7 +164,7 @@ def responsabilidad_social(request):
         'title': _("TALENTO, CULTURA CORPORATIVA Y COMUNIDAD"),
         'page': 'responsabilidad-social',
         'eventos': eventos_soc,
-        'imagen': staticfiles_storage.url('images/headers/Social.png'),
+        'imagen': staticfiles_storage.url('images/headers/header-ambiental.png'),
     }
     return render(request, '{0}/frontend/responsabilidad_social.html'.format(request.LANGUAGE_CODE), context)
 
