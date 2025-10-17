@@ -6,7 +6,21 @@
     <link rel="stylesheet" href="{% static 'stylesheets/carousel.eventos.min.css' %}">
     <link rel="stylesheet" href="{% static 'stylesheets/swiper.min.css' %}">
     <link rel="stylesheet" href="{% static 'stylesheets/timeline.min.css' %}">
+    <link rel="stylesheet" href="{% static 'stylesheets/boton_animado.css' %}">
     <style>
+    ul#cadena .nav-item.show .nav-link,ul#cadena .nav-link.active{
+        color:#fff;
+        background-color:#d0df00!important;
+        border-color:transparent;
+        height:100%
+    }
+    ul#cadena>li>.nav-link.active:before {
+    border-color: #d0df00 transparent transparent!important;
+}
+    
+        .col-ind{
+            color: #d0df00!important;
+        }
         .fc td, .fc th {
             border-style: none !important;
         }
@@ -124,49 +138,25 @@
     <div class="marquee"><br>
         <div class="container">
             <h2 class="text-center mt-2">
-                <span style="color: #fff;">- Una de nuestras fortalezas es vivir nuestra
-                        cultura corporativa, buscando siempre la
-                        excelencia en todas nuestras actividades,
-                        satisfacer las necesidades de nuestros clientes
-                        y desarrollando las mejores prácticas laborales
-                        y ambientales. -</span>
+                <span style="color: #fff;">- Reconocemos que nuestro compromiso con 
+                    la sostenibilidad se extiende 
+                    más allá de nuestras propias operaciones 
+                    y abarca toda nuestra cadena de valor. -</span>
                         </h2>
                     </div>
                 </div>
-                <section id="" class="py-5 bc-gray pb-5">
-                    <div class="container">
-                        <h1 class="title-effect tc-blue text-center">
-                            Nuestro Enfoque de Sostenibilidad
-                        </h1>
-                        <ul class="nav nav-tabs d-flex flex-wrap justify-content-around plan-accion" id="cadena" role="tablist">
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link active w-100" id="tab1-tab" data-toggle="tab" data-target="#tab1" type="button" role="tab" aria-controls="home" aria-selected="true">
-                        Talento y Cultura Corporativa
-                    </button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link w-100" id="tab2-tab" data-toggle="tab" data-target="#tab2" type="button" role="tab" aria-controls="profile" aria-selected="false">
-                        Comunidad
-                    </button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link w-100" id="tab3-tab" data-toggle="tab" data-target="#tab3" type="button" role="tab" aria-controls="profile" aria-selected="false">
-                        Medio Ambiente
-                    </button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link w-100" id="tab4-tab" data-toggle="tab" data-target="#tab4" type="button" role="tab" aria-controls="profile" aria-selected="false">
-                        Ética, Legalidad y Anticorrupción
-                    </button>
-                </li>
-            </ul>
-
-            <div class="tab-content" id="myTabContent">
-                <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
+    <section id="" class="py-5 bc-gray pb-5">
+        <div class="container">
+            <h1 class="title-effect tc-blue text-center col-ind">
+               Sostenibilidad corporativa
+            </h1>
+            <div class="">
                     <div class="row d-flex align-items-center flex-wrap">
                         <div class="col-md-6">
-                            <p class="text-justify">
-                                Impulsamos el crecimiento de nuestro talento con capacitación continua, seguridad y salud en el trabajo, y un ambiente inclusivo. Fomentamos una cultura de desempeño, aprendizaje y liderazgo ético.  
+                            <p class="text-left">
+                                La sostenibilidad forma parte de nuestra estructura de gobernanza corporativa,
+                                garantizando la rendición de cuentas y la alineación en todos los niveles
+                                organizacionales.  
                             </p>
                         </div>
                         <div class="col-md-6">
@@ -176,16 +166,76 @@
                         </div>
                     </div>
                 </div>
+        </div>
+    </section>
+    
+    <section id="" class="py-5 bc-gray pb-5">
+        <div class="container">
+            <h1 class="title-effect tc-blue text-center col-ind">
+                Nuestro Enfoque de Sostenibilidad
+            </h1>
+            <h3 style="text-align: center">Nuestra estrategia refleja un enfoque integral y estructurado hacia una gestión empresarial responsable.
+                Se basa en cuatro pilares que guían nuestros esfuerzos para crear valor a largo plazo y minimizar
+                impactos negativos</h3>
+            <ul class="nav nav-tabs d-flex flex-wrap justify-content-around plan-accion" id="cadena" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active w-100 text-white" id="tab1-tab" data-toggle="tab" data-target="#tab1"
+                            type="button" role="tab" aria-controls="home" aria-selected="true" style="background-color: #63666A">
+                        Gobernanza
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link w-100 text-white" id="tab2-tab" data-toggle="tab" data-target="#tab2" type="button"
+                            role="tab" aria-controls="profile" aria-selected="false" style="background-color: #63666A">
+                        Comunidad
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link w-100 text-white" id="tab3-tab" data-toggle="tab" data-target="#tab3" type="button"
+                            role="tab" aria-controls="profile" aria-selected="false" style="background-color: #63666A">
+                        Planeta
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link w-100 text-white" id="tab4-tab" data-toggle="tab" data-target="#tab4" type="button"
+                            role="tab" aria-controls="profile" aria-selected="false" style="background-color: #63666A">
+                        Rentabilidad
+                    </button>
+                </li>
+            </ul>
+
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
+                    <div class="row d-flex align-items-center flex-wrap">
+                        <div class="col-md-6">
+                            <p class="text-justify">
+                                La sostenibilidad forma parte de la gobernanza de Traxión.
+                                El Consejo de Administración, los comités y el Chief Sustainability Officer supervisan
+                                el cumplimiento ASG y garantizan la alineación con los objetivos corporativos.
+                            </p>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="text-center">
+                                <img class="img-fluid" src="/static/images/talento-diseno-02.png" width="800"
+                                     height="1000">
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
                     <div class="row d-flex align-items-center flex-wrap">
                         <div class="col-md-6">
                             <div class="text-center">
-                                <img class="img-fluid" src="/static/images/talento-diseno-03.png" width="800" height="1000">
+                                <img class="img-fluid" src="/static/images/talento-diseno-03.png" width="800"
+                                     height="1000">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <p class="text-justify">
-                                Colaboramos con las comunidades donde operamos mediante programas de educación, empleo local y voluntariado. Escuchamos, medimos impacto y tejemos alianzas para generar valor social sostenible. 
+                                A través de la Fundación Traxión impulsamos la movilidad social, la educación y el
+                                voluntariado.
+                                En 2024 participaron más de 2,300 voluntarios y se otorgaron becas y programas
+                                educativos como CEUNO.
                             </p>
                         </div>
                     </div>
@@ -194,12 +244,15 @@
                     <div class="row d-flex align-items-center flex-wrap">
                         <div class="col-md-6">
                             <p class="text-justify">
-                                Gestionamos de forma eficiente energía, agua y residuos, reducimos emisiones y cumplimos la normativa. Integramos buenas prácticas y certificaciones para minimizar impactos y avanzar hacia la economía circular. 
+                                Con Axión Verde promovemos la conciencia ambiental mediante reforestación, limpieza de
+                                espacios y acciones frente a desastres.
+                                En 2024 se plantaron más de 3,500 árboles en todo el país.
                             </p>
                         </div>
                         <div class="col-md-6">
                             <div class="text-center">
-                                <img class="img-fluid" src="/static/images/talento-diseno-04.png" width="800" height="1000">
+                                <img class="img-fluid" src="/static/images/talento-diseno-04.png" width="800"
+                                     height="1000">
                             </div>
                         </div>
                     </div>
@@ -208,15 +261,33 @@
                     <div class="row d-flex align-items-center flex-wrap">
                         <div class="col-md-6">
                             <div class="text-center">
-                                <img class="img-fluid" src="/static/images/talento-diseno_01.png" width="800" height="1000">
+                                <img class="img-fluid" src="/static/images/talento-diseno_01.png" width="800"
+                                     height="1000">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <p class="text-justify">
-                                Actuamos con integridad: aplicamos nuestro Código de Ética, capacitamos en cumplimiento y operamos con controles internos y canales de denuncia. Construimos, junto con proveedores y aliados, una comunidad anticorrupción de cero tolerancia al soborno.  
+                                Traxión mantiene un crecimiento rentable basado en innovación, eficiencia y
+                                diversificación.
+                                Nuestra gestión responsable nos posiciona en índices como el S&P/BMV Total México ESG y
+                                el Dow Jones MILA Pacific Alliance.
                             </p>
                         </div>
                     </div>
+                </div>
+            </div>
+            <div class="pt-5" style="margin:50px auto;">
+                <div class="boton-wrap" id="boton-wrap-d">
+                    <div id="div-link"
+                         class="field field--name-field-enlace field--type-link field--label-hidden field__item"><a
+                            href="https://investorcloud.s3.amazonaws.com/Cydsa/IA24-CydsaEsp.pdf"
+                            target="_blank">CONOCE NUESTRO
+                        INFORME DE SUSTENIBILIDAD 2023 </a></div>
+                    <div id="flecha-link" class="arrow">
+                        <a
+                                href="https://investorcloud.s3.amazonaws.com/Traxion/IA23-Traxion.pdf"
+                                target="_blank"><img src="{% static 'images/icono-documento.png' %}" alt="informe">
+                        </a></div>
                 </div>
             </div>
         </div>
@@ -226,53 +297,61 @@
             <div id="consumo" class="finn-counto">
                 <div class="container">
                     <div class="section-title text-center">
-                        <h1 class="title-effect text-white pt-2 pb-5">
+                        <h1 class="title-effect text-white pt-2">
                             Nuestras Cifras más Destacadas
                         </h1>
                     </div>
                     <div class="row honeycomb-wrapper justify-content-center pb-5">
-                        <div class="col-md-6 col-lg-3 tile">
+                        <div class="row col-12">
+                            <div class="col-md-6 col-lg-4 tile">
                             <div class="honeycomb">
                                 <div class="content">
-                                    <img src="/static/images/logo_energia-01.png" alt="" style="width: 100px;">
-                                    <h2 class="text-white count-index py-1" data-speed="2500" data-to="5454180" data-in-viewport="yes" data-decimals="0">5454180</h2>
+                                    <h2 class="text-white count-index py-1" data-speed="2500" data-to="21303" data-in-viewport="yes" data-decimals="0">21303</h2>
                                     <span class="title-effect "></span>
-                                    <h4 class="text-white">Consumo eléctrico <sup>1</sup></h4>
+                                    <h4 class="text-white">empleados</h4>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6 col-lg-3 tile">
-                            <div class="honeycomb">
-                                <div class="content">
-                                    <img src="/static/images/logo_eagua.png" alt="" style="width: 100px;">
-                                    <h2 class="text-white count-index py-1" data-speed="2500" data-to="125131" data-in-viewport="yes" data-decimals="0">125131</h2>
-                                    <span class="title-effect "></span>
-                                    <h4 class="text-white">Consumo de agua <sup>2</sup></h4>
+                            <div class="col-md-6 col-lg-4 tile">
+                                <div class="honeycomb">
+                                    <div class="content">
+    {#                                  <h2 class="text-white count-index py-1" data-speed="2500" data-to="369575" data-in-viewport="yes" data-decimals="0">369575</h2>
+                                        <span class="title-effect "></span>
+                                        <h4 class="text-white">beneficiarios de programas sociales</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4 tile">
+                                <div class="honeycomb">
+                                    <div class="content">
+    {#                                  <h2 class="text-white count-index py-1" data-speed="2500" data-to="735646 " data-in-viewport="yes" data-decimals="0">735646m<sup2>2</sup2></h2>
+                                        <span class="title-effect "></span>
+                                        <h4 class="text-white">m<sup>2</sup> de espacio de almacén 3PL</h4><br>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6 col-lg-3 tile">
+                        <div class="row col-12">
+                            <div class="col-md-6 col-lg-6 tile">
                             <div class="honeycomb">
                                 <div class="content">
-                                    <img src="/static/images/logo_coolaboradores.png" alt="" style="width: 100px;">
-                                    <h2 class="text-white count-index py-1" data-speed="2500" data-to="774" data-in-viewport="yes" data-decimals="0">774</h2>
+{#                                 <h2 class="text-white count-index py-1" data-speed="2500" data-to="619255 " data-in-viewport="yes" data-decimals="0">619255</h2>
                                     <span class="title-effect "></span>
-                                     <h4 class="text-white">Colaboradores</h4><br>
+                                    <h4 class="text-white">tCO<sub>2</sub>e emisiones alcance 1</h4><br>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6 col-lg-3 tile">
+                            <div class="col-md-6 col-lg-6 tile">
                             <div class="honeycomb" style="margin-top: 10px;">
                                 <div class="content">
-                                    <img src="/static/images/logo_capacitacion.png" alt="" style="width: 100px;">
-                                    <h2 class="text-white count-index py-1" data-speed="2500" data-to="2939" data-in-viewport="yes" data-decimals="0">2939</h2><span class="title-effect "></span>
-                                    <h4 class="text-white">Horas de capacitación</h4><br>
+{#                                 <h2 class="text-white count-index py-1" data-speed="2500" data-to="1.7" data-in-viewport="yes" data-decimals="1" 
+                                        data-formatter="function(value){return value.toFixed(1);}">1.7</h2><span class="title-effect "></span>
+                                    <h4 class="text-white">de m³ de gas natural utilizado en nuestra flota</h4><br>
                                 </div>
                             </div>
                         </div>
+                        </div>
                     </div>
-                    <p class="text-white text-right mb-0" style="font-size: 12px; text-decoration: underline;"><sup>1</sup> Cifra en kWh</p>
-                    <p class="text-white text-right mb-0" style="font-size: 12px; text-decoration: underline;"><sup>2</sup> Cifra en m<sup>3</sup></p>
                 </div>
             </div>
         </div>
@@ -281,9 +360,13 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12 pt-5 pb-5">
-                        <h1 class="text-center tc-blue">Progreso hacia la Agenda 2030 (ODS)</h1>
+                        <h1 class="text-center tc-blue col-ind">Progreso hacia la Agenda 2030 (ODS)</h1>
                         <p class="text-center">
-                            <strong>En FINSA integramos los ODS a la estrategia y la operación, con metas medibles, seguimiento continuo y alianzas que amplían nuestro impacto conforme a la Agenda 2030. Para nosotros, los ODS son un marco que orienta nuestras decisiones, fortaleciendo la confianza de nuestros grupos de interés.</strong>
+                            <strong>La Agenda 2030 de las Naciones Unidas y sus 17 Objetivos de Desarrollo Sostenible
+                                (ODS) son fundamentales para nuestra visión de crecimiento sostenible. Nuestra
+                                estrategia de sostenibilidad se construye sobre estos principios globales, guiando
+                                nuestros esfuerzos para fomentar el progreso económico y social, al tiempo que
+                                gestionamos de manera responsable nuestros impactos ambientales y en la comunidad.</strong>
                         </p>
                       <figure class="d-flex justify-content-center align-items-center" style="margin-top: 0 !important;">
                             <img src="{% static 'images/home-finsa/finsa-ods-1.png' %}" class="obj-cov" style="height: 550px; margin-top: 0 !important;">
@@ -293,19 +376,19 @@
             </div>
         </section>
     <div class="row justify-content-center align-items-center row-eq-height">
-            <div class=" col-md-6 repo-left" style="background-size: cover; background-repeat: no-repeat; background-position: center; background-image: url({% static 'images/portada-finsa.png' %})">
-                <h3 class="text-center text-dark mb-2 text-uppercase font-weight-bold" style="color: white !important;">Descargar Informe
-                    Anual</h3>
-                <div class="d-flex flex-column pt-1">
-                    <a target= "_blank" href = "https://cdn.investorcloud.net/finsa/reportes/IAS_Finsa_2024_EvolucionEstrategica.pdf" class="text-center">
-                        <i class="fa fa-file-text fa-3x mb-3" style="color: white !important;"></i>
-                        <p class="mb-0" style="color: white !important;">Informe Anual de Sostenibilidad 2024</p>
-                    </a>
-                </div>
-            </div>
             <div class=" col-md-6 calendar-right">
                 <h3 class="text-center mb-3 text-dark text-uppercase font-weight-bold">Calendario</h3>
                 <div id='calendar'></div>
+            </div>
+            <div class=" col-md-6 repo-left" style="background-size: cover; background-repeat: no-repeat; background-position: center; background-image: url({% static 'images/portada-finsa.png' %})">
+{#                <h3 class="text-center text-dark mb-2 text-uppercase font-weight-bold" style="color: white !important;">Descargar Informe#}
+{#                    Anual</h3>#}
+{#                <div class="d-flex flex-column pt-1">#}
+{#                    <a target= "_blank" href = "https://cdn.investorcloud.net/finsa/reportes/IAS_Finsa_2024_EvolucionEstrategica.pdf" class="text-center">#}
+{#                        <i class="fa fa-file-text fa-3x mb-3" style="color: white !important;"></i>#}
+{#                        <p class="mb-0" style="color: white !important;">Informe Anual de Sostenibilidad 2024</p>#}
+{#                    </a>#}
+{#                </div>#}
             </div>
         </div>
     
@@ -906,4 +989,21 @@
             }, 350);
         });
     </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let botonWrap = document.getElementById("boton-wrap-d");
+            let botonText = document.getElementById("div-link");
+            let arrow = document.getElementById("flecha-link");
+
+            botonWrap.addEventListener("mouseenter", function () {
+                botonText.classList.add("button-hover");
+                arrow.classList.add("arrow-hover");
+            });
+
+            botonWrap.addEventListener("mouseleave", function () {
+                botonText.classList.remove("button-hover");
+                arrow.classList.remove("arrow-hover");
+            });
+        });
+    </script> 
 {% endblock %}
