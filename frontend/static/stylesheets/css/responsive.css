@@ -2703,7 +2703,7 @@
 
     /* line 1739, D:/begrand/app/assets/stylesheets/css/responsive.css.scss */
     .widget_recent_comments li {
-        background-image: url("/../../images/icons/widget-comment@2x.png");
+        /* background-image: url("/../../images/icons/widget-comment@2x.png"); */
         background-size: 15px 26px;
     }
 
@@ -2717,7 +2717,7 @@
     .widget_pages li a,
     .widget_rss li a,
     .widget_recent_comments li a {
-        background-image: url("/../../images/icons/widget-link@2x.png");
+        /* background-image: url("/../../images/icons/widget-link@2x.png"); */
         background-size: 4px 20px;
     }
 
