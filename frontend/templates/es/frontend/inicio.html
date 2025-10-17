@@ -8,19 +8,23 @@
     <link rel="stylesheet" href="{% static 'stylesheets/timeline.min.css' %}">
     <link rel="stylesheet" href="{% static 'stylesheets/boton_animado.css' %}">
     <style>
-    ul#cadena .nav-item.show .nav-link,ul#cadena .nav-link.active{
-        color:#fff;
-        background-color:#d0df00!important;
-        border-color:transparent;
-        height:100%
-    }
-    ul#cadena>li>.nav-link.active:before {
-    border-color: #d0df00 transparent transparent!important;
-}
     
-        .col-ind{
-            color: #d0df00!important;
+        ul#cadena .nav-item.show .nav-link, ul#cadena .nav-link.active {
+            color: #53565a !important;
+            background-color: #d0df00 !important;
+            border-color: transparent;
+            height: 100%;
+            font-weight: bold;
         }
+
+        ul#cadena > li > .nav-link.active:before {
+            border-color: #d0df00 transparent transparent !important;
+        }
+
+        .col-ind {
+            color: #d0df00 !important;
+        }
+
         .fc td, .fc th {
             border-style: none !important;
         }
@@ -30,7 +34,6 @@
         }
 
         .repo-left {
-            /* background-color: #f2f2f2; */
             padding: 100px;
             border-top: 4px solid #939598;
             height: 350px;
@@ -122,8 +125,8 @@
                 transform: translateX(-100%);
             }
         }
-        @media(min-width: 550px) and (max-width: 991px){
-            .honeycomb img{
+        @media (min-width: 550px) and (max-width: 991px) {
+            .honeycomb img {
                 max-width: 50%;
             }
         }
@@ -138,7 +141,7 @@
     <div class="marquee"><br>
         <div class="container">
             <h2 class="text-center mt-2">
-                <span style="color: #fff;">- Reconocemos que nuestro compromiso con 
+                <span style="color: #53565a;">- Reconocemos que nuestro compromiso con 
                     la sostenibilidad se extiende 
                     más allá de nuestras propias operaciones 
                     y abarca toda nuestra cadena de valor. -</span>
@@ -161,7 +164,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="text-center">
-                                <img class="img-fluid" src="/static/images/talento-diseno-02.png" width="800" height="1000">
+                                <img class="img-fluid" src="/static/images/sost-corporativa.png" width="800" height="1000" style="max-width: 90%">
                             </div>
                         </div>
                     </div>
@@ -185,15 +188,15 @@
                     </button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link w-100 text-white" id="tab2-tab" data-toggle="tab" data-target="#tab2" type="button"
-                            role="tab" aria-controls="profile" aria-selected="false" style="background-color: #63666A">
-                        Comunidad
-                    </button>
-                </li>
-                <li class="nav-item" role="presentation">
                     <button class="nav-link w-100 text-white" id="tab3-tab" data-toggle="tab" data-target="#tab3" type="button"
                             role="tab" aria-controls="profile" aria-selected="false" style="background-color: #63666A">
                         Planeta
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link w-100 text-white" id="tab2-tab" data-toggle="tab" data-target="#tab2" type="button"
+                            role="tab" aria-controls="profile" aria-selected="false" style="background-color: #63666A">
+                        Comunidad
                     </button>
                 </li>
                 <li class="nav-item" role="presentation">
@@ -208,36 +211,19 @@
                 <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
                     <div class="row d-flex align-items-center flex-wrap">
                         <div class="col-md-6">
+                            <div class="text-center">
+                                <img class="img-fluid" src="/static/images/gobernanza.png" width="800"
+                                     height="1000">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
                             <p class="text-justify">
                                 La sostenibilidad forma parte de la gobernanza de Traxión.
                                 El Consejo de Administración, los comités y el Chief Sustainability Officer supervisan
                                 el cumplimiento ASG y garantizan la alineación con los objetivos corporativos.
                             </p>
                         </div>
-                        <div class="col-md-6">
-                            <div class="text-center">
-                                <img class="img-fluid" src="/static/images/talento-diseno-02.png" width="800"
-                                     height="1000">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
-                    <div class="row d-flex align-items-center flex-wrap">
-                        <div class="col-md-6">
-                            <div class="text-center">
-                                <img class="img-fluid" src="/static/images/talento-diseno-03.png" width="800"
-                                     height="1000">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <p class="text-justify">
-                                A través de la Fundación Traxión impulsamos la movilidad social, la educación y el
-                                voluntariado.
-                                En 2024 participaron más de 2,300 voluntarios y se otorgaron becas y programas
-                                educativos como CEUNO.
-                            </p>
-                        </div>
+                        
                     </div>
                 </div>
                 <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="tab3-tab">
@@ -251,20 +237,32 @@
                         </div>
                         <div class="col-md-6">
                             <div class="text-center">
-                                <img class="img-fluid" src="/static/images/talento-diseno-04.png" width="800"
+                                <img class="img-fluid" src="/static/images/planeta.png" width="800"
                                      height="1000">
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="tab-pane fade" id="tab4" role="tabpanel" aria-labelledby="tab4-tab">
+                <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
                     <div class="row d-flex align-items-center flex-wrap">
                         <div class="col-md-6">
                             <div class="text-center">
-                                <img class="img-fluid" src="/static/images/talento-diseno_01.png" width="800"
+                                <img class="img-fluid" src="/static/images/comunidad.png" width="800"
                                      height="1000">
                             </div>
                         </div>
+                        <div class="col-md-6">
+                            <p class="text-justify">
+                                A través de la Fundación Traxión impulsamos la movilidad social, la educación y el
+                                voluntariado.
+                                En 2024 participaron más de 2,300 voluntarios y se otorgaron becas y programas
+                                educativos como CEUNO.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="tab4" role="tabpanel" aria-labelledby="tab4-tab">
+                    <div class="row d-flex align-items-center flex-wrap">
                         <div class="col-md-6">
                             <p class="text-justify">
                                 Traxión mantiene un crecimiento rentable basado en innovación, eficiencia y
@@ -273,16 +271,22 @@
                                 el Dow Jones MILA Pacific Alliance.
                             </p>
                         </div>
+                        <div class="col-md-6">
+                            <div class="text-center">
+                                <img class="img-fluid" src="/static/images/rentabilidad.png" width="800"
+                                     height="1000">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="pt-5" style="margin:50px auto;">
                 <div class="boton-wrap" id="boton-wrap-d">
-                    <div id="div-link"
+                    <div id="div-link" style="padding-left: 30px"
                          class="field field--name-field-enlace field--type-link field--label-hidden field__item"><a
                             href="https://investorcloud.s3.amazonaws.com/Cydsa/IA24-CydsaEsp.pdf"
                             target="_blank">CONOCE NUESTRO
-                        INFORME DE SUSTENIBILIDAD 2023 </a></div>
+                        INFORME DE SUSTENTABILIDAD 2023 </a></div>
                     <div id="flecha-link" class="arrow">
                         <a
                                 href="https://investorcloud.s3.amazonaws.com/Traxion/IA23-Traxion.pdf"
@@ -315,7 +319,7 @@
                             <div class="col-md-6 col-lg-4 tile">
                                 <div class="honeycomb">
                                     <div class="content">
-    {#                                  <h2 class="text-white count-index py-1" data-speed="2500" data-to="369575" data-in-viewport="yes" data-decimals="0">369575</h2>
+                                      <h2 class="text-white count-index py-1" data-speed="2500" data-to="369575" data-in-viewport="yes" data-decimals="0">369575</h2>
                                         <span class="title-effect "></span>
                                         <h4 class="text-white">beneficiarios de programas sociales</h4>
                                     </div>
@@ -324,7 +328,7 @@
                             <div class="col-md-6 col-lg-4 tile">
                                 <div class="honeycomb">
                                     <div class="content">
-    {#                                  <h2 class="text-white count-index py-1" data-speed="2500" data-to="735646 " data-in-viewport="yes" data-decimals="0">735646m<sup2>2</sup2></h2>
+                                     <h2 class="text-white count-index py-1" data-speed="2500" data-to="735646 " data-in-viewport="yes" data-decimals="0">735646m<sup2>2</sup2></h2>
                                         <span class="title-effect "></span>
                                         <h4 class="text-white">m<sup>2</sup> de espacio de almacén 3PL</h4><br>
                                     </div>
@@ -335,7 +339,7 @@
                             <div class="col-md-6 col-lg-6 tile">
                             <div class="honeycomb">
                                 <div class="content">
-{#                                 <h2 class="text-white count-index py-1" data-speed="2500" data-to="619255 " data-in-viewport="yes" data-decimals="0">619255</h2>
+                                 <h2 class="text-white count-index py-1" data-speed="2500" data-to="619255 " data-in-viewport="yes" data-decimals="0">619255</h2>
                                     <span class="title-effect "></span>
                                     <h4 class="text-white">tCO<sub>2</sub>e emisiones alcance 1</h4><br>
                                 </div>
@@ -344,7 +348,7 @@
                             <div class="col-md-6 col-lg-6 tile">
                             <div class="honeycomb" style="margin-top: 10px;">
                                 <div class="content">
-{#                                 <h2 class="text-white count-index py-1" data-speed="2500" data-to="1.7" data-in-viewport="yes" data-decimals="1" 
+                                 <h2 class="text-white count-index py-1" data-speed="2500" data-to="1.7" data-in-viewport="yes" data-decimals="1" 
                                         data-formatter="function(value){return value.toFixed(1);}">1.7</h2><span class="title-effect "></span>
                                     <h4 class="text-white">de m³ de gas natural utilizado en nuestra flota</h4><br>
                                 </div>
@@ -361,7 +365,7 @@
                 <div class="row">
                     <div class="col-12 pt-5 pb-5">
                         <h1 class="text-center tc-blue col-ind">Progreso hacia la Agenda 2030 (ODS)</h1>
-                        <p class="text-center">
+                        <p class="text-center" style="color: #53565a">
                             <strong>La Agenda 2030 de las Naciones Unidas y sus 17 Objetivos de Desarrollo Sostenible
                                 (ODS) son fundamentales para nuestra visión de crecimiento sostenible. Nuestra
                                 estrategia de sostenibilidad se construye sobre estos principios globales, guiando
@@ -376,69 +380,63 @@
             </div>
         </section>
     <div class="row justify-content-center align-items-center row-eq-height">
-            <div class=" col-md-6 calendar-right">
-                <h3 class="text-center mb-3 text-dark text-uppercase font-weight-bold">Calendario</h3>
-                <div id='calendar'></div>
-            </div>
-            <div class=" col-md-6 repo-left" style="background-size: cover; background-repeat: no-repeat; background-position: center; background-image: url({% static 'images/portada-finsa.png' %})">
-{#                <h3 class="text-center text-dark mb-2 text-uppercase font-weight-bold" style="color: white !important;">Descargar Informe#}
-{#                    Anual</h3>#}
-{#                <div class="d-flex flex-column pt-1">#}
-{#                    <a target= "_blank" href = "https://cdn.investorcloud.net/finsa/reportes/IAS_Finsa_2024_EvolucionEstrategica.pdf" class="text-center">#}
-{#                        <i class="fa fa-file-text fa-3x mb-3" style="color: white !important;"></i>#}
-{#                        <p class="mb-0" style="color: white !important;">Informe Anual de Sostenibilidad 2024</p>#}
-{#                    </a>#}
-{#                </div>#}
-            </div>
+        <div class=" col-md-6 calendar-right">
+            <h3 class="text-center mb-3 text-dark text-uppercase font-weight-bold">Calendario</h3>
+            <div id='calendar'></div>
         </div>
+        <div class="col-md-6 repo-left"
+             style="background-image: url({% static 'images/calendario.png' %}); background-size: 122% auto;
+                     background-repeat: no-repeat; background-position: center;">
+        </div>
+    </div>
     
     <!--modals-->
 
-    <div class="modal fade popup" id="modalCuestionario" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered justify-content-center"
-             role="document">
-            <div class="modal-content">
-                <!--            <button type="button" class="close" data-dismiss="modal" aria-label="Close">-->
-                <!--                <span aria-hidden="true">&times;</span>-->
-                <!--            </button>-->
-                <div class="modal-body">
-                    <div class="container pb-3 pt-3">
-                        <h3 class="text-dark">Si usted desea obtener información ASG de nuestra parte, favor de
-                            compartirnos sus datos.</h3>
-                        <form action="" class="mb-0 was-validated" method="post" id="cuestionario_esg">
-                            <div class="form-group">
-                                <label for="nombre" class="col-form-label text-capitalize">Nombre:</label>
-                                <input type="text" name="nombre" id="nombre" required class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label for="empresa"
-                                       class="col-form-label text-capitalize">Empresa:</label>
-                                <input type="text" name="empresa" id="empresa" required class="form-control">
-                            </div>
-                            <div class="form-group mb-5">
-                                <label for="presentation-email" class="col-form-label text-capitalize">Correo:</label>
-                                <input type="email" name="correo" required class="form-control">
-                            </div>
-                            <div class="d-flex align-items-center justify-content-between">
-                                <button id="buzon-quejas" class="btn btn-info">Buzón de quejas <br>¡Quéremos escucharte!
-                                </button>
-                                <div>
-                                    <button type="button" class="btn btn-light mr-3 mb-0" data-dismiss="modal"
-                                            aria-label="Close">
-                                        Cerrar
-                                    </button>
-                                    <button id="cuestionario-submit" type="submit" class="btn btn-primary mb-0">
-                                        Solicitar
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
+{#    <div class="modal fade popup" id="modalCuestionario" tabindex="-1" role="dialog" aria-hidden="true">#}
+{#        <div class="modal-dialog modal-lg modal-dialog-centered justify-content-center"#}
+{#             role="document">#}
+{#            <div class="modal-content">#}
+{#                <!--            <button type="button" class="close" data-dismiss="modal" aria-label="Close">-->#}
+{#                <!--                <span aria-hidden="true">&times;</span>-->#}
+{#                <!--            </button>-->#}
+{#                <div class="modal-body">#}
+{#                    <div class="container pb-3 pt-3">#}
+{#                        <h3 class="text-dark">Si usted desea obtener información ASG de nuestra parte, favor de#}
+{#                            compartirnos sus datos.</h3>#}
+{#                        <form action="" class="mb-0 was-validated" method="post" id="cuestionario_esg">#}
+{#                            <div class="form-group">#}
+{#                                <label for="nombre" class="col-form-label text-capitalize">Nombre:</label>#}
+{#                                <input type="text" name="nombre" id="nombre" required class="form-control">#}
+{#                            </div>#}
+{#                            <div class="form-group">#}
+{#                                <label for="empresa"#}
+{#                                       class="col-form-label text-capitalize">Empresa:</label>#}
+{#                                <input type="text" name="empresa" id="empresa" required class="form-control">#}
+{#                            </div>#}
+{#                            <div class="form-group mb-5">#}
+{#                                <label for="presentation-email" class="col-form-label text-capitalize">Correo:</label>#}
+{#                                <input type="email" name="correo" required class="form-control">#}
+{#                            </div>#}
+{#                            <div class="d-flex align-items-center justify-content-between">#}
+{#                                <button id="buzon-quejas" class="btn btn-info">Buzón de quejas <br>¡Quéremos escucharte!#}
+{#                                </button>#}
+{#                                <div>#}
+{#                                    <button type="button" class="btn btn-light mr-3 mb-0" data-dismiss="modal"#}
+{#                                            aria-label="Close">#}
+{#                                        Cerrar#}
+{#                                    </button>#}
+{#                                    <button id="cuestionario-submit" type="submit" class="btn btn-primary mb-0">#}
+{#                                        Solicitar#}
+{#                                    </button>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </form>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{##}
+{#        </div>#}
+{#    </div>#}
 
     <div class="modal fade popup" id="modalBuzonQuejas" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered justify-content-center"

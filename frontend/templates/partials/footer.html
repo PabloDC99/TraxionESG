@@ -8,77 +8,116 @@
         background-position: center;
     }
     .rs-footer .footer-title{
-        color:#63666A!important;
+        color:#fff!important;
     }
     .rs-footer .footer-title:after{
-        background-color:#63666A!important;
-    }
-     p{
-        color:#63666A!important;
+        background-color:#d0df00!important;
     }
      #site-footer button[type=submit]{
          border-radius: 10px!important;
      }
      #site-footer button[type=submit]:hover {
-        background-color: #d0df00;
-        border: 1px solid #63666A!important;
-        color: #63666A;
+        background-color: #63666A;
+        border: 1px solid #d0df00!important;
+        color: #d0df00;
         transform: scale(1.05);
 }
+     
+     .border-main-color-2 {
+    --tw-border-opacity: 1;
+    border-color: #d0df00;
+}
 
-     {#}#}
 </style>
-<footer id="site-footer" class="site-footer pt-2 pb-1 position-relative rs-footer">
+<footer id="site-footer" class="site-footer pt-2 pb-1 position-relative rs-footer pt-5"
+    style="background: url('{% static "images/footer-bg.webp" %}') no-repeat center center / cover;">
     {#    <a id="denuncia" href="#" class="octf-btn d-flex align-items-center"><i#}
     {#            role="presentation" role="presentation"#}
     {#            class="fa fa-commenting-o text-white"></i> {% trans 'Canal de denuncias' %}</a>#}
     <div class="container">
-        <div class="row">
-            <div class="col-md-4 mb-1">
-                <div class="about-widget text-white">
-                    <h3 class="footer-title">ACERCA DE TRAXION:</h3>
+        <div class="row mb-5">
+            <div class="col-md-4 mb-5">
+                <div class="d-flex row about-widget text-white">
+                    <div class="flex flex-col justify-center pr-3">
+                        <img src="{% static 'images/icons/icon-empresa.svg' %}" alt="icon"
+                             loading="lazy" fetchpriority="low" width="14" height="14"
+                             style="max-width: 100%; height: auto;" class="block w-[14px] h-auto">
+                    </div>
+                    <h4 class="m-0 text-white text-bold">ACERCA DE TRAXION:</h4>
+                </div>
+                <hr class="border-t-1 border-solid border-main-color-2">
+                <div class="d-flex row">
                     <article style="max-width: 70%;">
-                        <p style="text-align: justify;">Ofrecemos soluciones innovadoras para mejorar la movilidad,
+                        <p class="pl-3" style="text-align: justify;">Ofrecemos soluciones innovadoras para mejorar la movilidad,
                             haciendo el transporte más eficiente y cómodo. Con tecnología avanzada y un equipo
                             especializado, garantizamos experiencias fluidas para empresas y particulares.</p>
                     </article>
                 </div>
             </div>
-            <div class="col-md-4 cont mb-1">
-                <h3 class="footer-title">CONTACTO:</h3>
-                <p class="news-note mb-1"><i class="fa fa-map-marker" aria-hidden="true"></i>
-                    comercialmkt@traxion.global
-                    +52 (55) 9861 1889
-                </p>
-                <div class="pt-2 a">
-                    <button id="" type="submit" class="btn">Contáctanos</button>
+            <div class="col-md-4 cont mb-5">
+                <div class="d-flex row about-widget text-white">
+                    <div class="flex flex-col justify-center pr-3">
+                            <img src="{% static 'images/icons/icon-contacto.svg' %}" alt="icon"
+                                 loading="lazy" fetchpriority="low" width="14" height="14"
+                                 style="max-width: 100%; height: auto;" class="block w-[14px] h-auto">
+                        </div>
+                    <h4 class="m-0 text-white text-bold">CONTACTO:</h4>
+                </div>
+                <hr class="border-t-1 border-solid border-main-color-2">
+                <div class="d-flex row pl-3">
+                    <p class="news-note mb-1 pb-4"><i class="fa fa-map-marker" aria-hidden="true"></i>
+                        comercialmkt@traxion.global
+                        +52 (55) 9861 1889
+                    </p>
+                    <div class="pt-2 a">
+                        <button id="" type="submit" onclick="window.location.href='{% url 'contacto' %}'" class="btn">Contáctanos</button>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-4 mb-1 fondo">
-                <h3 class="footer-title">UBICACIÓN</h3>
-                <div class="d-flex flex-column justify-content-around align-items-baseline">
-                    <p class="mb-1">
-                        Paseo de la Reforma 115, Lomas de Chapultepec C.P. 11000 CDMX
-                    </p>
-                    <form class="form mb-2 pt-2 text-center was-validated" method="post" id="newsletter-form-footer">
-                        <div class="form-group mb-1">
-                            <input class="col-md-8 col-sm-7 col-8" id="fieldEmail" name="email"
-                                   type="email" placeholder="{% trans 'Correo electrónico' %}" required
-                                   data-msg-required="" data-msg-email=""/>
-                            <button id="newsletter-submit-footer" type="submit" class="btn">Suscribirse</button>
+            <div class="col-md-4 mb-5">
+                <div class="d-flex row about-widget text-white">
+                    <div class="flex flex-col justify-center pr-3">
+                            <img src="{% static 'images/icons/icon-ubicacion.svg' %}" alt="icon"
+                                 loading="lazy" fetchpriority="low" width="14" height="14"
+                                 style="max-width: 100%; height: auto;" class="block w-[14px] h-auto">
                         </div>
-                        <div class="alert-message-footer"></div>
-                    </form>
+                        <h4 class="m-0 text-white text-bold">UBICACIÓN:</h4>
+                    </div>
+           
+                <hr class="border-t-1 border-solid border-main-color-2">
+                <div class="d-flex row">
+                    <div class="d-flex flex-column justify-content-around align-items-baseline pl-3">
+                        <p class="mb-1 pb-4">
+                            Paseo de la Reforma 115, Lomas de Chapultepec C.P. 11000 CDMX
+                        </p>
+                        <form class="form mb-2 pt-2 text-center was-validated" method="post" id="newsletter-form-footer">
+                            <div class="form-group mb-1">
+                                <input class="col-md-8 col-sm-7 col-8" id="fieldEmail" name="email"
+                                       type="email" placeholder="{% trans 'Correo electrónico' %}" required
+                                       data-msg-required="" data-msg-email=""/>
+                                <button id="newsletter-submit-footer" type="submit" class="btn">Suscribirse</button>
+                            </div>
+                            <div class="alert-message-footer"></div>
+                        </form>
+                    </div>
                 </div>
-
             </div>
         </div>
-        <div class="row mt-4">
-            <div class="col-lg-12 text-center">
+        <div class="w-full mb-8 lg:mb-0 mt-5">
+            <hr class="border-t-1 border-solid border-white mr-0">
+        </div>
+        <div class="d-flex flex-wrap justify-content-between align-items-center px-4 mb-5">
+            <div>
+                <img src="{% static 'images/logo-traxion-blanco.webp' %}"
+                     alt="Traxión" loading="lazy" fetchpriority="low"
+                     width="200" height="auto"
+                     style="max-width: 180px; height: auto;">
+            </div>
+            <div class="text-end">
                 <p class="copyright my-0">
-                    © {% now 'Y' %} {% trans 'Finsa - Diseñado y generado por' %}
+                    © {% now 'Y' %} {% trans 'Traxion - Diseñado y generado por' %}
                     <a href="http://www.irdesign.mx/">
-                        <img src="{% static 'images/ir-design-white.svg' %}" alt="IRDesign" width="90px">
+                        <img src="{% static 'images/ir-design-white.svg' %}" alt="IRDesign" width="90">
                     </a>
                 </p>
             </div>

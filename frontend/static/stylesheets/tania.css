@@ -1364,7 +1364,7 @@ p {
 }
 
 #primary-menu ul li > a {
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .copyright-bg {
@@ -1662,12 +1662,12 @@ blockquote {
 }
 
 #header.sticky-header #header-wrap {
-    background: #012E81;
+    background: #d0df00;
     color: #ffffff;
 }
 
 #header.sticky-header #header-wrap a {
-    color: #ffffff;
+    color: #63666A;
 }
 
 #header.sticky-header #header-wrap a:hover {
