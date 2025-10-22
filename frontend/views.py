@@ -82,10 +82,10 @@ def inicio(request):
 def ambiental(request):
     eventos_amb = EventosView.get_event_amb_es_data()
     context = {
-        'title': _("Medio Ambiente"),
+        'title': _("Planeta"),
         'page': 'ambiental',
         'eventos': eventos_amb,
-        'imagen': staticfiles_storage.url('images/headers/header-ambiental.png'),
+        'imagen': staticfiles_storage.url('images/headers/header-planeta.jpg'),
     }
     return render(request, '{0}/frontend/ambiental.html'.format(request.LANGUAGE_CODE), context)
 
