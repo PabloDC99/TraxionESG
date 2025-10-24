@@ -9,46 +9,46 @@
         </a>
     </li>
     <li class="sub">
-        <a href="{% url 'materialidad' %}">
+        <a href="">
             <div>{% trans 'Modelo ASG' %}</div>
         </a>
-        <ul>
-            <li class="">
-                <a href="{% url 'materialidad' %}?target=acciones">
-                    <div>{% trans "MODELO DE SOSTENIBILIDAD" %}</div>
-                </a>
-            </li>
-            <li class="">
-                <a href="{% url 'materialidad' %}?target=ejes">
-                    <div>{% trans "MODELO DE GESTIÓN" %}</div>
-                </a>
-            </li>
-            <li class="">
-                <a href="{% url 'materialidad' %}?target=modelo-sus">
-                    <div>{% trans "ESTRATEGIA DE SOSTENIBILIDAD" %}</div>
-                </a>
-            </li>
-            <li class="">
-                <a href="{% url 'materialidad' %}?target=grupos">
-                    <div>{% trans "GRUPOS DE INTERÉS" %}</div>
-                </a>
-            </li>
-            <li class="">
-                <a href="{% url 'materialidad' %}?target=actualizacion-sus">
-                    <div>{% trans "MATERIALIDAD" %}</div>
-                </a>
-            </li>
-            <li class="">
-                <a href="{% url 'materialidad' %}?target=contribucion_ods">
-                    <div>{% trans "CONTRIBUCIÓN A LOS ODS" %}</div>
-                </a>
-            </li> 
-            <li class="">
-                <a href="{% url 'materialidad' %}?target=descargable">
-                    <div>{% trans "CONTENIDO DESCARGABLE" %}</div>
-                </a>
-            </li>
-        </ul>
+{#        <ul>#}
+{#            <li class="">#}
+{#                <a href="{% url 'materialidad' %}?target=acciones">#}
+{#                    <div>{% trans "MODELO DE SOSTENIBILIDAD" %}</div>#}
+{#                </a>#}
+{#            </li>#}
+{#            <li class="">#}
+{#                <a href="{% url 'materialidad' %}?target=ejes">#}
+{#                    <div>{% trans "MODELO DE GESTIÓN" %}</div>#}
+{#                </a>#}
+{#            </li>#}
+{#            <li class="">#}
+{#                <a href="{% url 'materialidad' %}?target=modelo-sus">#}
+{#                    <div>{% trans "ESTRATEGIA DE SOSTENIBILIDAD" %}</div>#}
+{#                </a>#}
+{#            </li>#}
+{#            <li class="">#}
+{#                <a href="{% url 'materialidad' %}?target=grupos">#}
+{#                    <div>{% trans "GRUPOS DE INTERÉS" %}</div>#}
+{#                </a>#}
+{#            </li>#}
+{#            <li class="">#}
+{#                <a href="{% url 'materialidad' %}?target=actualizacion-sus">#}
+{#                    <div>{% trans "MATERIALIDAD" %}</div>#}
+{#                </a>#}
+{#            </li>#}
+{#            <li class="">#}
+{#                <a href="{% url 'materialidad' %}?target=contribucion_ods">#}
+{#                    <div>{% trans "CONTRIBUCIÓN A LOS ODS" %}</div>#}
+{#                </a>#}
+{#            </li> #}
+{#            <li class="">#}
+{#                <a href="{% url 'materialidad' %}?target=descargable">#}
+{#                    <div>{% trans "CONTENIDO DESCARGABLE" %}</div>#}
+{#                </a>#}
+{#            </li>#}
+{#        </ul>#}
     </li>
 
     <li class="sub">
@@ -57,116 +57,121 @@
         </a>
             <ul>
             <li class="">
-                <a href="{% url 'ambiental' %}?target=gestion_ambiental">
-                    <div>{% trans "Gestión Ambiental" %}</div>
+                <a href="{% url 'ambiental' %}?target=gestion_entorno">
+                    <div>{% trans "Gestión del Entorno Natural" %}</div>
                 </a>
             </li>
             <li class="">
-                <a href="{% url 'ambiental' %}?target=negociosos">
-                    <div>{% trans "Negocio Sostenible" %}</div>
+                <a href="{% url 'ambiental' %}?target=gestion_energia">
+                    <div>{% trans "Gestión de energía y combustible" %}</div>
                 </a>
             </li>
             <li class="">
-                <a href="{% url 'ambiental' %}?target=ihistoria">
-                    <div>{% trans "Parques sostenibles y gestión de ciclo de vida" %}</div>
+                <a href="{% url 'ambiental' %}?target=energia">
+                    <div>{% trans "Consumo de Energía" %}</div>
                 </a>
-            </li>  
+            </li>
             <li class="">
-                <a href="{% url 'ambiental' %}?target=desempeño">
-                    <div>{% trans "Desempeño Ambiental" %}</div>
+                <a href="{% url 'ambiental' %}?target=emisiones">
+                    <div>{% trans "Emisiones de GEI" %}</div>
                 </a>
-            </li>  
+            </li>
             <li class="">
-                <a href="{% url 'ambiental' %}?target=cambio_climatico">
-                    <div>{% trans "Cambio Climático" %}</div>
+                <a href="{% url 'ambiental' %}?target=agua">
+                    <div>{% trans "Gestión del Agua" %}</div>
                 </a>
-            </li>  
+            </li>
+            <li class="">
+                <a href="{% url 'ambiental' %}?target=residuos">
+                    <div>{% trans "Gestión de Residuos" %}</div>
+                </a>
+            </li>
         </ul>
     </li>
     <li class="sub">
-        <a href="{% url 'responsabilidad_social' %}">
+        <a href="">
             <div>{% trans 'COMUNIDAD' %}</div>
         </a>
-      <ul>
-            <li class="">
-                <a href="{% url 'responsabilidad_social' %}?target=acciones">
-                    <div>{% trans "Nuestro Talento" %}</div>
-                </a>
-            </li>
-            <li class="">
-                <a href="{% url 'responsabilidad_social' %}?target=cultura">
-                    <div>{% trans "Salud, Seguridad y Bienestar" %}</div>
-                </a>
-            </li>
-            <li class="">
-                <a href="{% url 'responsabilidad_social' %}?target=diversidad_colaboradores">
-                    <div>{% trans "Diversidad de Colaboradores" %}</div>
-                </a>
-            </li>
-            <li class="">
-                <a href="{% url 'responsabilidad_social' %}?target=fuerza_laboral">
-                    <div>{% trans "Fuerza laboral" %}</div>
-                </a>
-            </li>
-            <li class="">
-                <a href="{% url 'responsabilidad_social' %}?target=desarrollo">
-                    <div>{% trans "Desarrollo Profesional y Laboral" %}</div>
-                </a>
-            </li>
-            <li class="">
-                <a href="{% url 'responsabilidad_social' %}?target=formacion">
-                    <div>{% trans "Formación y Educación" %}</div>
-                </a>
-            </li>
-            <li class="">
-                <a href="{% url 'responsabilidad_social' %}?target=comunidades">
-                    <div>{% trans "Nuestras Comunidades y Responsabilidad Social" %}</div>
-                </a>
-            </li>
-             <li class="">
-                <a href="{% url 'responsabilidad_social' %}?target=comunidad">
-                    <div>{% trans "Apoyo a la comunidad" %}</div>
-                </a>
-            </li>
-             <li class="">
-                <a href="{% url 'responsabilidad_social' %}?target=propiedades">
-                    <div>{% trans "Nuestras propiedades" %}</div>
-                </a>
-            </li>
-        </ul>
+{#      <ul>#}
+{#            <li class="">#}
+{#                <a href="{% url 'responsabilidad_social' %}?target=acciones">#}
+{#                    <div>{% trans "Nuestro Talento" %}</div>#}
+{#                </a>#}
+{#            </li>#}
+{#            <li class="">#}
+{#                <a href="{% url 'responsabilidad_social' %}?target=cultura">#}
+{#                    <div>{% trans "Salud, Seguridad y Bienestar" %}</div>#}
+{#                </a>#}
+{#            </li>#}
+{#            <li class="">#}
+{#                <a href="{% url 'responsabilidad_social' %}?target=diversidad_colaboradores">#}
+{#                    <div>{% trans "Diversidad de Colaboradores" %}</div>#}
+{#                </a>#}
+{#            </li>#}
+{#            <li class="">#}
+{#                <a href="{% url 'responsabilidad_social' %}?target=fuerza_laboral">#}
+{#                    <div>{% trans "Fuerza laboral" %}</div>#}
+{#                </a>#}
+{#            </li>#}
+{#            <li class="">#}
+{#                <a href="{% url 'responsabilidad_social' %}?target=desarrollo">#}
+{#                    <div>{% trans "Desarrollo Profesional y Laboral" %}</div>#}
+{#                </a>#}
+{#            </li>#}
+{#            <li class="">#}
+{#                <a href="{% url 'responsabilidad_social' %}?target=formacion">#}
+{#                    <div>{% trans "Formación y Educación" %}</div>#}
+{#                </a>#}
+{#            </li>#}
+{#            <li class="">#}
+{#                <a href="{% url 'responsabilidad_social' %}?target=comunidades">#}
+{#                    <div>{% trans "Nuestras Comunidades y Responsabilidad Social" %}</div>#}
+{#                </a>#}
+{#            </li>#}
+{#             <li class="">#}
+{#                <a href="{% url 'responsabilidad_social' %}?target=comunidad">#}
+{#                    <div>{% trans "Apoyo a la comunidad" %}</div>#}
+{#                </a>#}
+{#            </li>#}
+{#             <li class="">#}
+{#                <a href="{% url 'responsabilidad_social' %}?target=propiedades">#}
+{#                    <div>{% trans "Nuestras propiedades" %}</div>#}
+{#                </a>#}
+{#            </li>#}
+{#        </ul>#}
     </li>
     <li class="sub">
-        <a href="{% url 'gobernanza' %}">
+        <a href="">
             <div>{% trans 'Gobernanza' %}</div>
         </a>
-      <ul>
-            <li class="">
-                <a href="{% url 'gobernanza' %}?target=gobierno">
-                    <div>{% trans "Gobierno Corporativo" %}</div>
-                </a>
-            </li>
-            <li class="">
-                <a href="{% url 'gobernanza' %}?target=consejo">
-                    <div>{% trans "Consejo de Administración" %}</div>
-                </a>
-            </li>
-            <li class="">
-                <a href="{% url 'gobernanza' %}?target=comite">
-                    <div>{% trans "Equipo directivo" %}</div>
-                </a>
-            </li>
-            <li class="">
-                <a href="{% url 'gobernanza' %}?target=etica">
-                    <div>{% trans "Ética y transparencia" %}</div>
-                </a>
-            </li>
-            <li class="">
-                <a href="{% url 'gobernanza' %}?target=riesgos">
-                    <div>{% trans "Ciberseguridad" %}</div>
-                </a>
-            </li>
-        </ul>
-    </li>
+{#      <ul>#}
+{#            <li class="">#}
+{#                <a href="{% url 'gobernanza' %}?target=gobierno">#}
+{#                    <div>{% trans "Gobierno Corporativo" %}</div>#}
+{#                </a>#}
+{#            </li>#}
+{#            <li class="">#}
+{#                <a href="{% url 'gobernanza' %}?target=consejo">#}
+{#                    <div>{% trans "Consejo de Administración" %}</div>#}
+{#                </a>#}
+{#            </li>#}
+{#            <li class="">#}
+{#                <a href="{% url 'gobernanza' %}?target=comite">#}
+{#                    <div>{% trans "Equipo directivo" %}</div>#}
+{#                </a>#}
+{#            </li>#}
+{#            <li class="">#}
+{#                <a href="{% url 'gobernanza' %}?target=etica">#}
+{#                    <div>{% trans "Ética y transparencia" %}</div>#}
+{#                </a>#}
+{#            </li>#}
+{#            <li class="">#}
+{#                <a href="{% url 'gobernanza' %}?target=riesgos">#}
+{#                    <div>{% trans "Ciberseguridad" %}</div>#}
+{#                </a>#}
+{#            </li>#}
+{#        </ul>#}
+{#    </li>#}
 
 {#    <li class="sub">#}
 {#        <a href="#">#}
