@@ -6,53 +6,52 @@
     <link rel="stylesheet" href="{% static 'stylesheets/css/owl.carousel.min.css' %}">
     <link rel="stylesheet" href="{% static 'stylesheets/css/owl.theme.default.css' %}">
     <style>
-        h1{
-           font-weight: bold;
+        h1 {
+            font-weight: bold;
         }
-        /* Flechas más grandes del carousel */
-.owl-carousel .owl-nav button.owl-prev,
-.owl-carousel .owl-nav button.owl-next {
-    font-size: 40px !important;
-    width: 60px !important;
-    height: 60px !important;
-    background: rgba(255, 255, 255, 0.8) !important;
-    border-radius: 50% !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-}
 
-.owl-carousel .owl-nav button.owl-prev:hover,
-.owl-carousel .owl-nav button.owl-next:hover {
-    background: rgba(255, 255, 255, 1) !important;
-    color: black;
-}
+        .owl-carousel .owl-nav button.owl-prev,
+        .owl-carousel .owl-nav button.owl-next {
+            font-size: 40px !important;
+            width: 60px !important;
+            height: 60px !important;
+            background: rgba(255, 255, 255, 0.8) !important;
+            border-radius: 50% !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+        }
 
-/* Posicionar flechas más hacia los extremos */
-.owl-carousel .owl-nav {
-    position: absolute;
-    top: 50%;
-    width: 100%;
-    transform: translateY(-50%);
-    display: flex;
-    justify-content: space-between;
-    pointer-events: none;
-}
+        .owl-carousel .owl-nav button.owl-prev:hover,
+        .owl-carousel .owl-nav button.owl-next:hover {
+            background: rgba(255, 255, 255, 1) !important;
+            color: black;
+        }
+        
+        .owl-carousel .owl-nav {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            transform: translateY(-50%);
+            display: flex;
+            justify-content: space-between;
+            pointer-events: none;
+        }
 
-.owl-carousel .owl-nav button {
-    pointer-events: all;
-    margin: 0 !important;
-}
+        .owl-carousel .owl-nav button {
+            pointer-events: all;
+            margin: 0 !important;
+        }
 
-.owl-carousel .owl-nav button.owl-prev {
-    left: -30px;
-    position: relative;
-}
+        .owl-carousel .owl-nav button.owl-prev {
+            left: -30px;
+            position: relative;
+        }
 
-.owl-carousel .owl-nav button.owl-next {
-    right: -30px;
-    position: relative;
-}
+        .owl-carousel .owl-nav button.owl-next {
+            right: -30px;
+            position: relative;
+        }
     </style>
 {% endblock %}
 
@@ -60,281 +59,243 @@
     <div class="content-wrap">
         <div class="container pt-5 pb-5">
             <h1 id="gobierno" class="text-center wow fadeInUp" data-wow-duration="2s"
-                style="color: #012E81;">
+                style="color: #d0df00;">
                 Gobierno Corporativo</h1>
-            <p class="text-justify wow fadeInUp" data-wow-duration="2s">El gobierno corporativo tiene como propósito asegurar que las empresas operen con <strong>eficiencia, transparencia y apego a la ley</strong>, además de fomentar una conducta ética y responsable hacia todos sus grupos de interés. En FINSA asumimos este compromiso mediante la implementación de políticas internas que establecen lineamientos claros para nuestras operaciones. Estas políticas buscan prevenir y erradicar prácticas como la corrupción, el soborno, la negligencia administrativa, los conflictos de interés y el lavado de dinero, colocando siempre en primer lugar el <strong>cumplimiento legal y normativo</strong>.</p>
-            <img class="mx-auto d-block" src="/static/images/gobernanza/gob-corporativo.png">
+            <p class="text-justify wow fadeInUp" data-wow-duration="2s">Reconocemos que un gobierno corporativo sólido
+                es clave para impulsar la sostenibilidad y la conducta empresarial responsable. Nuestro modelo de
+                gobernanza se sustenta en estándares reconocidos y en el estricto cumplimiento de la Ley del Mercado de
+                Valores de México, garantizando la creación de valor a largo plazo y la protección de los intereses de
+                nuestros grupos de interés.</p>
+            <img class="mx-auto d-block" src="/static/images/gobernanza/Gob_Corp.png">
         </div>
     </div>
     <div class="container pt-5 pb-5">
         <h1 id="consejo" class="text-center mb-5 wow fadeInUp" data-wow-duration="2s"
-            style="color: #012E81;">
-            Consejo de Administración</h1>
-        <p class="text-justify wow fadeInUp" data-wow-duration="2s">Dentro de nuestra estructura organizacional, el<strong> Consejo de Administración constituye el máximo órgano de gobierno</strong>. Sus integrantes tienen la responsabilidad de guiar la estrategia corporativa para asegurar el cumplimiento de los objetivos económicos, sociales y ambientales, además de supervisar la identificación de los principales riesgos y oportunidades del negocio. Entre sus principales características se encuentran las siguientes:</p>
-
-        <div class="container mt-5 mb-5">
-            <div id="icon-carousel" class="carousel slide d-md-none" data-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <div class="image-container">
-                            <img src="{% static 'images/gobernanza/tomadecision.png' %}" alt="Imagen 1"
-                                 class="d-block w-100">
-                            <p>Toma de decisiones estratégicas y financieras</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="image-container">
-                            <img src="{% static 'images/gobernanza/logo_garantizar_conduccion.png' %}" alt="Imagen 2"
-                                 class="d-block w-100">
-                            <p>Está integrado por nueve consejeros</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="image-container">
-                            <img src="{% static 'images/gobernanza/logo_asegurar_creacion.png' %}" alt="Imagen 3"
-                                 class="d-block w-100">
-                            <p>Los consejeros sesionan trimestralmente</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="image-container">
-                            <img src="{% static 'images/gobernanza/logo_evaluar_aprobar.png' %}" alt="Imagen 4"
-                                 class="d-block w-100">
-                            <p>Seguimiento a la estrategia de la empresa</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="image-container">
-                            <img src="{% static 'images/gobernanza/logo_promover_emision.png' %}" alt="Imagen 5"
-                                 class="d-block w-100">
-                            <p>Supervisión del desempeño del equipo directivo</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="image-container">
-                            <img src="{% static 'images/gobernanza/logo_asegurar_establecimiento.png' %}" alt="Imagen 6"
-                                 class="d-block w-100">
-                            <p>Establecimiento de nuevas metas y objetivos</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="image-container">
-                            <img src="{% static 'images/gobernanza/logo_promover_sociedad.png' %}" alt="Imagen 7"
-                                 class="d-block w-100">
-                            <p>Revisión de temas clave de la operación y ASG</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="image-container">
-                            <img src="{% static 'images/gobernanza/logo_impulsar_gestion.png' %}" alt="Imagen 8"
-                                 class="d-block w-100">
-                            <p>Fomento de cultura de comunicacióin e inclusión</p>
-                        </div>
-                    </div>
-                </div>
-                <a class="carousel-control-prev" href="#icon-carousel" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#icon-carousel" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
+            style="color: #d0df00;">
+            Estructura de gobierno corporativo</h1>
+        <div class="row col-12">
+            <div class="col-6">
+                <h2 class="text-bold text-center">Asamblea General <br>de Accionistas</h2>
+                <ul>
+                    <li>Constituye el máximo órgano dentro de nuestra estructura de gobierno corporativo. Sus
+                        responsabilidades incluyen la revisión de los informes presentados por el Director General, el
+                        Consejo de Administración y los principales comités.
+                    </li>
+                    <li>Asimismo, este órgano tiene la facultad de nombrar a los integrantes del Consejo de
+                        Administración, al Secretario y a sus suplentes, así como a los miembros del Comité de
+                        Nominaciones y Compensaciones.
+                    </li>
+                    <li>La Asamblea determina la remuneración correspondiente a los miembros del Consejo y de los
+                        comités, y ejerce otras atribuciones establecidas en el reglamento interno y en la normativa
+                        vigente. En caso necesario, puede convocarse a Asambleas Generales Extraordinarias para tratar
+                        asuntos específicos, como modificaciones a los estatutos sociales, entre otros temas.
+                    </li>
+                </ul>
             </div>
-            <div class="row d-none d-md-flex">
-                <div class="col-12 col-md-3 mb-4">
-                    <div class="image-container text-center">
-                        <img src="{% static 'images/gobernanza/tomadecision.png' %}" alt="Imagen 1"
-                             class="img-fluid">
-                        <p>Toma de decisiones estratégicas y financieras</p>
+            <div class="col-6">
+                <h2 class="text-bold text-center">Consejo de <br>Administración</h2>
+                <ul>
+                    <li>El Consejo de Administración define la dirección estratégica de la compañía y supervisa su
+                        desempeño financiero, operativo y de sostenibilidad, garantizando el cumplimiento de los más
+                        altos estándares de gobernanza.
+                    </li>
+                    <li>Entre sus responsabilidades destacan el nombramiento del Director General, la definición de la
+                        compensación ejecutiva y la aprobación de políticas de remuneración, con base en las
+                        recomendaciones del Comité de Prácticas Societarias y Sostenibilidad. Asimismo, trabaja en un
+                        plan de sucesión para asegurar la continuidad del liderazgo.
+                    </li>
+                    <li>En 2024, el Consejo estuvo integrado por 15 consejeros titulares y 12 suplentes, de los cuales
+                        66.6% fueron independientes, superando los requisitos legales y nuestros propios criterios
+                        internos. Ese año también incorporamos dos nuevas consejeras, alcanzando de forma anticipada
+                        nuestra meta de diversidad para 2025.
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-12">
+            <h2 class="text-bold text-center">Principales Comités</h2>
+            <ul>
+                <li>
+                    Para asegurar una supervisión eficiente y especializada, el Consejo de Administración de Traxión
+                    delega funciones clave en cuatro comités permanentes: Ejecutivo, de Prácticas Societarias y
+                    Sostenibilidad, de Nominaciones y Compensaciones, y de Auditoría. Estos comités actúan como
+                    apoyo del Consejo y se reúnen periódicamente para atender asuntos esenciales de gobernanza y
+                    gestión corporativa.
+                    <a id="verMasBtn" style="font-size: 22px; cursor: pointer;">PARA SABER MÁS DE NUESTROS COMITÉS</a>
+                </li>
+            </ul>
+            <div id="textoOculto" style="display: none; margin-top: 15px;">
+                <div class="row text-center">
+                    <div class="col-md-3">
+                        <h4 class="text-bold">Comité <br>Ejecutivo</h4>
+                        <ul class="list-styled">
+                            <li class="text-justify">El Comité Ejecutivo se encarga de dar seguimiento estratégico al
+                                desempeño de las unidades de negocio de Traxión. Analiza los resultados operativos,
+                                planes de negocio y temas estratégicos que presentan los Gerentes Generales, asegurando
+                                la alineación con los objetivos generales de la compañía.
+                            </li>
+                        </ul>
                     </div>
-                </div>
-                <div class="col-12 col-md-3 mb-4">
-                    <div class="image-container text-center">
-                        <img src="{% static 'images/gobernanza/consejeros.png' %}" alt="Imagen 2"
-                             class="img-fluid">
-                        <p>Está integrado por nueve consejeros</p>
+                    <div class="col-md-3">
+                        <h4 class="text-bold">Comité de Nominaciones y Compensaciones</h4>
+                        <ul class="list-styled">
+                            <li class="text-justify">Este comité se encarga de identificar y proponer a los candidatos
+                                para integrar el Consejo de Administración cuando existe una vacante, ya sea por
+                                expansión del Consejo o porque alguno de los miembros no es ratificado. Sus
+                                recomendaciones se presentan a la Asamblea General de Accionistas para su aprobación.
+                            </li>
+                        </ul>
                     </div>
-                </div>
-                <div class="col-12 col-md-3 mb-4">
-                    <div class="image-container text-center">
-                        <img src="{% static 'images/gobernanza/trimestre.png' %}" alt="Imagen 3"
-                             class="img-fluid">
-                        <p>Los consejeros sesionan trimestralmente</p>
+                    <div class="col-md-3">
+                        <h4 class="text-bold">Comité de Prácticas Societarias y Sostenibilidad</h4>
+                        <ul class="list-styled">
+                            <li class="text-justify">Este comité combina la supervisión del gobierno corporativo con la
+                                promoción de la estrategia de sostenibilidad de Traxión. Evalúa el desempeño y
+                                compensación del equipo directivo, supervisa operaciones con partes relacionadas y
+                                revisa exenciones conforme a la Ley del Mercado de Valores.
+                            </li>
+                            <li class="text-justify">También da seguimiento a la ejecución de la estrategia ASG, al
+                                desempeño social y ambiental, y a los riesgos y oportunidades climáticas, reportando sus
+                                avances al Consejo de Administración. La Estrategia de Sostenibilidad es aprobada por el
+                                Presidente Ejecutivo y ejecutada junto con las direcciones corporativas y el Comité de
+                                Sostenibilidad. Todos sus integrantes son consejeros independientes, en cumplimiento con
+                                la normativa aplicable.
+                            </li>
+                        </ul>
                     </div>
-                </div>
-                <div class="col-12 col-md-3 mb-4">
-                    <div class="image-container text-center">
-                        <img src="{% static 'images/gobernanza/estrategia.png' %}" alt="Imagen 4"
-                             class="img-fluid">
-                        <p>Seguimiento a la estrategia de la empresa</p>
-                    </div>
-                </div>
-                <div class="col-12 col-md-3 mb-4">
-                    <div class="image-container text-center">
-                        <img src="{% static 'images/gobernanza/desempeño.png' %}" alt="Imagen 5"
-                             class="img-fluid">
-                        <p>Supervisión del desempeño del equipo directivo</p>
-                    </div>
-                </div>
-                <div class="col-12 col-md-3 mb-4">
-                    <div class="image-container text-center">
-                        <img src="{% static 'images/gobernanza/metas.png' %}" alt="Imagen 6"
-                             class="img-fluid">
-                        <p>Establecimiento de nuevas metas y objetivos</p>
-                    </div>
-                </div>
-                <div class="col-12 col-md-3 mb-4">
-                    <div class="image-container text-center">
-                        <img src="{% static 'images/gobernanza/asg.png' %}" alt="Imagen 7"
-                             class="img-fluid">
-                        <p>Revisión de temas clave de la operación y ASG</p>
-                    </div>
-                </div>
-                <div class="col-12 col-md-3 mb-4">
-                    <div class="image-container text-center">
-                        <img src="{% static 'images/gobernanza/comunicacion.png' %}" alt="Imagen 8"
-                             class="img-fluid">
-                        <p>Fomento de cultura de comunicación e inclusión</p>
+                    <div class="col-md-3">
+                        <h4 class="text-bold">Comité de <br>Auditoría</h4>
+                        <p class="text-justify">El Comité de Auditoría es responsable de proteger la integridad del
+                            sistema de control
+                            interno y de la información financiera de Traxión.
+                            Entre sus funciones principales se incluyen:
+                        </p>
+                        <ul class="list-styled">
+                            <li class="text-justify">Evaluar los sistemas de auditoría interna e identificar áreas de
+                                mejora.
+                            </li>
+                            <li class="text-justify">Monitorear la exposición y gestión de riesgos, incluyendo riesgos
+                                operativos, financieros, de ciberseguridad y relacionados con el clima.
+                            </li>
+                            <li class="text-justify">Revisar los estados financieros y recomendar su aprobación al
+                                Consejo.
+                            </li>
+                            <li class="text-justify">Evaluar el trabajo de los auditores externos y las implicaciones de
+                                cambios en las políticas contables.
+                            </li>
+                            <li class="text-justify">Supervisar el cumplimiento de lineamientos internos, obligaciones
+                                legales y resoluciones del Consejo y de la Asamblea de Accionistas.
+                            </li>
+                            <li class="text-justify">Dar seguimiento a inquietudes recibidas a través de canales
+                                anónimos o confidenciales relacionadas con auditorías, controles o irregularidades.
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
+
     </div>
-<section id="comite" class="py-5" data-wow-duration="2s" data-wow-delay="2s"
-         style="background-image: url({% static 'images/gobernanza/fondo_comites.jpg' %}); background-size: cover; background-repeat: no-repeat; background-position: center;">
-    <h1 class="text-center mt-5" style="color: white;">Equipo Directivo</h1>
-    <div class="col-md-8 offset-md-2 pb-5">
-        <div id="oc-clients"
-             class="nobgcolor notopmargin owl-carousel owl-carousel-full image-carousel carousel-widget"
-             data-margin="20"
-             data-loop="true"
-             data-nav="true"
-             data-autoplay="4000"
-             data-items="1"
-             data-pagi="false">
-            
-            <!-- Item 1 -->
-            <div class="oc-item">
-                <div class="row d-flex flex-row justify-content-center align-items-center">
-                    <div class="text-center">
-                        <img src="/static/images/gobernanza/iconos-nombres-01.png"
-                             style="width:100%; height: 100%; cursor: pointer;"
-                             alt="Dirección General"
-                             onclick="openModal('Dirección General', 'Se encarga de establecer la misión y visión de la compañía, así como de implementar las estrategias de negocio necesarias para alcanzar los objetivos de crecimiento sostenible de la empresa. ', '/static/images/gobernanza/direccion-general-01.png')">
+    <section id="comite" class="py-5" data-wow-duration="2s" data-wow-delay="2s"
+             style="background-image: url({% static 'images/gobernanza/auxiliares.png' %}); background-size: cover; background-repeat: no-repeat; background-position: center;">
+        <h1 class="text-center mt-5" style="color: white;">Comités auxiliares</h1>
+        <div class="col-md-8 offset-md-2 pb-5">#}
+            <div id="oc-clients"
+                 class="nobgcolor notopmargin owl-carousel owl-carousel-full image-carousel carousel-widget"
+                 data-margin="20"
+                 data-loop="true"
+                 data-nav="true"
+                 data-autoplay="4000"
+                 data-items="1"
+                 data-pagi="false">
+                
+                <div class="oc-item">
+                    <div class="row d-flex flex-row justify-content-center align-items-center">
+                        <div class="text-center">
+                            <h3 class="text-white">Comité de Dirección</h3>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <!-- Item 2 -->
-            <div class="oc-item">
-                <div class="row d-flex flex-row justify-content-center align-items-center">
-                    <div class="text-center">
-                        <img src="/static/images/gobernanza/iconos-nombres-02.png"
-                             style="width:100%; height: 100%; cursor: pointer;"
-                             alt="Vicepresidencia de Finanzas y Administración"
-                             onclick="openModal('Vicepresidencia de Finanzas y Administración', 'Supervisa y coordina la planeación y desarrollo de las funciones financieras, la administración de portafolios, la gestión de parques, el abastecimiento estratégico y las relaciones con inversionistas, con el objetivo de asegurar una ejecución eficiente y puntual de las operaciones, así como la optimización de los recursos financieros. ', '/static/images/gobernanza/viceprsidencia-finanzas.png')">
+                <div class="oc-item">
+                    <div class="row d-flex flex-row justify-content-center align-items-center">
+                        <div class="text-center">
+                            <h3 class="text-white">Comité de Sostenibilidad </h3>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <!-- Item 3 -->
-            <div class="oc-item">
-                <div class="row d-flex flex-row justify-content-center align-items-center">
-                    <div class="text-center">
-                        <img src="/static/images/gobernanza/iconos-nombres-03.png"
-                             style="width:100%; height: 100%; cursor: pointer;"
-                             alt="Vicepresidencia de Desarrollo de Nuevos Negocios y Relaciones Públicas"
-                             onclick="openModal('Vicepresidencia de Desarrollo de Nuevos Negocios y Relaciones Públicas', 'Diseña e implementa estrategias para impulsar nuevos negocios que aseguren el crecimiento en distintas regiones del país, definiendo metas y objetivos orientados a ampliar la superficie en metros cuadrados y aumentar el número de parques industriales.', '/static/images/gobernanza/relaciones-publicas.png')">
+                <div class="oc-item">
+                    <div class="row d-flex flex-row justify-content-center align-items-center">
+                        <div class="text-center">
+                            <h3 class="text-white">Comité de Capital Humano </h3>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <!-- Item 4 -->
-            <div class="oc-item">
-                <div class="row d-flex flex-row justify-content-center align-items-center">
-                    <div class="text-center">
-                        <img src="/static/images/gobernanza/iconos-nombres-04.png"
-                             style="width:100%; height: 100%; cursor: pointer;"
-                             alt="Vicepresidencia Técnica"
-                             onclick="openModal('Vicepresidencia Técnica', 'Dirige la filial FINSA Ingeniería y Construcción, S.A. de C.V., siendo responsable de las operaciones relacionadas con el diseño arquitectónico, las ingenierías, la elaboración de presupuestos y la planeación de inversiones para proyectos de edificación e infraestructura.', '/static/images/gobernanza/tecnico.png')">
+                <div class="oc-item">
+                    <div class="row d-flex flex-row justify-content-center align-items-center">
+                        <div class="text-center">
+                            <h3 class="text-white">Comité de Seguridad</h3>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <!-- Item 5 -->
-            <div class="oc-item">
-                <div class="row d-flex flex-row justify-content-center align-items-center">
-                    <div class="text-center">
-                        <img src="/static/images/gobernanza/iconos-nombres-05.png"
-                             style="width:100%; height: 100%; cursor: pointer;"
-                             alt="Vicepresidencia de Capital Humano y Desarrollo Sostenible"
-                             onclick="openModal('Vicepresidencia de Capital Humano y Desarrollo Sostenible', 'Supervisa y coordina los planes de Capital Humano, ASG y Tecnologías de la Información, definiendo objetivos estratégicos orientados a atraer y retener talento, cumplir con las metas corporativas y garantizar un entorno laboral sano, seguro y saludable.', '/static/images/gobernanza/capital-humano.png')">
+                <div class="oc-item">
+                    <div class="row d-flex flex-row justify-content-center align-items-center">
+                        <div class="text-center">
+                            <h3 class="text-white">Comité de Seguridad de la Información</h3>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <!-- Item 6 -->
-            <div class="oc-item">
-                <div class="row d-flex flex-row justify-content-center align-items-center">
-                    <div class="text-center">
-                        <img src="/static/images/gobernanza/iconos-nombres-06.png"
-                             style="width:100%; height: 100%; cursor: pointer;"
-                             alt="Vicepresidencia Jurídica"
-                             onclick="openModal('Vicepresidencia Jurídica', 'Establece las estrategias legales y corporativas del Grupo, además de llevar a cabo auditorías corporativas e inmobiliarias. Gestiona negociaciones contractuales en proyectos inmobiliarios y financieros, supervisa el cumplimiento regulatorio en todas las operaciones y asegura la prevención de posibles contingencias legales.', '/static/images/gobernanza/juridico.png')">
+                <div class="oc-item">
+                    <div class="row d-flex flex-row justify-content-center align-items-center">
+                        <div class="text-center">
+                            <h3 class="text-white">Comité de Tecnologías de la Información e Innovación</h3>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <!-- Item 7 -->
-            <div class="oc-item">
-                <div class="row d-flex flex-row justify-content-center align-items-center">
-                    <div class="text-center">
-                        <img src="/static/images/gobernanza/iconos-nombres-07.png"
-                             style="width:100%; height: 100%; cursor: pointer;"
-                             alt="Vicepresidencia de Imagen y Estrategia Corporativa"
-                             onclick="openModal('Vicepresidencia de Imagen y Estrategia Corporativa', 'Mantiene interacción con medios de comunicación y diversas entidades para proyectar la voz de la empresa, impulsando una estrategia de visibilidad a largo plazo que contribuya a fortalecer su reputación corporativa.', '/static/images/gobernanza/estrrategia.png')">
+                <div class="oc-item">
+                    <div class="row d-flex flex-row justify-content-center align-items-center">
+                        <div class="text-center">
+                            <h3 class="text-white">Comité de Abastecimiento</h3>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<!-- Modal (este se mantiene igual) -->
-<div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="modalTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 class="modal-title text-center w-100" id="modalTitle" style="font-weight: bold;"></h2>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"
-                        style="top: 10px; right: 5px">
-                    <span aria-hidden="true">×</span>
-                </button>
-            </div>
-            <div class="modal-body text-center">
-                <p id="modalText" style="font-size: 18px"></p>
-                <img id="modalImage" src="" class="img-fluid mt-3" alt="Comité">
+                <div class="oc-item">
+                    <div class="row d-flex flex-row justify-content-center align-items-center">
+                        <div class="text-center">
+                            <h3 class="text-white">Comité de Comercialización</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="oc-item">
+                    <div class="row d-flex flex-row justify-content-center align-items-center">
+                        <div class="text-center">
+                            <h3 class="text-white">Comité de Rentabilidad</h3>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</div>
-
+    </section>
+   
     <div class="container pt-5 pb-5">
         <h1 id="etica" class="text-center mb-5 wow fadeInUp" data-wow-duration="2s"
-            style="color: #012E81;">
-            Ética y Transparencia</h1>
+            style="color: #d0df00;">
+            Ética, integridad y cumplimiento</h1>
         <div class="d-flex">
             <div class="col-md-6 col-lg-6 col-xl-6 d-flex align-items-center">
                 <p class="text-center justify-content-center mb-0">
-                    Conducir nuestras operaciones y negociaciones de manera <strong>íntegra y ética</strong> forma parte esencial de nuestra filosofía corporativa, ya que nos permite construir relaciones basadas en el respeto y la confianza con todos nuestros grupos de interés. Mediante nuestro <strong>Código de Ética y Conducta</strong> fomentamos la responsabilidad en el trabajo, el respeto a los Derechos Humanos, la integridad en las transacciones comerciales, entre otros.
+                    En Traxión, la integridad es un valor fundamental que impulsa nuestra cultura corporativa y guía
+                    nuestras decisiones. El Consejo de Administración supervisa el marco ético que rige nuestras
+                    operaciones, asegurando el cumplimiento con los más altos estándares de conducta empresarial
+                    responsable. La ética y el cumplimiento trascienden el mero cumplimiento legal; se integran en
+                    nuestros valores, políticas y relaciones con nuestros grupos de interés. Nuestro Código de Ética es
+                    la base de este compromiso, definiendo las conductas esperadas para todos los colaboradores y
+                    estableciendo las consecuencias del incumplimiento.
                 </p>
             </div>
             <div class="col-md-6 col-lg-6 col-xl-6">
                 <div class="image text-center">
                     <img class="img-fluid" style="width: 80%"
-                         src="{% static 'images/gobernanza/etica-transparencia.png' %}">
+                         src="{% static 'images/gobernanza/etica.png' %}">
                 </div>
             </div>
         </div>
@@ -343,92 +304,108 @@
         <article id="boxes-2" style="">
             <div class="card-group">
                 <div class="card p-0">
-                    <div class="card-header2 d-flex flex-column justify-content-between" style="background-color: #e6321f!important;transform: rotateX(0deg);">
-                        <img class="card-img-top" src="/static/images/gobernanza/anticorrupcion.png" alt="">
-                        <p class="mostrar w-100 text-center"><strong>Anticorrupción</strong></p>
-                    </div>      
+                    <div class="card-header2 d-flex flex-column justify-content-between"
+                         style="background-color: #e6321f!important;transform: rotateX(0deg);">
+                        <img class="card-img-top" src="{% static 'images/gobernanza/imagen_4.png' %}" alt="">
+                        <p class="mostrar w-100 text-center"><strong>Anticorrupción y de integridad </strong></p>
+                    </div>
                     <div class="card-body" style="background-color: #012B47 !important; font-size: 20px;">
-                        <p class="text-center d-block">De manera continua llevamos a cabo auditorías internas en todos nuestros procesos, con el propósito de identificar y prevenir riesgos relacionados con corrupción, soborno, fraude o lavado de dinero.
+                        <p class="text-center d-block">Realizamos auditorías internas de manera continua en todos
+                            nuestros procesos con el fin de identificar y mitigar riesgos asociados a la corrupción, el
+                            soborno, el fraude y operaciones on recursos de procedencia ilícita.
                         </p>
                     </div>
                 </div>
                 <div class="card p-0">
-                    <div class="card-header2 d-flex flex-column justify-content-between" style="background-color: #e4263b!important;transform: rotateX(0deg);">
-                        <img class="card-img-top" src="/static/images/gobernanza/cumplimiento-legal.png" alt="">
-                        <p class="mostrar w-100 text-center"><strong>Cumplimiento legal</strong></p>
+                    <div class="card-header2 d-flex flex-column justify-content-between"
+                         style="background-color: #e4263b!important;transform: rotateX(0deg);">
+                        <img class="card-img-top" src="{% static 'images/gobernanza/imagen_5.png' %}" alt="">
+                        <p class="mostrar w-100 text-center"><strong>Política de Cumplimiento </strong></p>
                     </div>
                     <div class="card-body" style="background-color: #00447C !important; font-size: 20px;">
-                        <p class="text-center d-block">Nos aseguramos de acatar las leyes, reglamentos y normativas que rigen nuestras operaciones, lo que garantiza la correcta construcción, administración y funcionamiento de nuestros desarrollos.
+                        <p class="text-center d-block">Cumplimos con las leyes, reglamentos y normativas que rigen
+                            nuestras operaciones.
                         </p>
                     </div>
                 </div>
-                    <div class="card p-0">
-                        <div class="card-header2 d-flex flex-column justify-content-between" style="background-color: #e4263b!important;transform: rotateX(0deg);">
-                            <img class="card-img-top" src="/static/images/gobernanza/derechos-humanos.png" alt="">
-                            <p class="mostrar w-100 text-center"><strong>Derechos humanos</strong></p>
-                        </div>
-                        <div class="card-body" style="background-color: #0076C0 !important; font-size: 20px;">
-                            <p class="text-center d-block">Reconocemos que el respeto a los derechos humanos es fundamental para brindar a nuestros colaboradores las mejores condiciones laborales, cumplir con la legislación vigente y garantizar la equidad.
-                            </p>
-                        </div>
+                <div class="card p-0">
+                    <div class="card-header2 d-flex flex-column justify-content-between"
+                         style="background-color: #e4263b!important;transform: rotateX(0deg);">
+                        <img class="card-img-top" src="{% static 'images/gobernanza/imagen_6.png' %}" alt="">
+                        <p class="mostrar w-100 text-center"><strong>Derechos humanos</strong></p>
                     </div>
-                    <div class="card p-0">
-                        <div class="card-header2 d-flex flex-column justify-content-between" style="background-color: #e4263b!important;transform: rotateX(0deg);">
-                            <img class="card-img-top mb-0" src="/static/images/gobernanza/linea-denuncia.png" alt="Anticorrupción">
-                            <p class="mostrar w-100 text-center"><strong>Línea de denuncia</strong></p>
-                        </div>
-                        <div class="card-body" style="background-color: #80A1B6 !important; font-size: 20px;">
-                            <p class="text-center d-block text-black">Esta herramienta nos permite detectar casos de corrupción y conflictos de interés, además de atender asuntos vinculados con el bienestar y la seguridad, a fin de mantener un entorno laboral seguro.
-                            </p>
-                        </div>
+                    <div class="card-body" style="background-color: #0076C0 !important; font-size: 20px;">
+                        <p class="text-center d-block">Entendemos que el respeto a los derechos humanos es esencial para
+                            ofrecer a nuestros colaboradores condiciones laborales ideales.
+                        </p>
                     </div>
                 </div>
-            </article>
-        </div>
+                <div class="card p-0">
+                    <div class="card-header2 d-flex flex-column justify-content-between"
+                         style="background-color: #e4263b!important;transform: rotateX(0deg);">
+                        <img class="card-img-top mb-0" src="{% static 'images/gobernanza/imagen_7.png' %}"
+                             alt="Anticorrupción">
+                        <p class="mostrar w-100 text-center"><strong>Seguridad y Salud Ocupacional</strong></p>
+                    </div>
+                    <div class="card-body" style="background-color: #80A1B6 !important; font-size: 20px;">
+                        <p class="text-center d-block text-black">Garantizamos un entorno de trabajo seguro, íntegro y
+                            libre de riesgos, promoviendo la salud óptima de nuestros colaboradores tanto dentro como
+                            fuera de nuestras instalaciones.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </article>
     </section>
 
     <section id="riesgos" class="container-fluid">
         <div class="row">
             <div class="col-md-12 mb-12 p-5"
-                 style="background-position: right; background-repeat: no-repeat; background-size: cover; background-image: url({% static 'images/gobernanza/ciberseguridad-2.png' %})">
-                <h1 class="text-center">Ciberseguridad</h1>
-                <p class="text-justify">La protección de nuestras redes y la privacidad de los datos de colaboradores y clientes es fundamental para garantizar la continuidad del negocio. Por ello, revisamos de manera constante nuestros <strong>controles de seguridad con el fin de detectar y prevenir amenazas</strong> como virus o accesos no autorizados. Entre nuestras acciones destacan la implementación de defensas contra malware, la supervisión y resguardo de la red, la protección del correo electrónico, la gestión de bitácoras de auditoría e infraestructura, así como planes de recuperación de datos y respuesta a incidentes. Asimismo, <strong>disponemos de mecanismos específicos</strong> para neutralizar códigos maliciosos, un directorio activo que regula las políticas de acceso a la red y controles sobre la salida a Internet, entre otros.
-                </p>
+                 style="background-position: right; background-repeat: no-repeat; background-size: cover; background-image: url({% static 'images/gobernanza/imagen_8.png' %})">
+                <h1 class="text-center">Gestión de riesgos</h1>
+                <p class="text-justify">El Consejo de Administración es responsable de la supervisión general de riesgos
+                    y delega su gestión al Comité de Auditoría. La Vicepresidencia de Administración y Finanzas define
+                    los lineamientos y procedimientos, mientras que la Dirección de Contraloría e Impuestos, junto con
+                    las áreas de Gestión de Riesgos y Control Interno, vela por su aplicación y efectividad.</p>
+                <p class="text-justify">La Dirección Jurídica garantiza el cumplimiento normativo y fomenta una cultura
+                    de integridad. La gestión de riesgos se aplica en todos los niveles de la organización: los
+                    directores operativos lideran su control en cada área, y los colaboradores participan identificando
+                    riesgos y apoyando en su mitigación.</p>
             </div>
         </div>
     </section>
 
 {% endblock %}
 {% block otherscripts %}
-{#    <script src="{% static 'js/bootstrap.min.js' %}"></script>#}
+    {#    <script src="{% static 'js/bootstrap.min.js' %}"></script>#}
     <script src="{% static 'javascripts/jquery.waypoints.min.js' %}"></script>
     <script src="{% static 'javascripts/countTo.js' %}"></script>
     <script src="{% static 'javascripts/carousel.eventos.js' %}"></script>
     <script>
         $(document).ready(function () {
             var owl = $("#oc-clients");
-            
+
             owl.owlCarousel({
-                items: 1, 
-                loop: false, 
+                items: 1,
+                loop: false,
                 margin: 10,
-                nav: true, 
-                dots: false,  
-                autoplay: true, 
-                autoplayTimeout: 4000, 
+                nav: true,
+                dots: false,
+                autoplay: true,
+                autoplayTimeout: 4000,
                 autoHeight: true,
-                smartSpeed: 600, 
-                slideTransition: "linear"  
+                smartSpeed: 600,
+                slideTransition: "linear"
             });
-            
+
             owl.find("img").on("load", function () {
                 owl.trigger("refresh.owl.carousel");
             });
-            
+
             $(window).on("load", function () {
                 owl.trigger("refresh.owl.carousel");
             });
-            
+
             $(".owl-next").on("click", function () {
                 owl.trigger('next.owl.carousel');
             });
@@ -436,7 +413,7 @@
             $(".owl-prev").on("click", function () {
                 owl.trigger('prev.owl.carousel');
             });
-            
+
             owl.on('changed.owl.carousel', function (event) {
                 console.log("Carrusel cambiado", event);
             });
@@ -450,5 +427,15 @@
             modal.show();
         }
 
+    </script>
+    <script>
+        document.getElementById('verMasBtn').addEventListener('click', function (e) {
+            e.preventDefault();
+            const texto = document.getElementById('textoOculto');
+            texto.style.display = texto.style.display === 'none' ? 'block' : 'none';
+            this.textContent = texto.style.display === 'block'
+                ? 'REGRESAR'
+                : 'PARA SABER MÁS DE NUESTROS COMITÉS';
+        });
     </script>
 {% endblock %}

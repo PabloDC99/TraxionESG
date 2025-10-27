@@ -11,7 +11,18 @@
     <link rel="stylesheet" href="{% static 'stylesheets/css/rs-plugin/layers.css' %}">
     <link rel="stylesheet" href="{% static 'stylesheets/css/rs-plugin/navigation.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .alineado-centro {
+            display: flex;
+            align-items: center;
+            justify-content: start;
+        }
 
+        .alineado-centro p {
+            margin: 0;
+            line-height: 1.4;
+        }
+    </style>
 {% endblock %}
 
 {% block wrapper %}
@@ -306,39 +317,30 @@
                         En nuestras instalaciones, hemos logrado avances en eficiencia energética a través de:
                     </p>
                 </div>
-                <div class="row col-7">
-                    <div class="col-8">
-                        <p>1. Sustitución de la iluminación tradicional por tecnología LED</p>
+                <div class="col-7">
+                    <div class="alineado-centro mb-3">
+                        <img src="{% static 'images/ambiental/energética_1.png' %}" alt="Eficiencia LED"
+                             style="width: 15%; height: auto; margin-right: 15px;">
+                        <p class="mb-0">Sustitución de la iluminación tradicional por tecnología LED</p>
                     </div>
-                    <div class="col-4">
-                        <img src="{% static 'images/ambiental/energética_1.png' %}" style="max-width: 60%">
-                    </div>
-                    <div class="col-8">
-                        <p>2. Instalación de sensores de movimiento para reducir el uso innecesario de
+                    <div class="alineado-centro mb-3">
+                        <img src="{% static 'images/ambiental/energética_2.png' %}" style="max-width: 15%; height: auto; margin-right: 15px;">
+                        <p>Instalación de sensores de movimiento para reducir el uso innecesario de
                             electricidad</p>
                     </div>
-                    <div class="col-4">
-                        <img src="{% static 'images/ambiental/energética_2.png' %}" style="max-width: 60%">
+                   <div class="alineado-centro mb-3">
+                        <img src="{% static 'images/ambiental/energética_3.png' %}" style="max-width: 15%; height: auto; margin-right: 15px;">
+                        <p>Instalación de paneles solares</p>
                     </div>
-                    <div class="col-8">
-                        <p>3. Instalación de paneles solares</p>
-                    </div>
-                    <div class="col-4">
-                        <img src="{% static 'images/ambiental/energética_3.png' %}" style="max-width: 60%">
-                    </div>
-                    <div class="col-8">
-                        <p>4. Adquisición de equipos energéticamente eficientes en todas nuestras unidades de
+                    <div class="alineado-centro mb-3">
+                        <img src="{% static 'images/ambiental/energética_4.png' %}" style="max-width: 15%; height: auto; margin-right: 15px;">
+                        <p>Adquisición de equipos energéticamente eficientes en todas nuestras unidades de
                             negocio</p>
                     </div>
-                    <div class="col-4">
-                        <img src="{% static 'images/ambiental/energética_4.png' %}" style="max-width: 60%">
-                    </div>
-                    <div class="col-8">
-                        <p>5.Capacitaciones para crear conciencia sobre la conservación de energía y generar una
+                    <div class="alineado-centro mb-3">
+                        <img src="{% static 'images/ambiental/energética_5.png' %}" style="max-width: 15%; height: auto; margin-right: 15px;">
+                        <p>Capacitaciones para crear conciencia sobre la conservación de energía y generar una
                             cultura de eficiencia</p>
-                    </div>
-                    <div class="col-4">
-                        <img src="{% static 'images/ambiental/energética_5.png' %}" style="max-width: 60%">
                     </div>
                 </div>
             </div>
