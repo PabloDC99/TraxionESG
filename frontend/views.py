@@ -161,10 +161,10 @@ def responsabilidad_social(request):
     eventos_soc = EventosView.get_event_soc_es_data()
 
     context = {
-        'title': _("TALENTO, CULTURA CORPORATIVA Y COMUNIDAD"),
+        'title': _("PERSONAS"),
         'page': 'responsabilidad-social',
         'eventos': eventos_soc,
-        'imagen': staticfiles_storage.url('images/headers/header-ambiental.png'),
+        'imagen': staticfiles_storage.url('images/headers/header-personas.png'),
     }
     return render(request, '{0}/frontend/responsabilidad_social.html'.format(request.LANGUAGE_CODE), context)
 

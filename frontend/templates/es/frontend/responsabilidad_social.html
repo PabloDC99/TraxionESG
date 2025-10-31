@@ -3,540 +3,191 @@
 {% block otherstyles %}
     <link rel="stylesheet" href="/static/stylesheets/tania.css">
     <link rel="stylesheet" href="/static/stylesheets/david.css">
+    <link rel="stylesheet" href="/static/stylesheets/carla.css">
     <link rel="stylesheet" href="/static/stylesheets/carrousel.css">
 
     <style>
-    h1{
-        font-weight: bold;
-    }
+        h1 {
+            font-weight: bold;
+        }
 
-
-    </style>
-    <style>
         :root {
-        --azulclaro: #0081c9;
-        --gris: #646468;
-        --azul: #022855;
-        --turquesa: #09c9b6;
-        --naranja: #ff8f43;
+            --verde: #d0df00;
+            --gris: #63666A;
+            --azul: #243881;
+            --blanco: #F5F5F5;
+            --morado: #5B2B84;
         }
 
-    /* MAPA */
-    .st0 {
-        fill: #212B59;
-        stroke: #FFFF;
-        stroke-width: 0.5;
-        content: "\f041";
-        cursor: pointer;
-    }
-
-    #MEX2714, #MEX2708, #MEX2716 {
-        fill: var(--naranja);
-        stroke: #FFFF;
-        stroke-width: 0.5;
-        content: "\f041";
-        cursor: pointer;
-    }
-
-    #MEX2706, #MEX2712, #MEX2709, #MEX2710, #MEX2713 {
-        fill: var(--turquesa);
-        stroke: #FFFF;
-        stroke-width: 0.5;
-        content: "\f041";
-        cursor: pointer;
-    }
-
-    #MEX2719, #MEX2717, #MEX2728, #MEX2733 {
-        fill: var(--gris);
-        stroke: #FFFF;
-        stroke-width: 0.5;
-        content: "\f041";
-        cursor: pointer;
-    }
-
-    #MEX2724, #MEX2732, #MEX2727, #MEX2731 {
-        fill: var(--azulclaro);
-        stroke: #FFFF;
-        stroke-width: 0.5;
-        content: "\f041";
-        cursor: pointer;
-    }
-
-    /* .mapa .active {
-        fill: #91BF1F;
-        stroke: #A6C96B;
-        stroke-width: 0.9;
-    } */
-    .st1 {
-        fill:  #ebedf0;
-        stroke-width: 0.5;
-        stroke:  #a3a3a3;
-    }
-    .st2 {
-        fill: #E0E0E0;
-        stroke: #FFFFFF;
-        stroke-width: 0.75;
-    }
-    .st4 {
-        stroke-width: 0.75;
-    }
-    .st3 {
-        stroke: #fff;
-        fill: none;
-        cursor: pointer;
-    }
-
-    /* Seccion info del mapa */
-
-    #propiedades-circle {
-        background-color: white;
-        border-radius: 20px;
-        box-shadow: #b2b2b2 0px 0px 15px;
-        padding: 20px;
-        text-align: left;
-    }
-
-    #propiedades-circle:hover {
-        transform: translateY(-7px);
-    }
-
-    #propiedades-circle h4, #propiedades-circle h3 {
-        margin-bottom: 0;
-        margin-top: 0;
-    }
-    #propiedades-circle ul {
-        margin-bottom: 0.5rem;
-    }
-    #propiedades-state{
-        background-color: white;
-        font-size: 2em;
-        color: var(--naranja);
-    }
-    #propiedades-text h2 {
-        font-weight: bold;
-        font-size: 2em;
-    }
-
-    svg.mapa{
-        max-width: 95%;
-    }
-
-    .naranja { color: var(--naranja); }
-    .gris { color: var(--gris); }
-    .azulclaro { color: var(--azulclaro); }
-    .turquesa { color: var(--turquesa); }
-
-    /* Seccion total del mapa */
-
-    .btn-total {
-        border: 2px var(--azulclaro) solid;
-        color: var(--azulclaro);
-        background-color: white;
-        font-size: 1.2em;
-        border-radius: 30px;
-        padding: 3px 30px;
-        font-weight: bold;
-        transition: all .6s ease;
-    }
-
-    .btn-total:hover {
-        scale: 110%;
-    }
-
-    #infoDiv {
-        /* opacity: 0;
-        transform: translateY(-10px);
-        transition: opacity 0.3s ease, transform 0.3s ease;
-        margin-top: 30px; */
-        background-color: white;
-        border-radius: 20px;
-        box-shadow: #b2b2b2 0px 0px 15px;
-        padding: 20px;
-        text-align: left;
-    }
-    #infoDiv h3 {
-        margin-bottom: 0;
-    }
-        .title {
-            text-align: center;
-            color: #2792ec;
+        #integracion .col-md-4 {
+            height: 300px;
         }
 
-        body {
-            overflow: hidden !important;
+        #integracion .col-md-4:hover .layer {
+            height: 300px;
         }
 
-        .mapa .active {
-            fill: #012E81;
-            stroke: #012E81;
-            stroke-width: 0.9;
+        .caja {
+            transition: all .2s ease;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            height: 200px;
         }
 
-
-        #propiedades-circle h4, #propiedades-circle h3 {
-            margin-bottom: 0;
-            margin-top: 0;
+        .caja:hover {
+            scale: 103%;
         }
 
-        #propiedades-circle ul {
-            margin-bottom: 0.5rem;
-        }
-        .consejo-administracion .miembro:hover .mas {
-            top: 0;
-        }
-        .miembro {
-            overflow: hidden;
-            position: relative;
-        }
-        .consejo-administracion .mas {
-            width: 40px;
-            height: 40px;
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background-color: #002855;
-            transition: all .2s;
-        }
-
-        .consejo-administracion .miembro:hover .mas {
-            transform: scale(1.1);
-        }
-        .btn-primary, .btn-primary:hover {
-            color: #fff;
-            background-color: #2892EC;
-            border-color: #2892EC;
-        }
-        .accordion-cadena .card-header {
-            padding: 0;
-            border-bottom: none;
-        }
-        
-        .accordion-cadena .card-header a {
-            display: block;
-            padding: 10px;
-            color: inherit;
-            text-decoration: none;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }   
-
-       /* Primera fila (Día de la Tierra + Reciclatón) */
-            .accordion-cadena .row:nth-child(1) .card-header {
-                background-color: #1bc2ae !important; /* Verde */
-                transition: all 0.3s ease !important;
-            }
-
-            .accordion-cadena .row:nth-child(1) .card-header:hover {
-                background-color: #17a085 !important; /* Verde más oscuro */
-                transform: translateY(-2px) !important;
-                box-shadow: 0 4px 12px rgba(27, 194, 174, 0.3) !important;
-            }
-
-            /* Estado activo fila 1 */
-            .accordion-cadena .row:nth-child(1) .card-header .card-link:not(.collapsed) {
-                background-color: #17a085 !important;
-                color: white !important;
-            }
-
-            /* Segunda fila (Pintar sonrisas + Mujeres inspirando mujeres) */
-            .accordion-cadena .row:nth-child(2) .card-header {
-                background-color: #2d4972 !important; /* Azul */
-                transition: all 0.3s ease !important;
-            }
-
-            .accordion-cadena .row:nth-child(2) .card-header:hover {
-                background-color: #1f3a5f !important; /* Azul más oscuro */
-                transform: translateY(-2px) !important;
-                box-shadow: 0 4px 12px rgba(45, 73, 114, 0.3) !important;
-            }
-
-            /* Estado activo fila 2 */
-            .accordion-cadena .row:nth-child(2) .card-header .card-link:not(.collapsed) {
-                background-color: #1f3a5f !important;
-                color: white !important;
-            }
-
-            /* Tercera fila (Recaudación de tapitas + Donación de juguetes) */
-            .accordion-cadena .row:nth-child(3) .card-header {
-                background-color: #fe8243 !important; /* Naranja */
-                transition: all 0.3s ease !important;
-            }
-
-            .accordion-cadena .row:nth-child(3) .card-header:hover {
-                background-color: #fd6a1a !important; /* Naranja más oscuro */
-                transform: translateY(-2px) !important;
-                box-shadow: 0 4px 12px rgba(254, 130, 67, 0.3) !important;
-            }
-
-            /* Estado activo fila 3 */
-            .accordion-cadena .row:nth-child(3) .card-header .card-link:not(.collapsed) {
-                background-color: #fd6a1a !important;
-                color: white !important;
-            }
-
-            /* Color del texto para todas las filas */
-            .accordion-cadena .card-header .card-link {
-                color: white !important;
-            }
-           #acciones .owl-carousel {
-                pointer-events: none;
-            }
-
-            #acciones .card {
-                pointer-events: auto;
-                transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
-            }
-
-            #acciones .card:hover {
-                transform: translateY(-10px);
-                background-color: #0083c9be;
-                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-            }
-
-            #acciones .card:hover h5,
-            #acciones .card:hover .card-text {
-                color: white;
-            }
-
-            .caja {
-                transition: all .7s ease;
-                border-radius: 20px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                padding: 20px;
-                height: 200px;
-            }
-            .caja:hover {
-                scale: 103%;
-            }
     </style>
 {% endblock %}
 
 {% block wrapper %}
-<div class="content-wrap">
-    <div class="container">
-        <div id="ppropiedades" class="">
-            <div class="container-fluid">
-                <div class="tab-content" id="myTabContent">
-                    <div class="tab-pane fade show active" id="grupos" role="tabpanel" aria-labelledby="grupos-tab">
-                        <div id="acciones">
-                            <div class="py-5 container">
-                                <h1 class="text-center" style="color: #23356B;">
-                                    Nuestro Talento
-                                </h1>
-                                <article id="carousell_book">
-                                    <div class="content-wrap2">
-                                        <div class="container clearfix">
-                                            <div class="gtco-testimonials">
-                                                <div class="owl-carousel owl-carousel1 owl-theme owl-loaded owl-drag">
-                                                    <div class="owl-stage-outer">
-                                                        <div class="owl-stage" style="transition: 0.25s; width: 7200px; transform: translate3d(-2880px, 0px, 0px);">
-                                                            <div class="owl-item" style="width: 360px;">
-                                                                <div class="card text-center">
-                                                                    <div class="d-flex flex-column justify-content-around align-items-center">
-                                                                        {# <img class="img-circle" src="/static/images/social/icono_capital-humano-01.png"> #}
-                                                                        <h5 class="text-bold" style="font-size: 26px">
-                                                                            Relaciones con Colaboradores
-                                                                        </h5>
-                                                                        <p class="card-text">
-                                                                            Como empresa comprometida con la sostenibilidad, brindamos condiciones laborales que incentivan a nuestros colaboradores a crecer y desarrollarse profesionalmente, con énfasis principal en su bienestar.
-                                                                        </p>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="owl-item" style="width: 360px;">
-                                                                <div class="card text-center">
-                                                                    <div class="d-flex flex-column justify-content-around align-items-center">
-                                                                        {# <img class="img-circle" src="/static/images/social/icono_capital-humano-02.png"> #}
-                                                                        <h5 class="text-bold" style="font-size: 26px">
-                                                                            Capital <br>Humano
-                                                                        </h5>
-                                                                        <p class="card-text">
-                                                                            Nuestra gente forma parte de nuestro capital humano, siempre buscando distintas formas de innovar los servicios que ofrecemos y de mejorar los resultados de nuestras operaciones.
-                                                                        </p>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="owl-item" style="width: 360px;">
-                                                                <div class="card text-center">
-                                                                    <div class="d-flex flex-column justify-content-around align-items-center">
-                                                                        {# <img class="img-circle" src="/static/images/social/icono_capital-humano-03.png"> #}
-                                                                        <h5 class="text-bold" style="font-size: 26px">
-                                                                            Nuestro <br>Equipo
-                                                                        </h5>
-                                                                        <p class="card-text">
-                                                                            Nuestro equipo de colaboradores realiza sus labores con un alto sentido de responsabilidad y comparten su experiencia y sus conocimientos para que en FINSA continuemos operando de forma exitosa y sostenible.
-                                                                        </p>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </article>
-                            </div>
-                        </div>
+    <section id="nuestro-talento" class="py-5">
+        <div class="container text-center">
+            <h1 class="mb-5" style="color: #d0df00;">Nuestro Talento</h1>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="talento-card">
+                        <img src="{% static 'images/social/icono.png' %}" alt="Capital humano" class="talento-icon">
+                        <h3>Capital humano</h3>
+                        <p>
+                            Consideramos que el talento humano es nuestro activo más valioso. Nuestra filosofía de
+                            gestión pone a las personas en el centro, fomentando relaciones duraderas basadas en la
+                            confianza, el respeto y el crecimiento mutuo.
+                        </p>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-</div>
 
-    <section class="bg-gray-fmty estrategia" id="cultura">
-        <div class="container-fluid container-relative">
-            <div class="row align-items-center justify-content-center preguntas-finales">
-                <div class="col-12 col-xl-5 col-lg-6 col-md-10 padding-6-rem-tb lg-padding-5-rem-tb lg-padding-2-half-rem-right md-padding-15px-right md-no-padding-tb md-margin-5-rem-bottom">
-                    <h1 class="mt-5 mt-lg-0 alt-font font-weight-500 texto-cenizo letter-spacing-minus-1px margin-4-half-rem-bottom md-margin-4-rem-bottom lg-margin-2-half-rem-bottom md-w-100" style="color: #23356B;">
-                        Salud, Seguridad y Bienestar
-                    </h1>
-                    <div class="panel-group accordion-event accordion-style-03 margin-4-rem-bottom lg-margin-2-rem-bottom">
-                        <div data-item="primero"
-                             class="estra-link panel box-shadow-small border-radius-5px wow animate__fadeInUp animated active"
-                             data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s;">
-                            <div class="panel-heading">
-                                <div class="boton-info1">
-                                    <span>Manual de Seguridad de Higiene</span>
-                                    <i class="indicator fa fa-angle-right text-tussock icon-extra-small"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div data-item="segundo"
-                             class="estra-link panel box-shadow-small border-radius-5px wow animate__fadeInUp animated"
-                             data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s;">
-                            <div class="panel-heading">
-                                <div class="boton-info1">
-                                    <span>Programa de capacitación</span>
-                                    <i class="indicator fa fa-angle-right text-tussock icon-extra-small"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div data-item="tercero"
-                             class="estra-link panel box-shadow-small border-radius-5px wow animate__fadeInUp animated"
-                             data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s;">
-                            <div class="panel-heading">
-                                <div class="boton-info1">
-                                    <span>Política de Seguridad Patrimonial</span>
-                                    <i class="indicator fa fa-angle-right text-tussock icon-extra-small"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div data-item="cuarto"
-                             class="estra-link panel box-shadow-small border-radius-5px wow animate__fadeInUp animated"
-                             data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s;">
-                            <div class="panel-heading">
-                                <div class="boton-info1">
-                                    <span>Promoción de la salud</span>
-                                    <i class="indicator fa fa-angle-right text-tussock icon-extra-small"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div data-item="quinto"
-                             class="estra-link panel box-shadow-small border-radius-5px wow animate__fadeInUp animated"
-                             data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s;">
-                            <div class="panel-heading">
-                                <div class="boton-info1">
-                                    <span>Lesiones y accidentes laborales</span>
-                                    <i class="indicator fa fa-angle-right text-tussock icon-extra-small"></i>
-                                </div>
-                            </div>
-                        </div>
+                <div class="col-md-4">
+                    <div class="talento-card">
+                        <img src="{% static 'images/social/icono-laborales.png' %}" alt="Prácticas laborales"
+                             class="talento-icon">
+                        <h3>Prácticas laborales</h3>
+                        <p>
+                            Respetar las prácticas laborales justas y mantener relaciones laborales positivas resulta
+                            fundamental para la continuidad operativa, especialmente en sectores con representación
+                            sindical.
+                        </p>
                     </div>
                 </div>
-                <div class="col-12 col-lg-6 offset-xl-1 col-md-10 estra-item primero"
-                     style="visibility: visible; animation-name: fadeInRight;">
-                    <div class="outside-box-right position-relative">
-                         <img src="/static/images/social/seguridad-salud-01.jpg" class="overflow-hidden"> 
-                        <div class="estra-info">
-                            <p class="font">El Manual tiene como propósito principal reconocer los riesgos presentes y definir acciones preventivas que garanticen la seguridad y el bienestar físico de nuestros colaboradores.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-lg-6 offset-xl-1 col-md-10 estra-item segundo d-none"
-                     style="visibility: visible; animation-name: fadeInRight;">
-                    <div class="outside-box-right position-relative">
-                         <img src="/static/images/social/sistemas_gestion.jpg" class="overflow-hidden"> 
-                        <div class="estra-info">
-                            <p class="font">Dentro de nuestro programa de capacitación hemos establecido diversos cursos orientados a asegurar el cumplimiento de los procesos operativos. Asimismo, realizamos charlas mensuales sobre temas de seguridad vinculados a los proyectos en curso.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-lg-6 offset-xl-1 col-md-10 estra-item tercero d-none"
-                     style="visibility: visible; animation-name: fadeInRight;">
-                    <div class="outside-box-right position-relative">
-                         <img src="/static/images/social/seguridad-patrimonial.jpg" class="overflow-hidden"> 
-                        <div class="estra-info">
-                            <p class="font">Nuestra Política de Seguridad Patrimonial establece el compromiso de salvaguardar la integridad y la salud de todos los colaboradores, dar cumplimiento a la normativa y legislación laboral aplicable, y garantizar la correcta supervisión de los procesos de construcción y operación tanto en nuestras oficinas como en los parques industriales.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-lg-6 offset-xl-1 col-md-10 estra-item cuarto d-none"
-                     style="visibility: visible; animation-name: fadeInRight;">
-                    <div class="outside-box-right position-relative">
-                        <img src="/static/images/social/promocion-salud.jpg" class="overflow-hidden"> 
-                        <div class="estra-info">
-                            <p class="font">Velamos por la salud y la integridad física de nuestros colaboradores, impulsando medidas orientadas a prevenir enfermedades, lesiones o malestares relacionados con su actividad laboral o hábitos personales. En este sentido, en 2024 llevamos a cabo la segunda Semana de la Salud en las instalaciones del corporativo de FINSA.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-lg-6 offset-xl-1 col-md-10 estra-item quinto d-none"
-                     style="visibility: visible; animation-name: fadeInRight;">
-                    <div class="outside-box-right position-relative">
-                        <img src="/static/images/social/accidente-laboral.jpg" class="overflow-hidden"> 
-                        <div class="estra-info">
-                            <p class="font">Nuestros programas de salud preventiva y seguridad han sido diseñados para minimizar y evitar cualquier situación que represente un riesgo para la salud y la integridad física de nuestros colaboradores. Con ellos buscamos reducir posibles negligencias, como la omisión de controles de seguridad, el exceso de confianza, la prisa en la ejecución de tareas, el incumplimiento en el uso del equipo de protección y el desvío de los procesos de seguridad establecidos, además de atender los riesgos de accidentes y lesiones en todas nuestras instalaciones.</p>
-                        </div>
+
+                <div class="col-md-4">
+                    <div class="talento-card">
+                        <img src="{% static 'images/social/icono-derechos.png' %}" alt="Derechos humanos"
+                             class="talento-icon">
+                        <h3>Derechos humanos</h3>
+                        <p>
+                            El respeto a los derechos humanos forma parte esencial de nuestros valores corporativos y
+                            guía el comportamiento de todos los colaboradores de la organización.
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <section id="integracion" class="container-fluid">
-            <div class="row">
-                <div class="col-md-4 mb-4 d-flex justify-content-center align-items-center p-5"
-                     style="background-image: url({% static 'images/social/prestaciones.jpg' %});">
-                    <div class="layer"></div>
-                    <h2 class="text-center text-white font-weight-bold">Hemos creado un paquete de prestaciones y beneficios que impulsa su crecimiento personal y familiar, al mismo tiempo que contribuye a elevar su calidad de vida.</h2>
+
+    <section id="iniciativas">
+        <div class="container mb-5 mt-5">
+            <div class="transporte-container">
+                <div class="transporte-card" data-card=""
+                     style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url({% static 'images/social/sistema_salud.png' %}); background-position: center;background-size: cover;">
+                    <h3 class="text-white text-bold">Sistema de Gestión de Seguridad y Salud</h3>
+                    <div class="card-content text-left">En 2024, tuvimos avances considerables en la implementación de
+                        nuestro
+                        Sistema de Gestión de Salud y Seguridad Ocupacional alineado con la norma ISO 45001. Este
+                        sistema se está desplegando progresivamente en todas las unidades de negocio y, como parte de
+                        este proceso, trabajamos para obtener la certificación de dos unidades de negocio en 2025.
+                    </div>
+                    <button class="card-button">Regresar</button>
                 </div>
-                <div class="col-md-4 mb-4 d-flex justify-content-center align-items-center p-5"
-                     style="background-image: url({% static 'images/social/colaboradores_posibilidad.jpg' %});">
-                    <div class="layer"></div>
-                    <h2 class="text-center text-white font-weight-bold">Llevamos a cabo una evaluación anual que considera el cumplimiento de objetivos, el trabajo en equipo, el liderazgo, las relaciones interpersonales y las habilidades de gestión.</h2>
+                <div class="transporte-card" data-card=""
+                     style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url({% static 'images/social/programa_salud.png' %}); background-position: center;background-size: cover;">
+                    <h3 class="text-white text-bold">Programas de Seguridad y Salud Operacional</h3>
+                    <div class="card-content text-left">Nuestros programas de seguridad y salud ocupacional se
+                        fundamentan en
+                        procesos estructurados de identificación de peligros, evaluación de riesgos e implementación de
+                        controles efectivos en todas nuestras unidades de negocio.
+                    </div>
+                    <button class="card-button">Regresar</button>
                 </div>
-                <div class="col-md-4 mb-4 d-flex justify-content-center align-items-center p-5"
-                     style="background-image: url({% static 'images/social/retroalimentacion.jpg' %});">
-                    <div class="layer"></div>
-                    <h2 class="text-center text-white font-weight-bold">Cada colaborador recibe retroalimentación personalizada que le permite reconocer sus fortalezas y áreas de oportunidad, para avanzar y mejorar su desempeño.</h2>
+                <div class="transporte-card" data-card=""
+                     style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url({% static 'images/social/gestion_seguridad.png' %}); background-position: center;background-size: cover;">
+                    <h3 class="text-white text-bold text-left">Sistema de Gestión de Seguridad Vial</h3>
+                    <div class="card-content text-left">Continuamos fortaleciendo nuestro Sistema de Gestión de la
+                        Seguridad Vial,
+                        que cuenta con la certificación ISO 39001 en tres de nuestras unidades de negocio. Este sistema
+                        provee una estructura para prevenir incidentes viales y se sustenta en una serie de políticas y
+                        procedimientos robustos.
+                    </div>
+                    <button class="card-button">Regresar</button>
                 </div>
-            </div>
-        </section>
-        <div id="diversidad_colaboradores" class="container pt-5 pb-5">
-            <div class="col-12 d-flex align-items-center">
-                <div class="col-6 d-flex justify-content-center pr-2" style="align-items: center;">
-                    <img class="img-circle"
-                         src="/static/images/social/diversidad_colaborador.jpg" 
-                         style="margin-top: 30px;">
-                </div>
-                <div class="col-6">
-                    <div class="pt-5 container">
-                        <h1 class="text-center salud" style="color: #23356B;">
-                            Diversidad de Colaboradores
-                        </h1>
-                    </div> 
-                <p style="text-align: justify;">En cada una de las localidades donde operamos parques industriales aplicamos el mismo proceso de <strong>selección, reclutamiento y contratación</strong>. Las vacantes se difunden a la comunidad en general, priorizando a los habitantes de la zona que cumplan con los requisitos del puesto, contribuyendo así al <strong>desarrollo económico y social de la región</strong>.</p>
+                <div class="transporte-card" data-card=""
+                     style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url({% static 'images/social/salud_bienestar.png' %}); background-position: center;background-size: cover;">
+                    <h3 class="text-white text-bold">Salud y Bienestar</h3>
+                    <div class="card-content text-left">El Área Corporativa de Salud Ocupacional coordinó una red de 66
+                        consultorios médicos en todas nuestras unidades de negocio, mismas que emplean a 83
+                        profesionales de la salud, entre médicos y enfermeras.
+                    </div>
+                    <button class="card-button">Regresar</button>
                 </div>
             </div>
         </div>
-    <div id= "fuerza_laboral"class="content-wrap">
+    </section>
+
+    <section id="integracion" class="content-wrap container-fluid">
+        <div id="diversidad_colaboradores" class="container pt-5 pb-5">
+            <div class="row justify-content-center text-center">
+                <div class="col-6">
+                    <h1 class="salud" style="color: #d0df00;">Atracción y Retención</h1>
+                    <p class="text-left">
+                        En una industria altamente competitiva e intensiva en mano de obra, hemos adoptado un enfoque
+                        proactivo y estratégico para identificar, seleccionar y contratar a profesionistas calificados
+                        que
+                        se alinean con las necesidades y cultura de nuestro negocio.
+                    </p>
+                    <img src="/static/images/social/accion_retencion.png" class="img-fluid mt-3"
+                         alt="Atracción y Retención">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 mb-4 d-flex justify-content-center align-items-center p-5"
+                 style="background-image: url({% static 'images/social/img1.png' %});">
+                <div class="layer"></div>
+                <h3 class="text-center text-white font-weight-bold" style="font-size: 24px!important;">La seguridad vial
+                    es fundamental de nuestras operaciones, dada la naturaleza de nuestro negocio, tenemos que proteger
+                    tanto a los operadores como a los pasajeros.</h3>
+            </div>
+            <div class="col-md-4 mb-4 d-flex justify-content-center align-items-center p-5"
+                 style="background-image: url({% static 'images/social/img2.png' %});">
+                <div class="layer"></div>
+                <h3 class="text-center text-white font-weight-bold" style="font-size: 24px!important;">Monitoreamos de
+                    cerca los horarios laborales y las horas extras para garantizar que todos los colaboradores tengan
+                    una carga laboral equilibrada.</h3>
+            </div>
+            <div class="col-md-4 mb-4 d-flex justify-content-center align-items-center p-5"
+                 style="background-image: url({% static 'images/social/img3.png' %});">
+                <div class="layer"></div>
+                <h3 class="text-center text-white font-weight-bold" style="font-size: 24px!important;">Para fortalecer
+                    las capacidades de liderazgo y promover la movilidad interna, ofrecemos programas de desarrollo
+                    específicos en distintos niveles de la organización.</h3>
+            </div>
+        </div>
+    </section>
+
+    <div id="fuerza_laboral" class="content-wrap">
         <div class="container" id="diversidad">
-            <div class="py-5 container">
-                <h1 class="text-center" style="color: #23356B;">
+            <div class="col-6 py-5">
+                <h1 class="text-center" style="color: #d0df00;">
                     Fuerza Laboral
                 </h1>
-                <p style="text-align: justify;">Al cierre de 2024, nuestro equipo de colaboradores registró un <strong>crecimiento del 9.5%</strong>, al acumular un total de <strong>774 colaboradores</strong>, de los cuales el <strong>79%</strong> correspondían al sexo masculino y el <strong>21%</strong> al femenino, distribuidos de la siguiente manera:</p>
+                <p style="text-align: left;">Al cierre de 2024, nuestro equipo de colaboradores acumuló un total de
+                    <strong>21,303 colaboradores</strong>, de los cuales el <strong>
+                            82.7%</strong> correspondían al sexo masculino y el <strong>17.3%</strong> al femenino,
+                    distribuidos de la siguiente manera:</p>
             </div>
             <section id="sec_consumo" class="py-3">
                 <div class="container-fluid">
@@ -546,7 +197,7 @@
                                 <div class="col-md-6 col-lg-4 tile">
                                     <div class="honeycomb">
                                         <div class="content">
-                                             <img src="/static/images/social/icono_hombres.png" alt=""> 
+                                            <img src="/static/images/social/icono_hombres.png" alt="">
                                             <h2 class="count" data-speed="2500" data-to="613" data-in-viewport="yes"
                                                 data-decimals="0">612</h2><span class="title-effect "></span>
                                         </div>
@@ -556,7 +207,7 @@
                                 <div class="col-md-6 col-lg-4 tile">
                                     <div class="honeycomb">
                                         <div class="content">
-                                             <img src="/static/images/social/icono_mujeres.png" alt=""> 
+                                            <img src="/static/images/social/icono_mujeres.png" alt="">
                                             <h2 class="count" data-speed="2500" data-to="161" data-in-viewport="yes"
                                                 data-decimals="0">161</h2><span class="title-effect "></span>
                                         </div>
@@ -566,7 +217,7 @@
                                 <div class="col-md-6 col-lg-4 tile">
                                     <div class="honeycomb">
                                         <div class="content">
-                                             <img src="/static/images/social/icono_ambos.png" alt=""> 
+                                            <img src="/static/images/social/icono_ambos.png" alt="">
                                             <h2 class="count" data-speed="2500" data-to="774" data-in-viewport="yes"
                                                 data-decimals="0">774</h2><span class="title-effect "></span>
                                         </div>
@@ -583,347 +234,433 @@
     <section class="bg-gray-fmty gestion pb-4" id="n-gestion" style="background-color: #efefef;">
         <div class="container-fluid container-relative">
             <div class="  container">
-                <h1 class="text-center" style="color: #FE8243; font-size: 1.8em;">Rotación de personal</h1>
+                <h1 class="text-center" style="color: #d0df00; font-size: 1.8em;">Rotación de Personal</h1>
             </div>
             <div class="row justify-content-center" style="width: 80%; margin: 0 auto;">
                 <div class="row text-center">
                     <div class="col-md-6">
                         <div class="caja" style="border: 2px #2D4972 solid;">
-                            <h3 style="font-weight: bold; color: #2D4972">137 empleados rotaron en el año, resultando en una tasa de 25.8%.</h3>
+                            <h3 style="font-weight: bold; color: #243881">La tasa de rotación del año fue de 102.3%, 9.4
+                                puntos porcentuales por debajo del año anterior.</h3>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="caja" style="border: 2px #2D4972 solid;">
-                            <h3 style="font-weight: bold; color: #2D4972">192 empleados fueron contratados en el año, resultando en una tasa de 36.2%.</h3>
+                            <h3 style="font-weight: bold; color: #243881">21,668 empleados fueron contratados en el año,
+                                un nivel de contratación que responde al crecimiento de nuestro negocio.</h3>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <section id="desarrollo" class="container-fluid">
-        <div class="row">
-            <div class="col-md-12 mb-12 p-5"
-                 style="background-image: url({% static 'images/social/parallax_bienestar.jpg' %});">
-                <h1 class="text-center text-white">Desarrollo Profesional y Laboral</h1>
-                <h2 class="text-center text-white">Impulsar el <strong>desarrollo y crecimiento profesional</strong> de nuestros colaboradores es un compromiso que asumimos desde el momento en que se integran a nuestra organización. Como parte de nuestro programa de capacitación, cada año los invitamos a participar en <strong>cursos, talleres y charlas</strong> orientadas al fortalecimiento de sus competencias y habilidades.</h2>
-            </div>
-        </div>
-    </section>
-    <div class="content-wrap">
-        <section id="formacion" class="container-fluid">
-            <div class=" pt-5 container">
-                <h1 class="text-center" style="color: #23356B;">Formación y Educación</h1>
-                <p style="text-align: justify;">El <strong>programa de capacitación de FINSA</strong> abarca contenidos sobre inclusión laboral, riesgos, sostenibilidad, gestión del talento, bienestar emocional, comunicación asertiva, ética, resiliencia, temas técnica y desarrollo de habilidades blandas. Durante 2024 <strong>impartimos 42 cursos, talleres y conferencias</strong>, que sumaron un total de <strong>2,939 horas de capacitación</strong> para nuestros colaboradores, de los cuales 20 estuvieron relacionados con temas sociales, 5 con gobernanza y 17 con temas técnicos.</p>
-            </div>
-            <div class="content">
-                 <img class="mx-auto d-block pb-5" src="/static/images/social/capacitacion.png" alt=""> 
-            </div>
-        </section>
-
-    </div>
-    
-<!--SECTION DE GENTE-->
-    <div id = "comunidades"class="content-wrap" style="background-color: white;">
-        <div class="container pt-5 pb-5">
-            <h1 id="gobierno" class="text-center wow fadeInUp" data-wow-duration="2s"
-                style="color: #012E81;">
-                Nuestras Comunidades y Responsabilidad Social</h1>
-            <p class="text-justify wow fadeInUp" data-wow-duration="2s">En FINSA, contribuir al desarrollo de la comunidad es un elemento esencial de nuestra <strong>cultura de responsabilidad social</strong>. Entendemos que nuestro crecimiento empresarial va de la mano del bienestar de las comunidades donde operamos, por lo que impulsamos iniciativas que generan un <strong>impacto positivo y sostenible en la sociedad</strong>. A nivel nacional, nuestras acciones se articulan en torno a <strong>tres ejes fundamentales</strong>, los cuales guían los proyectos y programas que llevamos a cabo con el propósito de fortalecer el tejido social, promover el desarrollo económico local y fomentar la sostenibilidad.
-            </p>
-        </div>
-        <section id="" class="">
-            <div class="container">
-                <div class="row">
-                    <div class="section-title text-center w-100">
-                    </div>
-                    <div class="col-12 consejo-administracion">
-                        <div class="d-flex flex-row justify-content-around">
-                            <div class="col-4 item cadusel miembro px-5">
-                                <h3 class="text-bold" style="color:#232323; text-align: center; margin-right: 5px;">Cuidado del <br>Medio Ambiente</h3>
-                                <div class="font-weight-bold mb-2"></div>
-                                <h6></h6>
-                                <a class="mas modal-directivo d-flex align-items-center justify-content-center align-content-center"
-                                   href="#" data-toggle="modal" data-mdb-toggle="modal" data-mdb-target="#DirectiveModal1"
-                                   data-img="/static/images/comunidad/medioambiente.png" data-name="Cuidado del Medio Ambiente"
-                                   data-position=""
-                                   data-description="En FINSA entendemos que el cuidado del medio ambiente es también una forma de apoyar a las comunidades donde operamos. Por ello, impulsamos prácticas sostenibles que reducen nuestro impacto, fomentan la eficiencia en el uso de los recursos y promueven un entorno más saludable y seguro para las personas.">
-                                    <div class=" d-flex align-items-center justify-content-center"><i
-                                            class="fa fa-plus text-white"></i></div>
-                                </a>
-                            </div>
-                            <div class="col-4 item cadusel miembro px-5">
-                                <h3 class="text-bold" style="color:#232323; text-align: center;">Educación</h3>
-                                <div class="font-weight-bold mb-2"></div>
-                                <h6></h6>
-                                <a class="mas modal-directivo d-flex align-items-center justify-content-center align-content-center"
-                                   href="#" data-toggle="modal" data-mdb-toggle="modal" data-mdb-target="#DirectiveModal1"
-                                   data-img="/static/images/comunidad/educacion-fin.png" data-name="Educación"
-                                   data-position=""
-                                   data-description="En FINSA creemos que la educación es la base del progreso de las comunidades. Por ello, apoyamos a niñas, niños y jóvenes a través de becas y programas formativos que les brindan herramientas para crecer profesional y personalmente, contribuyendo al desarrollo de su entorno y a la construcción de un mejor futuro.">
-                                    <div class=" d-flex align-items-center justify-content-center"><i
-                                            class="fa fa-plus text-white"></i></div>
-                                </a>
-                            </div>
-                            <div class="col-4 item cadusel miembro px-5">
-                                <h2 class="text-bold" style="color:#232323; text-align: center; font-size: 24px!important;">Apoyo a <br>Causas Sociales</h2>
-                                <div class="font-weight-bold mb-2"></div>
-                                <h6></h6>
-                                <a class="mas modal-directivo d-flex align-items-center justify-content-center align-content-center"
-                                   href="#" data-toggle="modal" data-mdb-toggle="modal" data-mdb-target="#DirectiveModal1"
-                                   data-img="/static/images/comunidad/causas-sociales-03.png" data-name="Apoyo a Causas Sociales"
-                                   data-position=""
-                                   data-description="En FINSA asumimos la responsabilidad de contribuir al bienestar de las comunidades mediante el apoyo a diversas causas sociales. Impulsamos iniciativas que promueven la inclusión, la salud y la equidad, buscando generar un impacto positivo que fortalezca el tejido social y mejore la calidad de vida de las personas.">
-                                    <div class=" d-flex align-items-center justify-content-center"><i
-                                            class="fa fa-plus text-white"></i></div>
-                                </a>
-                            </div>
-                            
-                        </div>
-                    </div>
-                <div style="width: 90%; margin: auto;">
-                    <p class="text-justify wow fadeInUp" data-wow-duration="2s">Como parte de nuestro compromiso con la responsabilidad social, durante 2024 <strong>beneficiamos a más de 9 mil personas</strong>, a través de los 20 programas en los que participamos durante el año. A continuación se enlistan los más importantes de ellos:
-            </p>
-            <div id="accordion" class="accordion-cadena">
-                <div class="row">
-                    <div class="card back-color col-md-6">
-                        <div class="card-header">
-                            <a class="card-link collapsed" data-toggle="collapse" href="#tierra" aria-expanded="false">
-                                <div class="text-bold" style="width: 100%;">
-                                    Día de la Tierra
-                                </div>
-                            </a>
-                        </div>
-                        <div id="tierra" class="collapse" data-parent="#accordion" style="">
-                            <div style="width: 100%; margin-top: 30px;">
-                                <p style="width: 90%; margin: auto;">Con motivo del Día de la Tierra, cada año llevamos a cabo actividades ambientales en diversas escuelas del país, con la finalidad de sensibilizar a niñas y niños en edad escolar sobre la importancia de cuidar y proteger los recursos naturales.</p>
-                            </div>
-                            <div class=" d-flex flex-column justify-content-center align-content-center" style="margin-top: 20px;">
-                                <div class="justify-content-center align-content-center">
-                                    <div class="row d-flex  justify-content-center align-content-center">
-                                        <div class=" col-8">
-                                            <img class="img-fluid" src="/static/images/comunidad/social-01.png">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card back-color col-md-6">
-                        <div class="card-header">
-                            <a class="card-link collapsed" data-toggle="collapse" href="#recicla" aria-expanded="false">
-                                <div class="text-bold" style="width: 100%;">
-                                    Reciclatón
-                                </div>
-                            </a>
-                        </div>
-                        <div id="recicla" class="collapse" data-parent="#accordion" style="">
-                            <div style="width: 100%; margin-top: 30px;">
-                                <p style="width: 90%; margin: auto;">Conscientes de la importancia de proteger el medio ambiente y de fomentar una cultura de responsabilidad en torno a la disposición de los residuos electrónicos, impulsamos esta campaña orientada a la recolección de dispositivos, asegurando su manejo adecuado.</p>
-                            </div>
-                            <div class=" d-flex flex-column justify-content-center align-content-center" style="margin-top: 20px;">
-                                <div class="justify-content-center align-content-center">
-                                    <div class="row d-flex  justify-content-center align-content-center">
-                                        <div class=" col-8">
-                                            <img class="img-fluid" src="/static/images/comunidad/social-02.png">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                    <div class="row">
-                    <div class="card back-color col-md-6">
-                        <div class="card-header">
-                            <a class="card-link collapsed" data-toggle="collapse" href="#sonrisas" aria-expanded="false">
-                                <div class="text-bold" style="width: 100%;">
-                                    Pintar sonrisas
-                                </div>
-                            </a>
-                        </div>
-                        <div id="sonrisas" class="collapse" data-parent="#accordion" style="">
-                            <div style="width: 100%; margin-top: 30px;">
-                                <p style="width: 90%; margin: auto;">Conscientes de la importancia de proteger el medio ambiente y de fomentar una cultura de responsabilidad en torno a la disposición de los residuos electrónicos, impulsamos esta campaña orientada a la recolección de dispositivos, asegurando su manejo adecuado.</p>
-                            </div>
-                            <div class=" d-flex flex-column justify-content-center align-content-center" style="margin-top: 20px;">
-                                <div class="justify-content-center align-content-center">
-                                    <div class="row d-flex  justify-content-center align-content-center">
-                                        <div class=" col-8">
-                                            <img class="img-fluid" src="/static/images/comunidad/social-03.png">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card back-color col-md-6">
-                        <div class="card-header">
-                            <a class="card-link collapsed" data-toggle="collapse" href="#mujeres" aria-expanded="false">
-                                <div class="text-bold" style="width: 100%;">
-                                     Mujeres inspirando mujeres
-                                </div>
-                            </a>
-                        </div>
-                        <div id="mujeres" class="collapse" data-parent="#accordion" style="">
-                            <div style="width: 100%; margin-top: 30px;">
-                            <p style="width: 90%; margin: auto;">Este año realizamos la primera edición del programa de charlas “Mujeres inspirando a mujeres”, una iniciativa diseñada para motivar e impulsar a niñas y jóvenes a continuar con su formación académica, brindándoles referentes positivos que fortalezcan su confianza y aspiraciones.</p>
-                            </div>
-                            <div class=" d-flex flex-column justify-content-center align-content-center" style="margin-top: 20px;">
-                                <div class="justify-content-center align-content-center">
-                                    <div class="row d-flex  justify-content-center align-content-center">
-                                        <div class=" col-8">
-                                            <img class="img-fluid" src="/static/images/comunidad/social-04.png">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="card back-color col-md-6">
-                        <div class="card-header">
-                            <a class="card-link collapsed" data-toggle="collapse" href="#tapitas" aria-expanded="false">
-                                <div class="text-bold" style="width: 100%;">
-                                    Recaudación de tapitas
-                                </div>
-                            </a>
-                        </div>
-                        <div id="tapitas" class="collapse" data-parent="#accordion" style="">
-                            <div style="width: 100%; margin-top: 30px;">
-                            <p style="width: 90%; margin: auto;">Con el propósito de apoyar a niñas, niños y jóvenes diagnosticados con cáncer, hemos instalado dos contenedores en los parques industriales FINSA Matamoros del Norte y Guadalupe. En ellos se recolectan taparroscas de plástico que son entregadas al Banco de Tapitas, A.C., organización que destina estos recursos a cubrir parte de los gastos de tratamientos médicos.</p>
-                            </div>
-                            <div class=" d-flex flex-column justify-content-center align-content-center" style="margin-top: 20px;">
-                                <div class="justify-content-center align-content-center">
-                                    <div class="row d-flex  justify-content-center align-content-center">
-                                        <div class=" col-8">
-                                            <img class="img-fluid" src="/static/images/comunidad/social-05.png">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card back-color col-md-6">
-                        <div class="card-header">
-                            <a class="card-link collapsed" data-toggle="collapse" href="#juguetes" aria-expanded="false">
-                                <div class="text-bold" style="width: 100%;">
-                                      Donación de juguetes
-                                </div>
-                            </a>
-                        </div>
-                        <div id="juguetes" class="collapse" data-parent="#accordion" style="">
-                            <div style="width: 100%; margin-top: 30px;">
-                            <p style="width: 90%; margin: auto;">Entregamos 4,368 juguetes a niñas y niños en situación vulnerable, a través de 16 organismos públicos municipales y estatales, los cuales se encargaron de distribuirlos durante las celebraciones navideñas para llevar alegría en esas fechas especiales.</p>
-                            </div>
-                            <div class=" d-flex flex-column justify-content-center align-content-center" style="margin-top: 20px;">
-                                <div class="justify-content-center align-content-center">
-                                    <div class="row d-flex  justify-content-center align-content-center">
-                                        <div class=" col-8">
-                                            <img class="img-fluid" src="/static/images/comunidad/social-06.png">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Modal -->
-            <div class="modal fade" id="DirectiveModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-lg">
-                    <div class="modal-content">
-                        <div class="modal-header d-flex justify-content-center align-items-center" style="background-color: #2892EC;">
-                            <h3 class="modal-title directivo-name text-bold mb-0 text-white text-center" style="color: #232323; font-size: 24px">
-                                Título del modal
-                            </h3>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body text-center">
-                            <p class="directivo-description">Descripción del modal</p>
-                            <img class="directivo-img img-fluid mb-3" style="width: 70%" src="" alt="">
-                        </div>
-                        <div class="modal-footer d-flex justify-content-center align-items-center">
-                            <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-    <div id="comunidad" style="background-color: #efefef;">
-        <div class="container pt-5">
-            <h1 id="" class="text-center wow fadeInUp" data-wow-duration="2s"
-                style="color: #012E81;">
-                Apoyo a la comunidad</h1>
-            <p class="text-justify wow fadeInUp" data-wow-duration="2s" style="margin-bottom: 0;">En FINSA mantenemos un firme compromiso con el <strong>bienestar y desarrollo de las comunidades</strong> donde operamos. A través de nuestra Fundación y de alianzas clave, impulsamos iniciativas que generan un impacto positivo y duradero, contribuyendo a <strong>mejorar la calidad de vida</strong> de las personas y promoviendo un crecimiento sostenible e incluyente.</p>
-        </div>
-    </div>
+    {#    <div id="comunidad" style="background-color: #efefef;">#}
+    {#        <div class="container pt-5">#}
+    {#            <h1 id="" class="text-center wow fadeInUp" data-wow-duration="2s"#}
+    {#                style="color: #012E81;">#}
+    {#                Apoyo a la comunidad</h1>#}
+    {#            <p class="text-justify wow fadeInUp" data-wow-duration="2s" style="margin-bottom: 0;">En FINSA mantenemos un firme compromiso con el <strong>bienestar y desarrollo de las comunidades</strong> donde operamos. A través de nuestra Fundación y de alianzas clave, impulsamos iniciativas que generan un impacto positivo y duradero, contribuyendo a <strong>mejorar la calidad de vida</strong> de las personas y promoviendo un crecimiento sostenible e incluyente.</p>#}
+    {#        </div>#}
+    {#    </div>#}
     <!---MAPA-->
     <section id="boxes-index" style="">
         <div class="card-group">
             <div class="card">
-                <h3 class="text-white text-bold">FUNDACIÓN FINSA</h3>
-                 <img class="card-img-top" src="{% static 'images/comunidad/fundacion-1.png' %}" alt="Card image cap"> 
-                <div class="card-body d-flex text-center justify-content-center align-items-center" style="background-color: #314597 !important;">
+                <h3 class="text-white text-bold">Desarrollo Profesional y Laboral</h3>
+                <img class="card-img-top" src="{% static 'images/social/desarrollo_prof.png' %}" alt="Card image cap">
+                <div class="card-body d-flex text-center justify-content-center align-items-center"
+                     style="background-color: #314597 !important;">
                     <p>
-                        <strong>Desde hace 15 años, en la Fundación FINSA hemos asumido el compromiso de contribuir a la educación de niñas, niños y jóvenes. A través de nuestro programa de becas, apoyamos a estudiantes con destacado desempeño académico que enfrentan condiciones económicas desfavorables en las comunidades donde tenemos presencia.</strong>
+                        <strong>Estamos comprometidos con construir una fuerza laboral habilitada, resiliente y
+                            adaptable a través de programas integrales de capacitación y desarrollo adaptados a las
+                            necesidades específicas de cada segmento de negocio y nivel desde operadores hasta
+                            directores.</strong>
                     </p>
                 </div>
             </div>
             <div class="card">
-                <h3 class="text-white text-bold">ALIANZA CON FUNDACIONES</h3>
-                 <img class="card-img-top" src="{% static 'images/comunidad/alianza-finsa.png' %}" alt="Card image cap"> 
-                <div class="card-body d-flex text-center justify-content-center align-items-center" style="background-color: #314597 !important;">
+                <h3 class="text-white text-bold">Formación y Educación</h3>
+                <img class="card-img-top" src="{% static 'images/social/forma_educ.png' %}" alt="Card image cap">
+                <div class="card-body d-flex text-center justify-content-center align-items-center"
+                     style="background-color: #314597 !important;">
                     <p>
-                        <strong>Mediante la colaboración con Fundación BBVA y Fundación Dibujando un Mañana, hemos fortalecido nuestro compromiso con la educación al otorgar becas a 108 estudiantes universitarios. Gracias a estas alianzas estratégicas, no solo contribuimos a que los jóvenes continúen con su formación profesional, sino que también fomentamos la igualdad de oportunidades y abrimos camino para que desarrollen su potencial en beneficio de sus comunidades y del país.</strong>
+                        <strong>Durante 2024, invertimos $47.3 millones de pesos en capacitación. Nuestros programas se
+                            imparten a través de una combinación de plataformas virtuales, cursos presenciales y centros
+                            especializados, con lo que logramos que el aprendizaje sea más accesible y
+                            efectivo.</strong>
                     </p>
                 </div>
             </div>
         </div>
     </section>
-    <section id ="propiedades"class="ml-5 mr-5 mt-30 mb-50">
-        <div class="row wow fadeInUp mb-30" data-wow-delay=".4s">
-            <h1 class="text-center wow fadeInUp" data-wow-duration="2s"
-                style="color: #012E81; margin: auto;">
-                Nuestras Propiedades</h1>
-        </div>
-        <div class=" row wow fadeInDown text-center" data-wow-delay=".4s">
-            <div class="col-md-3" style="display: flex; align-items: center;">
-                <div id="propiedades-circle" class="propiedades-circle wow fadeInLeft">
-                    <h3 id="propiedades-state" ></h3>
-                    <div id="propiedades-text"></div>
+    <section class="bg-gray-fmty estrategia" id="cultura">
+        <div class="container-fluid container-relative">
+            <div class="row align-items-center justify-content-center preguntas-finales">
+                <div class="col-12 col-xl-5 col-lg-6 col-md-10 padding-6-rem-tb lg-padding-5-rem-tb lg-padding-2-half-rem-right md-padding-15px-right md-no-padding-tb md-margin-5-rem-bottom">
+                    <h1 class="mt-5 mt-lg-0 alt-font font-weight-500 texto-cenizo letter-spacing-minus-1px margin-4-half-rem-bottom md-margin-4-rem-bottom lg-margin-2-half-rem-bottom md-w-100"
+                        style="color: #243881;">
+                        Fundaciones
+                    </h1>
+                    <div class="panel-group accordion-event accordion-style-03 margin-4-rem-bottom lg-margin-2-rem-bottom">
+                        <div data-item="primero"
+                             class="estra-link panel box-shadow-small border-radius-5px wow animate__fadeInUp animated active"
+                             data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s;">
+                            <div class="panel-heading">
+                                <div class="boton-info1">
+                                    <span>Movilidad Social</span>
+                                    <i class="indicator fa fa-angle-right text-tussock icon-extra-small"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div data-item="segundo"
+                             class="estra-link panel box-shadow-small border-radius-5px wow animate__fadeInUp animated"
+                             data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s;">
+                            <div class="panel-heading">
+                                <div class="boton-info1">
+                                    <span>Logística Social</span>
+                                    <i class="indicator fa fa-angle-right text-tussock icon-extra-small"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div data-item="tercero"
+                             class="estra-link panel box-shadow-small border-radius-5px wow animate__fadeInUp animated"
+                             data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s;">
+                            <div class="panel-heading">
+                                <div class="boton-info1">
+                                    <span>Voluntariado y Medio Ambiente</span>
+                                    <i class="indicator fa fa-angle-right text-tussock icon-extra-small"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-6">
-                <div class="wow fadeInRight" data-wow-duration="1.5s">
-                    <?xml version="1.0" encoding="utf-8"?>
-                    <!-- Generator: Adobe Illustrator 25.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-                    {% include 'partials/mapa.html' %}
+                <div class="col-12 col-lg-6 offset-xl-1 col-md-10 estra-item primero"
+                     style="visibility: visible; animation-name: fadeInRight;">
+                    <div class="outside-box-right position-relative">
+                        <img src="/static/images/social/movilidad.png" class="overflow-hidden">
+                        <div class="estra-info">
+                            <p class="font">Brindar oportunidades educativas para reducir la desigualdad y promover el
+                                crecimiento profesional.</p>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-3" style="display: flex; align-items: center;">
-                <div id="infoDiv" style=" margin-top: 10px;">
-                   <h2 style="color: var(--azulclaro); font-weight: bold;">TOTAL</h2>
-                   <h3>22</h3>
-                   <p>PARQUES INDUSTRIALES</p>
-                   <h3>3,417,647.53 m<sup>2</sup></h3>
-                   <p>ÁREA BRUTA RENTABLE (GLA m<sup>2</sup>)</p>
-                   <h3>3,293,062.73 m<sup>2</sup></h3>
-                   <p>ÁREA OCUPADA (m<sup>2</sup>)</p>
-                   <h3>96.35%</h3>
-                   <p>PORCENTAJE DE OCUPACIÓN</p>
+                <div class="col-12 col-lg-6 offset-xl-1 col-md-10 estra-item segundo d-none"
+                     style="visibility: visible; animation-name: fadeInRight;">
+                    <div class="outside-box-right position-relative">
+                        <img src="/static/images/social/logistica.png" class="overflow-hidden">
+                        <div class="estra-info">
+                            <p class="font">Apoyar a organizaciones sin fines de lucro mediante el transporte de
+                                personas y bienes, especialmente durante situaciones de emergencia.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6 offset-xl-1 col-md-10 estra-item tercero d-none"
+                     style="visibility: visible; animation-name: fadeInRight;">
+                    <div class="outside-box-right position-relative">
+                        <img src="/static/images/social/verde.png" class="overflow-hidden">
+                        <div class="estra-info">
+                            <p class="font">Involucrar a colaboradores y comunidades en actividades que promueven la
+                                protección del medio ambiente y el bienestar social.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
+
+    {#    <section id="desarrollo" class="container-fluid">#}
+    {#        <div class="row">#}
+    {#            <div class="col-md-12 mb-12 p-5"#}
+    {#                 style="background-image: url({% static 'images/social/parallax_bienestar.jpg' %});">#}
+    {#                <h1 class="text-center text-white">Desarrollo Profesional y Laboral</h1>#}
+    {#                <h2 class="text-center text-white">Impulsar el <strong>desarrollo y crecimiento profesional</strong> de nuestros colaboradores es un compromiso que asumimos desde el momento en que se integran a nuestra organización. Como parte de nuestro programa de capacitación, cada año los invitamos a participar en <strong>cursos, talleres y charlas</strong> orientadas al fortalecimiento de sus competencias y habilidades.</h2>#}
+    {#            </div>#}
+    {#        </div>#}
+    {#    </section>#}
+    {#    <div class="content-wrap">#}
+    {#        <section id="formacion" class="container-fluid">#}
+    {#            <div class=" pt-5 container">#}
+    {#                <h1 class="text-center" style="color: #23356B;">Formación y Educación</h1>#}
+    {#                <p style="text-align: justify;">El <strong>programa de capacitación de FINSA</strong> abarca contenidos sobre inclusión laboral, riesgos, sostenibilidad, gestión del talento, bienestar emocional, comunicación asertiva, ética, resiliencia, temas técnica y desarrollo de habilidades blandas. Durante 2024 <strong>impartimos 42 cursos, talleres y conferencias</strong>, que sumaron un total de <strong>2,939 horas de capacitación</strong> para nuestros colaboradores, de los cuales 20 estuvieron relacionados con temas sociales, 5 con gobernanza y 17 con temas técnicos.</p>#}
+    {#            </div>#}
+    {#            <div class="content">#}
+    {#                 <img class="mx-auto d-block pb-5" src="/static/images/social/capacitacion.png" alt=""> #}
+    {#            </div>#}
+    {#        </section>#}
+    {##}
+    {#    </div>#}
+    {#    #}
+    {#<!--SECTION DE GENTE-->#}
+    {#    <div id = "comunidades"class="content-wrap" style="background-color: white;">#}
+    {#        <div class="container pt-5 pb-5">#}
+    {#            <h1 id="gobierno" class="text-center wow fadeInUp" data-wow-duration="2s"#}
+    {#                style="color: #012E81;">#}
+    {#                Nuestras Comunidades y Responsabilidad Social</h1>#}
+    {#            <p class="text-justify wow fadeInUp" data-wow-duration="2s">En FINSA, contribuir al desarrollo de la comunidad es un elemento esencial de nuestra <strong>cultura de responsabilidad social</strong>. Entendemos que nuestro crecimiento empresarial va de la mano del bienestar de las comunidades donde operamos, por lo que impulsamos iniciativas que generan un <strong>impacto positivo y sostenible en la sociedad</strong>. A nivel nacional, nuestras acciones se articulan en torno a <strong>tres ejes fundamentales</strong>, los cuales guían los proyectos y programas que llevamos a cabo con el propósito de fortalecer el tejido social, promover el desarrollo económico local y fomentar la sostenibilidad.#}
+    {#            </p>#}
+    {#        </div>#}
+    {#        <section id="" class="">#}
+    {#            <div class="container">#}
+    {#                <div class="row">#}
+    {#                    <div class="section-title text-center w-100">#}
+    {#                    </div>#}
+    {#                    <div class="col-12 consejo-administracion">#}
+    {#                        <div class="d-flex flex-row justify-content-around">#}
+    {#                            <div class="col-4 item cadusel miembro px-5">#}
+    {#                                <h3 class="text-bold" style="color:#232323; text-align: center; margin-right: 5px;">Cuidado del <br>Medio Ambiente</h3>#}
+    {#                                <div class="font-weight-bold mb-2"></div>#}
+    {#                                <h6></h6>#}
+    {#                                <a class="mas modal-directivo d-flex align-items-center justify-content-center align-content-center"#}
+    {#                                   href="#" data-toggle="modal" data-mdb-toggle="modal" data-mdb-target="#DirectiveModal1"#}
+    {#                                   data-img="/static/images/comunidad/medioambiente.png" data-name="Cuidado del Medio Ambiente"#}
+    {#                                   data-position=""#}
+    {#                                   data-description="En FINSA entendemos que el cuidado del medio ambiente es también una forma de apoyar a las comunidades donde operamos. Por ello, impulsamos prácticas sostenibles que reducen nuestro impacto, fomentan la eficiencia en el uso de los recursos y promueven un entorno más saludable y seguro para las personas.">#}
+    {#                                    <div class=" d-flex align-items-center justify-content-center"><i#}
+    {#                                            class="fa fa-plus text-white"></i></div>#}
+    {#                                </a>#}
+    {#                            </div>#}
+    {#                            <div class="col-4 item cadusel miembro px-5">#}
+    {#                                <h3 class="text-bold" style="color:#232323; text-align: center;">Educación</h3>#}
+    {#                                <div class="font-weight-bold mb-2"></div>#}
+    {#                                <h6></h6>#}
+    {#                                <a class="mas modal-directivo d-flex align-items-center justify-content-center align-content-center"#}
+    {#                                   href="#" data-toggle="modal" data-mdb-toggle="modal" data-mdb-target="#DirectiveModal1"#}
+    {#                                   data-img="/static/images/comunidad/educacion-fin.png" data-name="Educación"#}
+    {#                                   data-position=""#}
+    {#                                   data-description="En FINSA creemos que la educación es la base del progreso de las comunidades. Por ello, apoyamos a niñas, niños y jóvenes a través de becas y programas formativos que les brindan herramientas para crecer profesional y personalmente, contribuyendo al desarrollo de su entorno y a la construcción de un mejor futuro.">#}
+    {#                                    <div class=" d-flex align-items-center justify-content-center"><i#}
+    {#                                            class="fa fa-plus text-white"></i></div>#}
+    {#                                </a>#}
+    {#                            </div>#}
+    {#                            <div class="col-4 item cadusel miembro px-5">#}
+    {#                                <h2 class="text-bold" style="color:#232323; text-align: center; font-size: 24px!important;">Apoyo a <br>Causas Sociales</h2>#}
+    {#                                <div class="font-weight-bold mb-2"></div>#}
+    {#                                <h6></h6>#}
+    {#                                <a class="mas modal-directivo d-flex align-items-center justify-content-center align-content-center"#}
+    {#                                   href="#" data-toggle="modal" data-mdb-toggle="modal" data-mdb-target="#DirectiveModal1"#}
+    {#                                   data-img="/static/images/comunidad/causas-sociales-03.png" data-name="Apoyo a Causas Sociales"#}
+    {#                                   data-position=""#}
+    {#                                   data-description="En FINSA asumimos la responsabilidad de contribuir al bienestar de las comunidades mediante el apoyo a diversas causas sociales. Impulsamos iniciativas que promueven la inclusión, la salud y la equidad, buscando generar un impacto positivo que fortalezca el tejido social y mejore la calidad de vida de las personas.">#}
+    {#                                    <div class=" d-flex align-items-center justify-content-center"><i#}
+    {#                                            class="fa fa-plus text-white"></i></div>#}
+    {#                                </a>#}
+    {#                            </div>#}
+    {#                            #}
+    {#                        </div>#}
+    {#                    </div>#}
+    {#                <div style="width: 90%; margin: auto;">#}
+    {#                    <p class="text-justify wow fadeInUp" data-wow-duration="2s">Como parte de nuestro compromiso con la responsabilidad social, durante 2024 <strong>beneficiamos a más de 9 mil personas</strong>, a través de los 20 programas en los que participamos durante el año. A continuación se enlistan los más importantes de ellos:#}
+    {#            </p>#}
+    {#            <div id="accordion" class="accordion-cadena">#}
+    {#                <div class="row">#}
+    {#                    <div class="card back-color col-md-6">#}
+    {#                        <div class="card-header">#}
+    {#                            <a class="card-link collapsed" data-toggle="collapse" href="#tierra" aria-expanded="false">#}
+    {#                                <div class="text-bold" style="width: 100%;">#}
+    {#                                    Día de la Tierra#}
+    {#                                </div>#}
+    {#                            </a>#}
+    {#                        </div>#}
+    {#                        <div id="tierra" class="collapse" data-parent="#accordion" style="">#}
+    {#                            <div style="width: 100%; margin-top: 30px;">#}
+    {#                                <p style="width: 90%; margin: auto;">Con motivo del Día de la Tierra, cada año llevamos a cabo actividades ambientales en diversas escuelas del país, con la finalidad de sensibilizar a niñas y niños en edad escolar sobre la importancia de cuidar y proteger los recursos naturales.</p>#}
+    {#                            </div>#}
+    {#                            <div class=" d-flex flex-column justify-content-center align-content-center" style="margin-top: 20px;">#}
+    {#                                <div class="justify-content-center align-content-center">#}
+    {#                                    <div class="row d-flex  justify-content-center align-content-center">#}
+    {#                                        <div class=" col-8">#}
+    {#                                            <img class="img-fluid" src="/static/images/comunidad/social-01.png">#}
+    {#                                        </div>#}
+    {#                                    </div>#}
+    {#                                </div>#}
+    {#                            </div>#}
+    {#                        </div>#}
+    {#                    </div>#}
+    {#                    <div class="card back-color col-md-6">#}
+    {#                        <div class="card-header">#}
+    {#                            <a class="card-link collapsed" data-toggle="collapse" href="#recicla" aria-expanded="false">#}
+    {#                                <div class="text-bold" style="width: 100%;">#}
+    {#                                    Reciclatón#}
+    {#                                </div>#}
+    {#                            </a>#}
+    {#                        </div>#}
+    {#                        <div id="recicla" class="collapse" data-parent="#accordion" style="">#}
+    {#                            <div style="width: 100%; margin-top: 30px;">#}
+    {#                                <p style="width: 90%; margin: auto;">Conscientes de la importancia de proteger el medio ambiente y de fomentar una cultura de responsabilidad en torno a la disposición de los residuos electrónicos, impulsamos esta campaña orientada a la recolección de dispositivos, asegurando su manejo adecuado.</p>#}
+    {#                            </div>#}
+    {#                            <div class=" d-flex flex-column justify-content-center align-content-center" style="margin-top: 20px;">#}
+    {#                                <div class="justify-content-center align-content-center">#}
+    {#                                    <div class="row d-flex  justify-content-center align-content-center">#}
+    {#                                        <div class=" col-8">#}
+    {#                                            <img class="img-fluid" src="/static/images/comunidad/social-02.png">#}
+    {#                                        </div>#}
+    {#                                    </div>#}
+    {#                                </div>#}
+    {#                            </div>#}
+    {#                        </div>#}
+    {#                    </div>#}
+    {#                </div>#}
+    {#                    <div class="row">#}
+    {#                    <div class="card back-color col-md-6">#}
+    {#                        <div class="card-header">#}
+    {#                            <a class="card-link collapsed" data-toggle="collapse" href="#sonrisas" aria-expanded="false">#}
+    {#                                <div class="text-bold" style="width: 100%;">#}
+    {#                                    Pintar sonrisas#}
+    {#                                </div>#}
+    {#                            </a>#}
+    {#                        </div>#}
+    {#                        <div id="sonrisas" class="collapse" data-parent="#accordion" style="">#}
+    {#                            <div style="width: 100%; margin-top: 30px;">#}
+    {#                                <p style="width: 90%; margin: auto;">Conscientes de la importancia de proteger el medio ambiente y de fomentar una cultura de responsabilidad en torno a la disposición de los residuos electrónicos, impulsamos esta campaña orientada a la recolección de dispositivos, asegurando su manejo adecuado.</p>#}
+    {#                            </div>#}
+    {#                            <div class=" d-flex flex-column justify-content-center align-content-center" style="margin-top: 20px;">#}
+    {#                                <div class="justify-content-center align-content-center">#}
+    {#                                    <div class="row d-flex  justify-content-center align-content-center">#}
+    {#                                        <div class=" col-8">#}
+    {#                                            <img class="img-fluid" src="/static/images/comunidad/social-03.png">#}
+    {#                                        </div>#}
+    {#                                    </div>#}
+    {#                                </div>#}
+    {#                            </div>#}
+    {#                        </div>#}
+    {#                    </div>#}
+    {#                    <div class="card back-color col-md-6">#}
+    {#                        <div class="card-header">#}
+    {#                            <a class="card-link collapsed" data-toggle="collapse" href="#mujeres" aria-expanded="false">#}
+    {#                                <div class="text-bold" style="width: 100%;">#}
+    {#                                     Mujeres inspirando mujeres#}
+    {#                                </div>#}
+    {#                            </a>#}
+    {#                        </div>#}
+    {#                        <div id="mujeres" class="collapse" data-parent="#accordion" style="">#}
+    {#                            <div style="width: 100%; margin-top: 30px;">#}
+    {#                            <p style="width: 90%; margin: auto;">Este año realizamos la primera edición del programa de charlas “Mujeres inspirando a mujeres”, una iniciativa diseñada para motivar e impulsar a niñas y jóvenes a continuar con su formación académica, brindándoles referentes positivos que fortalezcan su confianza y aspiraciones.</p>#}
+    {#                            </div>#}
+    {#                            <div class=" d-flex flex-column justify-content-center align-content-center" style="margin-top: 20px;">#}
+    {#                                <div class="justify-content-center align-content-center">#}
+    {#                                    <div class="row d-flex  justify-content-center align-content-center">#}
+    {#                                        <div class=" col-8">#}
+    {#                                            <img class="img-fluid" src="/static/images/comunidad/social-04.png">#}
+    {#                                        </div>#}
+    {#                                    </div>#}
+    {#                                </div>#}
+    {#                            </div>#}
+    {#                        </div>#}
+    {#                    </div>#}
+    {#                </div>#}
+    {#                <div class="row">#}
+    {#                    <div class="card back-color col-md-6">#}
+    {#                        <div class="card-header">#}
+    {#                            <a class="card-link collapsed" data-toggle="collapse" href="#tapitas" aria-expanded="false">#}
+    {#                                <div class="text-bold" style="width: 100%;">#}
+    {#                                    Recaudación de tapitas#}
+    {#                                </div>#}
+    {#                            </a>#}
+    {#                        </div>#}
+    {#                        <div id="tapitas" class="collapse" data-parent="#accordion" style="">#}
+    {#                            <div style="width: 100%; margin-top: 30px;">#}
+    {#                            <p style="width: 90%; margin: auto;">Con el propósito de apoyar a niñas, niños y jóvenes diagnosticados con cáncer, hemos instalado dos contenedores en los parques industriales FINSA Matamoros del Norte y Guadalupe. En ellos se recolectan taparroscas de plástico que son entregadas al Banco de Tapitas, A.C., organización que destina estos recursos a cubrir parte de los gastos de tratamientos médicos.</p>#}
+    {#                            </div>#}
+    {#                            <div class=" d-flex flex-column justify-content-center align-content-center" style="margin-top: 20px;">#}
+    {#                                <div class="justify-content-center align-content-center">#}
+    {#                                    <div class="row d-flex  justify-content-center align-content-center">#}
+    {#                                        <div class=" col-8">#}
+    {#                                            <img class="img-fluid" src="/static/images/comunidad/social-05.png">#}
+    {#                                        </div>#}
+    {#                                    </div>#}
+    {#                                </div>#}
+    {#                            </div>#}
+    {#                        </div>#}
+    {#                    </div>#}
+    {#                    <div class="card back-color col-md-6">#}
+    {#                        <div class="card-header">#}
+    {#                            <a class="card-link collapsed" data-toggle="collapse" href="#juguetes" aria-expanded="false">#}
+    {#                                <div class="text-bold" style="width: 100%;">#}
+    {#                                      Donación de juguetes#}
+    {#                                </div>#}
+    {#                            </a>#}
+    {#                        </div>#}
+    {#                        <div id="juguetes" class="collapse" data-parent="#accordion" style="">#}
+    {#                            <div style="width: 100%; margin-top: 30px;">#}
+    {#                            <p style="width: 90%; margin: auto;">Entregamos 4,368 juguetes a niñas y niños en situación vulnerable, a través de 16 organismos públicos municipales y estatales, los cuales se encargaron de distribuirlos durante las celebraciones navideñas para llevar alegría en esas fechas especiales.</p>#}
+    {#                            </div>#}
+    {#                            <div class=" d-flex flex-column justify-content-center align-content-center" style="margin-top: 20px;">#}
+    {#                                <div class="justify-content-center align-content-center">#}
+    {#                                    <div class="row d-flex  justify-content-center align-content-center">#}
+    {#                                        <div class=" col-8">#}
+    {#                                            <img class="img-fluid" src="/static/images/comunidad/social-06.png">#}
+    {#                                        </div>#}
+    {#                                    </div>#}
+    {#                                </div>#}
+    {#                            </div>#}
+    {#                        </div>#}
+    {#                    </div>#}
+    {#                </div>#}
+    {##}
+    {#            </div>#}
+    {#                    </div>#}
+    {#                </div>#}
+    {#            </div>#}
+    {#            <!-- Modal -->#}
+    {#            <div class="modal fade" id="DirectiveModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">#}
+    {#                <div class="modal-dialog modal-lg">#}
+    {#                    <div class="modal-content">#}
+    {#                        <div class="modal-header d-flex justify-content-center align-items-center" style="background-color: #2892EC;">#}
+    {#                            <h3 class="modal-title directivo-name text-bold mb-0 text-white text-center" style="color: #232323; font-size: 24px">#}
+    {#                                Título del modal#}
+    {#                            </h3>#}
+    {#                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">#}
+    {#                                <span aria-hidden="true">&times;</span>#}
+    {#                            </button>#}
+    {#                        </div>#}
+    {#                        <div class="modal-body text-center">#}
+    {#                            <p class="directivo-description">Descripción del modal</p>#}
+    {#                            <img class="directivo-img img-fluid mb-3" style="width: 70%" src="" alt="">#}
+    {#                        </div>#}
+    {#                        <div class="modal-footer d-flex justify-content-center align-items-center">#}
+    {#                            <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>#}
+    {#                        </div>#}
+    {#                    </div>#}
+    {#                </div>#}
+    {#            </div>#}
+    {#        </section>#}
+    {#    </div>#}
+    {#    #}
+    {#    <section id ="propiedades"class="ml-5 mr-5 mt-30 mb-50">#}
+    {#        <div class="row wow fadeInUp mb-30" data-wow-delay=".4s">#}
+    {#            <h1 class="text-center wow fadeInUp" data-wow-duration="2s"#}
+    {#                style="color: #012E81; margin: auto;">#}
+    {#                Nuestras Propiedades</h1>#}
+    {#        </div>#}
+    {#        <div class=" row wow fadeInDown text-center" data-wow-delay=".4s">#}
+    {#            <div class="col-md-3" style="display: flex; align-items: center;">#}
+    {#                <div id="propiedades-circle" class="propiedades-circle wow fadeInLeft">#}
+    {#                    <h3 id="propiedades-state" ></h3>#}
+    {#                    <div id="propiedades-text"></div>#}
+    {#                </div>#}
+    {#            </div>#}
+    {#            <div class="col-md-6">#}
+    {#                <div class="wow fadeInRight" data-wow-duration="1.5s">#}
+    {#                    <?xml version="1.0" encoding="utf-8"?>#}
+    {#                    <!-- Generator: Adobe Illustrator 25.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->#}
+    {#                    {% include 'partials/mapa.html' %}#}
+    {#                </div>#}
+    {#            </div>#}
+    {#            <div class="col-md-3" style="display: flex; align-items: center;">#}
+    {#                <div id="infoDiv" style=" margin-top: 10px;">#}
+    {#                   <h2 style="color: var(--azulclaro); font-weight: bold;">TOTAL</h2>#}
+    {#                   <h3>22</h3>#}
+    {#                   <p>PARQUES INDUSTRIALES</p>#}
+    {#                   <h3>3,417,647.53 m<sup>2</sup></h3>#}
+    {#                   <p>ÁREA BRUTA RENTABLE (GLA m<sup>2</sup>)</p>#}
+    {#                   <h3>3,293,062.73 m<sup>2</sup></h3>#}
+    {#                   <p>ÁREA OCUPADA (m<sup>2</sup>)</p>#}
+    {#                   <h3>96.35%</h3>#}
+    {#                   <p>PORCENTAJE DE OCUPACIÓN</p>#}
+    {#                </div>#}
+    {#            </div>#}
+    {#        </div>#}
+    {#    </section>#}
     </div>
 {% endblock %}
 
@@ -934,8 +671,8 @@
     <script src="{% static 'javascripts/jquery.waypoints.min.js' %}"></script>
     <script src="{% static 'javascripts/countTo.js' %}"></script>
     <script src="{% static 'javascripts/owl.carousel.min.js' %}"></script>
-      <script src="{% static 'javascripts/maps-states-mx.js' %}"></script>
-    
+    <script src="{% static 'javascripts/maps-states-mx.js' %}"></script>
+
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const fragment = window.location.hash;
@@ -960,12 +697,12 @@
             center: false,
             margin: 0,
             responsiveClass: true,
-            nav: false, 
+            nav: false,
             drag: false,
-            touchDrag: false, 
-            mouseDrag: false, 
-            pullDrag: false, 
-            freeDrag: false, 
+            touchDrag: false,
+            mouseDrag: false,
+            pullDrag: false,
+            freeDrag: false,
             responsive: {
                 0: {
                     items: 1,
@@ -974,11 +711,11 @@
                 680: {
                     items: 1,
                     nav: false,
-                    loop: false 
+                    loop: false
                 },
                 1000: {
                     items: 3,
-                    nav: false 
+                    nav: false
                 }
             },
             onInitialized: removeBlurEffect,
@@ -1034,14 +771,14 @@
             $this.addClass('active');
             $('.estra-item.' + item).removeClass("d-none");
         });
-        
+
         $(window).on('load', function () {
             new WOW().init();
             $('.finn-counto').each(function () {
                 finn_waypoint('#' + $(this).attr('id'));
                 finn_counto('#' + $(this).attr('id'));
             });
-            
+
         });
 
         function finn_waypoint(elemento) {
@@ -1073,8 +810,8 @@
                                 return value.toFixed(options.decimals).replace(/\B(?=(?:\d{3})+(?!\d))/g, ',');
                             },
                             onComplete: function (value) {
-                                
-                                
+
+
                                 return this.innerHTML;
                             }
 
@@ -1084,7 +821,7 @@
             }
         }
     </script>
-        <script>
+    <script>
         $(window).on('load', function () {
 
             $("path.st0, path.st3")
@@ -1124,47 +861,47 @@
             function numberWithCommas(x) {
                 return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
             }
-        
+
             // Initialize counters with waypoints
-            $('.finn-counto .count').each(function() {
+            $('.finn-counto .count').each(function () {
                 var $this = $(this);
                 var $button = $this.closest('button');
-        
+
                 // Start the honeycomb animation by adding a class to the SVG element
-                var animateHoneycomb = function($element) {
+                var animateHoneycomb = function ($element) {
                     $element.closest('.honeycomb').find('svg.honeycomb-path').addClass('honeycomb-animated');
                 };
-        
-                $this.waypoint(function() {
+
+                $this.waypoint(function () {
                     // Delay the counting to ensure it's visible
-                    setTimeout(function(){
+                    setTimeout(function () {
                         // Trigger the honeycomb animation
                         animateHoneycomb($this);
                         $button.addClass('animation-trigger');
-        
+
                         $this.countTo({
                             from: 0,
                             to: $this.data('to'),
                             speed: $this.data('speed'),
                             decimals: $this.data('decimals'),
-                            onUpdate: function(value) {
-                              var prefix = $this.data('prefix') ? $this.data('prefix') + ' ' : '';
-                              var isPercent = $this.data('porcent') === true || $this.data('porcent') === "true";
-                              var displayValue = isPercent ? value.toFixed($this.data('decimals')) + '%' :
-                                numberWithCommas(value.toFixed($this.data('decimals')));
-                              $this.text(prefix + displayValue);
+                            onUpdate: function (value) {
+                                var prefix = $this.data('prefix') ? $this.data('prefix') + ' ' : '';
+                                var isPercent = $this.data('porcent') === true || $this.data('porcent') === "true";
+                                var displayValue = isPercent ? value.toFixed($this.data('decimals')) + '%' :
+                                    numberWithCommas(value.toFixed($this.data('decimals')));
+                                $this.text(prefix + displayValue);
                             },
-                            onComplete: function(value) {
-                              // This ensures the class is only added once at the beginning of counting
-                              var prefix = $this.data('prefix') ? $this.data('prefix') + ' ' : '';
-                              var isPercent = $this.data('porcent') === true || $this.data('porcent') === "true";
-                              var displayValue = isPercent ? value.toFixed($this.data('decimals')) + '%' :
-                                numberWithCommas(value.toFixed($this.data('decimals')));
-                              $this.text(prefix + displayValue);
+                            onComplete: function (value) {
+                                // This ensures the class is only added once at the beginning of counting
+                                var prefix = $this.data('prefix') ? $this.data('prefix') + ' ' : '';
+                                var isPercent = $this.data('porcent') === true || $this.data('porcent') === "true";
+                                var displayValue = isPercent ? value.toFixed($this.data('decimals')) + '%' :
+                                    numberWithCommas(value.toFixed($this.data('decimals')));
+                                $this.text(prefix + displayValue);
                             }
-                          });
+                        });
                     }, $this.data('delay') || 0);
-        
+
                     this.destroy(); // Ensures the animation and counting occur only once
                 }, {
                     offset: '80%', // Triggers when the element is 75% from the top of the viewport
@@ -1185,7 +922,7 @@
             });
         });
 
-        
+
     </script>
 
     <script>
@@ -1197,6 +934,39 @@
             autoplayTimeout: 45000,
             autoplayHoverPause: true,
             items: 1,
+        });
+    </script>
+
+
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const cards = document.querySelectorAll(".transporte-card");
+
+            cards.forEach(card => {
+                const title = card.querySelector("h3");
+                const button = card.querySelector(".card-button");
+
+                title.addEventListener("click", () => {
+                    cards.forEach(c => c.classList.remove("expanded", "collapsed"));
+                    card.classList.add("expanded");
+                    cards.forEach(c => {
+                        if (c !== card) c.classList.add("collapsed");
+                    });
+                });
+
+                button.addEventListener("click", () => {
+                    cards.forEach(c => c.classList.remove("expanded", "collapsed"));
+
+                    cards.forEach(c => {
+                        const h3 = c.querySelector("h3");
+                        h3.style.transition = "font-size 0.5s ease";
+                        h3.style.fontSize = "28px"; // tamaño mayor temporal
+                        setTimeout(() => (h3.style.fontSize = "24px"), 800); // vuelve a normal
+                    });
+                });
+            });
         });
     </script>
 
