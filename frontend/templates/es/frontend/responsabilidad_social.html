@@ -41,6 +41,29 @@
             scale: 103%;
         }
 
+        .estra-link.panel {
+            width: 680px;
+            height: 65.33px;
+            background-size: contain !important;
+            background-position: center !important;
+            background-repeat: no-repeat !important;
+            border: 1.5px solid #bdbdbd;
+            transition: transform .25s ease, border .25s ease, box-shadow .25s ease;
+        }
+        .estra-link.panel .panel-heading,
+        .estra-link.panel .boton-info1 {
+            background: transparent !important;
+        }
+        .estra-link.panel.active {
+            transform: scale(1.04);
+            border: 3px solid #63666A;
+            box-shadow: 0 6px 14px rgba(0,0,0,.12);
+        }
+        .accordion-event [data-item="primero"] { background-image: url('{% static 'images/social/movilidad.png' %}'); }
+        .accordion-event [data-item="segundo"] { background-image: url('{% static 'images/social/logistica.png' %}'); }
+        .accordion-event [data-item="tercero"] { background-image: url('{% static 'images/social/verde.png' %}'); }
+        .estra-item .estra-info { display: none; }
+        .estra-item.show-info .estra-info { display: block; }
     </style>
 {% endblock %}
 
@@ -180,55 +203,25 @@
 
     <div id="fuerza_laboral" class="content-wrap">
         <div class="container" id="diversidad">
-            <div class="col-6 py-5">
-                <h1 class="text-center" style="color: #d0df00;">
-                    Fuerza Laboral
-                </h1>
-                <p style="text-align: left;">Al cierre de 2024, nuestro equipo de colaboradores acumuló un total de
-                    <strong>21,303 colaboradores</strong>, de los cuales el <strong>
-                            82.7%</strong> correspondían al sexo masculino y el <strong>17.3%</strong> al femenino,
-                    distribuidos de la siguiente manera:</p>
-            </div>
-            <section id="sec_consumo" class="py-3">
-                <div class="container-fluid">
-                    <div id="consumo" class="finn-counto">
-                        <div class="container">
-                            <div class="row honeycomb-wrapper justify-content-center">
-                                <div class="col-md-6 col-lg-4 tile">
-                                    <div class="honeycomb">
-                                        <div class="content">
-                                            <img src="/static/images/social/icono_hombres.png" alt="">
-                                            <h2 class="count" data-speed="2500" data-to="613" data-in-viewport="yes"
-                                                data-decimals="0">612</h2><span class="title-effect "></span>
-                                        </div>
-                                    </div>
-                                    <h5><b>Hombres</b></h5>
-                                </div>
-                                <div class="col-md-6 col-lg-4 tile">
-                                    <div class="honeycomb">
-                                        <div class="content">
-                                            <img src="/static/images/social/icono_mujeres.png" alt="">
-                                            <h2 class="count" data-speed="2500" data-to="161" data-in-viewport="yes"
-                                                data-decimals="0">161</h2><span class="title-effect "></span>
-                                        </div>
-                                    </div>
-                                    <h5><b>Mujeres</b></h5><br>
-                                </div>
-                                <div class="col-md-6 col-lg-4 tile">
-                                    <div class="honeycomb">
-                                        <div class="content">
-                                            <img src="/static/images/social/icono_ambos.png" alt="">
-                                            <h2 class="count" data-speed="2500" data-to="774" data-in-viewport="yes"
-                                                data-decimals="0">774</h2><span class="title-effect "></span>
-                                        </div>
-                                    </div>
-                                    <h5><b>Total</b><br></h5>
-                                </div>
-                            </div>
+            <div class="row align-items-center">
+                <div class="col-12 col-lg-6 mb-4 mb-lg-0">
+                    <h1 class="text-center" style="color: #d0df00;">
+                        Fuerza Laboral
+                    </h1>
+                    <p style="text-align: left;">Al cierre de 2024, nuestro equipo de colaboradores acumuló un total de
+                        <strong>21,303 colaboradores</strong>, de los cuales el <strong>
+                                82.7%</strong> correspondían al sexo masculino y el <strong>17.3%</strong> al femenino,
+                        distribuidos de la siguiente manera:</p>
+                </div>
+                <div class="col-12 col-lg-6 d-flex justify-content-center">
+                    <div id="graf" style="height: 350px; width: 100%; max-width: 420px;"></div>
+                    <div class="w-100 d-flex justify-content-start" style="max-width: 120px;">
+                        <div style="font-weight: bold; font-size: 14px; color: #333; margin-top: 220px;">
+                            Total = 21,303
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
         </div>
     </div>
     <section class="bg-gray-fmty gestion pb-4" id="n-gestion" style="background-color: #efefef;">
@@ -303,31 +296,31 @@
                     </h1>
                     <div class="panel-group accordion-event accordion-style-03 margin-4-rem-bottom lg-margin-2-rem-bottom">
                         <div data-item="primero"
-                             class="estra-link panel box-shadow-small border-radius-5px wow animate__fadeInUp animated active"
-                             data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s;">
+                             class="estra-link panel box-shadow-small border-radius-5px wow animate__fadeInUp animated"
+                             data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; background-image: url({% static 'images/social/movilidad.png' %}); background-position: center; background-size: cover;">
                             <div class="panel-heading">
                                 <div class="boton-info1">
-                                    <span>Movilidad Social</span>
+{#                                    <span>Movilidad Social</span>#}
                                     <i class="indicator fa fa-angle-right text-tussock icon-extra-small"></i>
                                 </div>
                             </div>
                         </div>
                         <div data-item="segundo"
                              class="estra-link panel box-shadow-small border-radius-5px wow animate__fadeInUp animated"
-                             data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s;">
+                             data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; background-image: url({% static 'images/social/logistica.png' %}); background-position: center; background-size: cover;">
                             <div class="panel-heading">
                                 <div class="boton-info1">
-                                    <span>Logística Social</span>
+{#                                    <span>Logística Social</span>#}
                                     <i class="indicator fa fa-angle-right text-tussock icon-extra-small"></i>
                                 </div>
                             </div>
                         </div>
                         <div data-item="tercero"
                              class="estra-link panel box-shadow-small border-radius-5px wow animate__fadeInUp animated"
-                             data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s;">
+                             data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; background-image: url({% static 'images/social/verde.png' %}); background-position: center; background-size: cover;">
                             <div class="panel-heading">
                                 <div class="boton-info1">
-                                    <span>Voluntariado y Medio Ambiente</span>
+{#                                    <span>Voluntariado y Medio Ambiente</span>#}
                                     <i class="indicator fa fa-angle-right text-tussock icon-extra-small"></i>
                                 </div>
                             </div>
@@ -337,7 +330,7 @@
                 <div class="col-12 col-lg-6 offset-xl-1 col-md-10 estra-item primero"
                      style="visibility: visible; animation-name: fadeInRight;">
                     <div class="outside-box-right position-relative">
-                        <img src="/static/images/social/movilidad.png" class="overflow-hidden">
+                        <img src="/static/images/social/fundaciones.png" class="overflow-hidden">
                         <div class="estra-info">
                             <p class="font">Brindar oportunidades educativas para reducir la desigualdad y promover el
                                 crecimiento profesional.</p>
@@ -347,7 +340,7 @@
                 <div class="col-12 col-lg-6 offset-xl-1 col-md-10 estra-item segundo d-none"
                      style="visibility: visible; animation-name: fadeInRight;">
                     <div class="outside-box-right position-relative">
-                        <img src="/static/images/social/logistica.png" class="overflow-hidden">
+                        <img src="/static/images/social/fundaciones.png" class="overflow-hidden">
                         <div class="estra-info">
                             <p class="font">Apoyar a organizaciones sin fines de lucro mediante el transporte de
                                 personas y bienes, especialmente durante situaciones de emergencia.</p>
@@ -357,7 +350,7 @@
                 <div class="col-12 col-lg-6 offset-xl-1 col-md-10 estra-item tercero d-none"
                      style="visibility: visible; animation-name: fadeInRight;">
                     <div class="outside-box-right position-relative">
-                        <img src="/static/images/social/verde.png" class="overflow-hidden">
+                        <img src="/static/images/social/fundaciones.png" class="overflow-hidden">
                         <div class="estra-info">
                             <p class="font">Involucrar a colaboradores y comunidades en actividades que promueven la
                                 protección del medio ambiente y el bienestar social.</p>
@@ -367,301 +360,6 @@
             </div>
         </div>
     </section>
-
-    {#    <section id="desarrollo" class="container-fluid">#}
-    {#        <div class="row">#}
-    {#            <div class="col-md-12 mb-12 p-5"#}
-    {#                 style="background-image: url({% static 'images/social/parallax_bienestar.jpg' %});">#}
-    {#                <h1 class="text-center text-white">Desarrollo Profesional y Laboral</h1>#}
-    {#                <h2 class="text-center text-white">Impulsar el <strong>desarrollo y crecimiento profesional</strong> de nuestros colaboradores es un compromiso que asumimos desde el momento en que se integran a nuestra organización. Como parte de nuestro programa de capacitación, cada año los invitamos a participar en <strong>cursos, talleres y charlas</strong> orientadas al fortalecimiento de sus competencias y habilidades.</h2>#}
-    {#            </div>#}
-    {#        </div>#}
-    {#    </section>#}
-    {#    <div class="content-wrap">#}
-    {#        <section id="formacion" class="container-fluid">#}
-    {#            <div class=" pt-5 container">#}
-    {#                <h1 class="text-center" style="color: #23356B;">Formación y Educación</h1>#}
-    {#                <p style="text-align: justify;">El <strong>programa de capacitación de FINSA</strong> abarca contenidos sobre inclusión laboral, riesgos, sostenibilidad, gestión del talento, bienestar emocional, comunicación asertiva, ética, resiliencia, temas técnica y desarrollo de habilidades blandas. Durante 2024 <strong>impartimos 42 cursos, talleres y conferencias</strong>, que sumaron un total de <strong>2,939 horas de capacitación</strong> para nuestros colaboradores, de los cuales 20 estuvieron relacionados con temas sociales, 5 con gobernanza y 17 con temas técnicos.</p>#}
-    {#            </div>#}
-    {#            <div class="content">#}
-    {#                 <img class="mx-auto d-block pb-5" src="/static/images/social/capacitacion.png" alt=""> #}
-    {#            </div>#}
-    {#        </section>#}
-    {##}
-    {#    </div>#}
-    {#    #}
-    {#<!--SECTION DE GENTE-->#}
-    {#    <div id = "comunidades"class="content-wrap" style="background-color: white;">#}
-    {#        <div class="container pt-5 pb-5">#}
-    {#            <h1 id="gobierno" class="text-center wow fadeInUp" data-wow-duration="2s"#}
-    {#                style="color: #012E81;">#}
-    {#                Nuestras Comunidades y Responsabilidad Social</h1>#}
-    {#            <p class="text-justify wow fadeInUp" data-wow-duration="2s">En FINSA, contribuir al desarrollo de la comunidad es un elemento esencial de nuestra <strong>cultura de responsabilidad social</strong>. Entendemos que nuestro crecimiento empresarial va de la mano del bienestar de las comunidades donde operamos, por lo que impulsamos iniciativas que generan un <strong>impacto positivo y sostenible en la sociedad</strong>. A nivel nacional, nuestras acciones se articulan en torno a <strong>tres ejes fundamentales</strong>, los cuales guían los proyectos y programas que llevamos a cabo con el propósito de fortalecer el tejido social, promover el desarrollo económico local y fomentar la sostenibilidad.#}
-    {#            </p>#}
-    {#        </div>#}
-    {#        <section id="" class="">#}
-    {#            <div class="container">#}
-    {#                <div class="row">#}
-    {#                    <div class="section-title text-center w-100">#}
-    {#                    </div>#}
-    {#                    <div class="col-12 consejo-administracion">#}
-    {#                        <div class="d-flex flex-row justify-content-around">#}
-    {#                            <div class="col-4 item cadusel miembro px-5">#}
-    {#                                <h3 class="text-bold" style="color:#232323; text-align: center; margin-right: 5px;">Cuidado del <br>Medio Ambiente</h3>#}
-    {#                                <div class="font-weight-bold mb-2"></div>#}
-    {#                                <h6></h6>#}
-    {#                                <a class="mas modal-directivo d-flex align-items-center justify-content-center align-content-center"#}
-    {#                                   href="#" data-toggle="modal" data-mdb-toggle="modal" data-mdb-target="#DirectiveModal1"#}
-    {#                                   data-img="/static/images/comunidad/medioambiente.png" data-name="Cuidado del Medio Ambiente"#}
-    {#                                   data-position=""#}
-    {#                                   data-description="En FINSA entendemos que el cuidado del medio ambiente es también una forma de apoyar a las comunidades donde operamos. Por ello, impulsamos prácticas sostenibles que reducen nuestro impacto, fomentan la eficiencia en el uso de los recursos y promueven un entorno más saludable y seguro para las personas.">#}
-    {#                                    <div class=" d-flex align-items-center justify-content-center"><i#}
-    {#                                            class="fa fa-plus text-white"></i></div>#}
-    {#                                </a>#}
-    {#                            </div>#}
-    {#                            <div class="col-4 item cadusel miembro px-5">#}
-    {#                                <h3 class="text-bold" style="color:#232323; text-align: center;">Educación</h3>#}
-    {#                                <div class="font-weight-bold mb-2"></div>#}
-    {#                                <h6></h6>#}
-    {#                                <a class="mas modal-directivo d-flex align-items-center justify-content-center align-content-center"#}
-    {#                                   href="#" data-toggle="modal" data-mdb-toggle="modal" data-mdb-target="#DirectiveModal1"#}
-    {#                                   data-img="/static/images/comunidad/educacion-fin.png" data-name="Educación"#}
-    {#                                   data-position=""#}
-    {#                                   data-description="En FINSA creemos que la educación es la base del progreso de las comunidades. Por ello, apoyamos a niñas, niños y jóvenes a través de becas y programas formativos que les brindan herramientas para crecer profesional y personalmente, contribuyendo al desarrollo de su entorno y a la construcción de un mejor futuro.">#}
-    {#                                    <div class=" d-flex align-items-center justify-content-center"><i#}
-    {#                                            class="fa fa-plus text-white"></i></div>#}
-    {#                                </a>#}
-    {#                            </div>#}
-    {#                            <div class="col-4 item cadusel miembro px-5">#}
-    {#                                <h2 class="text-bold" style="color:#232323; text-align: center; font-size: 24px!important;">Apoyo a <br>Causas Sociales</h2>#}
-    {#                                <div class="font-weight-bold mb-2"></div>#}
-    {#                                <h6></h6>#}
-    {#                                <a class="mas modal-directivo d-flex align-items-center justify-content-center align-content-center"#}
-    {#                                   href="#" data-toggle="modal" data-mdb-toggle="modal" data-mdb-target="#DirectiveModal1"#}
-    {#                                   data-img="/static/images/comunidad/causas-sociales-03.png" data-name="Apoyo a Causas Sociales"#}
-    {#                                   data-position=""#}
-    {#                                   data-description="En FINSA asumimos la responsabilidad de contribuir al bienestar de las comunidades mediante el apoyo a diversas causas sociales. Impulsamos iniciativas que promueven la inclusión, la salud y la equidad, buscando generar un impacto positivo que fortalezca el tejido social y mejore la calidad de vida de las personas.">#}
-    {#                                    <div class=" d-flex align-items-center justify-content-center"><i#}
-    {#                                            class="fa fa-plus text-white"></i></div>#}
-    {#                                </a>#}
-    {#                            </div>#}
-    {#                            #}
-    {#                        </div>#}
-    {#                    </div>#}
-    {#                <div style="width: 90%; margin: auto;">#}
-    {#                    <p class="text-justify wow fadeInUp" data-wow-duration="2s">Como parte de nuestro compromiso con la responsabilidad social, durante 2024 <strong>beneficiamos a más de 9 mil personas</strong>, a través de los 20 programas en los que participamos durante el año. A continuación se enlistan los más importantes de ellos:#}
-    {#            </p>#}
-    {#            <div id="accordion" class="accordion-cadena">#}
-    {#                <div class="row">#}
-    {#                    <div class="card back-color col-md-6">#}
-    {#                        <div class="card-header">#}
-    {#                            <a class="card-link collapsed" data-toggle="collapse" href="#tierra" aria-expanded="false">#}
-    {#                                <div class="text-bold" style="width: 100%;">#}
-    {#                                    Día de la Tierra#}
-    {#                                </div>#}
-    {#                            </a>#}
-    {#                        </div>#}
-    {#                        <div id="tierra" class="collapse" data-parent="#accordion" style="">#}
-    {#                            <div style="width: 100%; margin-top: 30px;">#}
-    {#                                <p style="width: 90%; margin: auto;">Con motivo del Día de la Tierra, cada año llevamos a cabo actividades ambientales en diversas escuelas del país, con la finalidad de sensibilizar a niñas y niños en edad escolar sobre la importancia de cuidar y proteger los recursos naturales.</p>#}
-    {#                            </div>#}
-    {#                            <div class=" d-flex flex-column justify-content-center align-content-center" style="margin-top: 20px;">#}
-    {#                                <div class="justify-content-center align-content-center">#}
-    {#                                    <div class="row d-flex  justify-content-center align-content-center">#}
-    {#                                        <div class=" col-8">#}
-    {#                                            <img class="img-fluid" src="/static/images/comunidad/social-01.png">#}
-    {#                                        </div>#}
-    {#                                    </div>#}
-    {#                                </div>#}
-    {#                            </div>#}
-    {#                        </div>#}
-    {#                    </div>#}
-    {#                    <div class="card back-color col-md-6">#}
-    {#                        <div class="card-header">#}
-    {#                            <a class="card-link collapsed" data-toggle="collapse" href="#recicla" aria-expanded="false">#}
-    {#                                <div class="text-bold" style="width: 100%;">#}
-    {#                                    Reciclatón#}
-    {#                                </div>#}
-    {#                            </a>#}
-    {#                        </div>#}
-    {#                        <div id="recicla" class="collapse" data-parent="#accordion" style="">#}
-    {#                            <div style="width: 100%; margin-top: 30px;">#}
-    {#                                <p style="width: 90%; margin: auto;">Conscientes de la importancia de proteger el medio ambiente y de fomentar una cultura de responsabilidad en torno a la disposición de los residuos electrónicos, impulsamos esta campaña orientada a la recolección de dispositivos, asegurando su manejo adecuado.</p>#}
-    {#                            </div>#}
-    {#                            <div class=" d-flex flex-column justify-content-center align-content-center" style="margin-top: 20px;">#}
-    {#                                <div class="justify-content-center align-content-center">#}
-    {#                                    <div class="row d-flex  justify-content-center align-content-center">#}
-    {#                                        <div class=" col-8">#}
-    {#                                            <img class="img-fluid" src="/static/images/comunidad/social-02.png">#}
-    {#                                        </div>#}
-    {#                                    </div>#}
-    {#                                </div>#}
-    {#                            </div>#}
-    {#                        </div>#}
-    {#                    </div>#}
-    {#                </div>#}
-    {#                    <div class="row">#}
-    {#                    <div class="card back-color col-md-6">#}
-    {#                        <div class="card-header">#}
-    {#                            <a class="card-link collapsed" data-toggle="collapse" href="#sonrisas" aria-expanded="false">#}
-    {#                                <div class="text-bold" style="width: 100%;">#}
-    {#                                    Pintar sonrisas#}
-    {#                                </div>#}
-    {#                            </a>#}
-    {#                        </div>#}
-    {#                        <div id="sonrisas" class="collapse" data-parent="#accordion" style="">#}
-    {#                            <div style="width: 100%; margin-top: 30px;">#}
-    {#                                <p style="width: 90%; margin: auto;">Conscientes de la importancia de proteger el medio ambiente y de fomentar una cultura de responsabilidad en torno a la disposición de los residuos electrónicos, impulsamos esta campaña orientada a la recolección de dispositivos, asegurando su manejo adecuado.</p>#}
-    {#                            </div>#}
-    {#                            <div class=" d-flex flex-column justify-content-center align-content-center" style="margin-top: 20px;">#}
-    {#                                <div class="justify-content-center align-content-center">#}
-    {#                                    <div class="row d-flex  justify-content-center align-content-center">#}
-    {#                                        <div class=" col-8">#}
-    {#                                            <img class="img-fluid" src="/static/images/comunidad/social-03.png">#}
-    {#                                        </div>#}
-    {#                                    </div>#}
-    {#                                </div>#}
-    {#                            </div>#}
-    {#                        </div>#}
-    {#                    </div>#}
-    {#                    <div class="card back-color col-md-6">#}
-    {#                        <div class="card-header">#}
-    {#                            <a class="card-link collapsed" data-toggle="collapse" href="#mujeres" aria-expanded="false">#}
-    {#                                <div class="text-bold" style="width: 100%;">#}
-    {#                                     Mujeres inspirando mujeres#}
-    {#                                </div>#}
-    {#                            </a>#}
-    {#                        </div>#}
-    {#                        <div id="mujeres" class="collapse" data-parent="#accordion" style="">#}
-    {#                            <div style="width: 100%; margin-top: 30px;">#}
-    {#                            <p style="width: 90%; margin: auto;">Este año realizamos la primera edición del programa de charlas “Mujeres inspirando a mujeres”, una iniciativa diseñada para motivar e impulsar a niñas y jóvenes a continuar con su formación académica, brindándoles referentes positivos que fortalezcan su confianza y aspiraciones.</p>#}
-    {#                            </div>#}
-    {#                            <div class=" d-flex flex-column justify-content-center align-content-center" style="margin-top: 20px;">#}
-    {#                                <div class="justify-content-center align-content-center">#}
-    {#                                    <div class="row d-flex  justify-content-center align-content-center">#}
-    {#                                        <div class=" col-8">#}
-    {#                                            <img class="img-fluid" src="/static/images/comunidad/social-04.png">#}
-    {#                                        </div>#}
-    {#                                    </div>#}
-    {#                                </div>#}
-    {#                            </div>#}
-    {#                        </div>#}
-    {#                    </div>#}
-    {#                </div>#}
-    {#                <div class="row">#}
-    {#                    <div class="card back-color col-md-6">#}
-    {#                        <div class="card-header">#}
-    {#                            <a class="card-link collapsed" data-toggle="collapse" href="#tapitas" aria-expanded="false">#}
-    {#                                <div class="text-bold" style="width: 100%;">#}
-    {#                                    Recaudación de tapitas#}
-    {#                                </div>#}
-    {#                            </a>#}
-    {#                        </div>#}
-    {#                        <div id="tapitas" class="collapse" data-parent="#accordion" style="">#}
-    {#                            <div style="width: 100%; margin-top: 30px;">#}
-    {#                            <p style="width: 90%; margin: auto;">Con el propósito de apoyar a niñas, niños y jóvenes diagnosticados con cáncer, hemos instalado dos contenedores en los parques industriales FINSA Matamoros del Norte y Guadalupe. En ellos se recolectan taparroscas de plástico que son entregadas al Banco de Tapitas, A.C., organización que destina estos recursos a cubrir parte de los gastos de tratamientos médicos.</p>#}
-    {#                            </div>#}
-    {#                            <div class=" d-flex flex-column justify-content-center align-content-center" style="margin-top: 20px;">#}
-    {#                                <div class="justify-content-center align-content-center">#}
-    {#                                    <div class="row d-flex  justify-content-center align-content-center">#}
-    {#                                        <div class=" col-8">#}
-    {#                                            <img class="img-fluid" src="/static/images/comunidad/social-05.png">#}
-    {#                                        </div>#}
-    {#                                    </div>#}
-    {#                                </div>#}
-    {#                            </div>#}
-    {#                        </div>#}
-    {#                    </div>#}
-    {#                    <div class="card back-color col-md-6">#}
-    {#                        <div class="card-header">#}
-    {#                            <a class="card-link collapsed" data-toggle="collapse" href="#juguetes" aria-expanded="false">#}
-    {#                                <div class="text-bold" style="width: 100%;">#}
-    {#                                      Donación de juguetes#}
-    {#                                </div>#}
-    {#                            </a>#}
-    {#                        </div>#}
-    {#                        <div id="juguetes" class="collapse" data-parent="#accordion" style="">#}
-    {#                            <div style="width: 100%; margin-top: 30px;">#}
-    {#                            <p style="width: 90%; margin: auto;">Entregamos 4,368 juguetes a niñas y niños en situación vulnerable, a través de 16 organismos públicos municipales y estatales, los cuales se encargaron de distribuirlos durante las celebraciones navideñas para llevar alegría en esas fechas especiales.</p>#}
-    {#                            </div>#}
-    {#                            <div class=" d-flex flex-column justify-content-center align-content-center" style="margin-top: 20px;">#}
-    {#                                <div class="justify-content-center align-content-center">#}
-    {#                                    <div class="row d-flex  justify-content-center align-content-center">#}
-    {#                                        <div class=" col-8">#}
-    {#                                            <img class="img-fluid" src="/static/images/comunidad/social-06.png">#}
-    {#                                        </div>#}
-    {#                                    </div>#}
-    {#                                </div>#}
-    {#                            </div>#}
-    {#                        </div>#}
-    {#                    </div>#}
-    {#                </div>#}
-    {##}
-    {#            </div>#}
-    {#                    </div>#}
-    {#                </div>#}
-    {#            </div>#}
-    {#            <!-- Modal -->#}
-    {#            <div class="modal fade" id="DirectiveModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">#}
-    {#                <div class="modal-dialog modal-lg">#}
-    {#                    <div class="modal-content">#}
-    {#                        <div class="modal-header d-flex justify-content-center align-items-center" style="background-color: #2892EC;">#}
-    {#                            <h3 class="modal-title directivo-name text-bold mb-0 text-white text-center" style="color: #232323; font-size: 24px">#}
-    {#                                Título del modal#}
-    {#                            </h3>#}
-    {#                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">#}
-    {#                                <span aria-hidden="true">&times;</span>#}
-    {#                            </button>#}
-    {#                        </div>#}
-    {#                        <div class="modal-body text-center">#}
-    {#                            <p class="directivo-description">Descripción del modal</p>#}
-    {#                            <img class="directivo-img img-fluid mb-3" style="width: 70%" src="" alt="">#}
-    {#                        </div>#}
-    {#                        <div class="modal-footer d-flex justify-content-center align-items-center">#}
-    {#                            <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>#}
-    {#                        </div>#}
-    {#                    </div>#}
-    {#                </div>#}
-    {#            </div>#}
-    {#        </section>#}
-    {#    </div>#}
-    {#    #}
-    {#    <section id ="propiedades"class="ml-5 mr-5 mt-30 mb-50">#}
-    {#        <div class="row wow fadeInUp mb-30" data-wow-delay=".4s">#}
-    {#            <h1 class="text-center wow fadeInUp" data-wow-duration="2s"#}
-    {#                style="color: #012E81; margin: auto;">#}
-    {#                Nuestras Propiedades</h1>#}
-    {#        </div>#}
-    {#        <div class=" row wow fadeInDown text-center" data-wow-delay=".4s">#}
-    {#            <div class="col-md-3" style="display: flex; align-items: center;">#}
-    {#                <div id="propiedades-circle" class="propiedades-circle wow fadeInLeft">#}
-    {#                    <h3 id="propiedades-state" ></h3>#}
-    {#                    <div id="propiedades-text"></div>#}
-    {#                </div>#}
-    {#            </div>#}
-    {#            <div class="col-md-6">#}
-    {#                <div class="wow fadeInRight" data-wow-duration="1.5s">#}
-    {#                    <?xml version="1.0" encoding="utf-8"?>#}
-    {#                    <!-- Generator: Adobe Illustrator 25.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->#}
-    {#                    {% include 'partials/mapa.html' %}#}
-    {#                </div>#}
-    {#            </div>#}
-    {#            <div class="col-md-3" style="display: flex; align-items: center;">#}
-    {#                <div id="infoDiv" style=" margin-top: 10px;">#}
-    {#                   <h2 style="color: var(--azulclaro); font-weight: bold;">TOTAL</h2>#}
-    {#                   <h3>22</h3>#}
-    {#                   <p>PARQUES INDUSTRIALES</p>#}
-    {#                   <h3>3,417,647.53 m<sup>2</sup></h3>#}
-    {#                   <p>ÁREA BRUTA RENTABLE (GLA m<sup>2</sup>)</p>#}
-    {#                   <h3>3,293,062.73 m<sup>2</sup></h3>#}
-    {#                   <p>ÁREA OCUPADA (m<sup>2</sup>)</p>#}
-    {#                   <h3>96.35%</h3>#}
-    {#                   <p>PORCENTAJE DE OCUPACIÓN</p>#}
-    {#                </div>#}
-    {#            </div>#}
-    {#        </div>#}
-    {#    </section>#}
-    </div>
 {% endblock %}
 
 {% block otherscripts %}
@@ -672,6 +370,8 @@
     <script src="{% static 'javascripts/countTo.js' %}"></script>
     <script src="{% static 'javascripts/owl.carousel.min.js' %}"></script>
     <script src="{% static 'javascripts/maps-states-mx.js' %}"></script>
+    <script src="{% static 'javascripts/amcharts/amcharts.js' %}"></script>
+    <script src="{% static 'javascripts/amcharts/pie.js' %}"></script>
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
@@ -737,6 +437,96 @@
             $(".owl-item").css("transform", "scale(1)");
         }
 
+        // Donut Fuerza Laboral
+        document.addEventListener('DOMContentLoaded', function () {
+            if (typeof AmCharts === 'undefined') return;
+            var graf = AmCharts.makeChart("graf", {
+                "type": "pie",
+                "theme": "light",
+                "colors": ["#243881", "#e87722"], // Mujeres (azul), Hombres (naranja)
+                "dataProvider": [
+                    { "categoria": "Mujeres", "valor": 3677 },
+                    { "categoria": "Hombres", "valor": 17626 }
+                ],
+                "titleField": "categoria",
+                "valueField": "valor",
+                "innerRadius": "68%",
+                "radius": "32%",
+                "labelsEnabled": true,
+                "labelText": "[[value]]",
+                "labelRadius": 15,
+                "labelTickAlpha": 0.4,
+                "labelTickColor": "#888888",
+                "labelTickLength": 8,
+                "minAngle": 5,
+                "legend": {
+                    "position": "right",
+                    "align": "left",
+                    "markerType": "square",
+                    "labelText": "[[title]]",
+                    "valueText": "",
+                    "equalWidths": true,
+                    "maxColumns": 1
+                }
+            });
+
+            function placeIcons() {
+                try {
+                    var svg = graf.chartDiv.getElementsByTagName('svg')[0];
+                    if (!svg || !graf.chartData) return;
+                    var oldIcons = svg.querySelectorAll('.label-icon');
+                    oldIcons.forEach(function(n){ n.remove(); });
+                    graf.chartData.forEach(function(cd){
+                        if (!cd.label || !cd.label.node) return;
+                        var tr = cd.label.node.getAttribute('transform');
+                        if (!tr) return;
+                        var m = /translate\(([-\d\.]+),\s*([-\d\.]+)\)/.exec(tr);
+                        if (!m) return;
+                        var lx = parseFloat(m[1]);
+                        var ly = parseFloat(m[2]);
+                        var img = document.createElementNS('http://www.w3.org/2000/svg', 'image');
+                        img.setAttributeNS(null, 'x', lx - 45);
+                        img.setAttributeNS(null, 'y', ly - 45);
+                        img.setAttributeNS(null, 'width', 38);
+                        img.setAttributeNS(null, 'height', 38);
+                        img.setAttribute('class', 'label-icon');
+                        var href = (cd.title === 'Mujeres') ? '/static/images/social/icono4.png' : '/static/images/social/icono5.png';
+                        img.setAttributeNS('http://www.w3.org/1999/xlink', 'href', href);
+                        svg.appendChild(img);
+                    });
+                } catch(e) {}
+            }
+            graf.addListener('init', placeIcons);
+            graf.addListener('rendered', placeIcons);
+            // Mostrar total debajo de la leyenda (usar init y rendered para asegurar disponibilidad del DOM)
+            function placeTotal() {
+                try {
+                    var container = graf.chartDiv;
+                    if (!container) return;
+                    var legendDiv = container.querySelector('.amcharts-legend-div');
+                    // Si aún no existe la leyenda, reintentar en breve
+                    if (!legendDiv) {
+                        setTimeout(placeTotal, 50);
+                        return;
+                    }
+                    var old = container.querySelector('.total-container');
+                    if (old) old.remove();
+                    var totalDiv = document.createElement('div');
+                    totalDiv.className = 'total-container';
+                    totalDiv.style.width = 'auto';
+                    totalDiv.style.marginTop = '6px';
+                    totalDiv.style.textAlign = 'left';
+                    totalDiv.style.fontWeight = 'bold';
+                    totalDiv.style.fontSize = '14px';
+                    totalDiv.style.color = '#333';
+                    totalDiv.innerHTML = 'Total = <span style=\"font-weight:bold;\">21,303</span>';
+                    legendDiv.parentNode.insertBefore(totalDiv, legendDiv.nextSibling);
+                } catch (e) {}
+            }
+            graf.addListener('init', placeTotal);
+            graf.addListener('rendered', placeTotal);
+        });
+
         var counter = 1,
             interval = setInterval(function () {
                 var elemento = $("#n-estrategia").find(".estra-link ")[counter];
@@ -766,10 +556,10 @@
         $(".estra-link").on('click', function (event) {
             var $this = $(this);
             var item = $this.data('item');
-            $(".estra-item").addClass('d-none');
+            $(".estra-item").addClass('d-none').removeClass('show-info');
             $(".estra-link").removeClass('active');
             $this.addClass('active');
-            $('.estra-item.' + item).removeClass("d-none");
+            $('.estra-item.' + item).removeClass("d-none").addClass('show-info');
         });
 
         $(window).on('load', function () {

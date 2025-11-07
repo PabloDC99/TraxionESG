@@ -106,10 +106,10 @@ def atencion_comunidad(request):
 def materialidad(request):
     eventos_amb = EventosView.get_event_amb_es_data()
     context = {
-        'title': _("Modelo ASG"),
+        'title': _("Sostenibilidad"),
         'page': 'materialidad',
         'eventos': eventos_amb,
-        'imagen': staticfiles_storage.url('images/headers/header-modeloasg.png'),
+        'imagen': staticfiles_storage.url('images/headers/header-sostenibilidad.jpg'),
     }
     return render(request, '{0}/frontend/modelo_asg/materialidad.html'.format(request.LANGUAGE_CODE), context)
 

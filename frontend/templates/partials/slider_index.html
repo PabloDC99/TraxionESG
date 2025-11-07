@@ -1,100 +1,32 @@
 {% load i18n %}
 {% load static %}
 
-<section id="slider" class="slider-element slider-parallax revslider-wrap clearfix">
-    <div id="rev_slider_579_1_wrapper" class="rev_slider_wrapper " style="padding:0px;">
-        <div id="rev_slider_579_1" class="rev_slider " style="display:none;" data-version="5.1.4">
-            <ul>
-                <li class="dark" data-transition="fade" data-slotamount="1" data-masterspeed="1500" data-delay="9000"
-                    data-thumb="{% static 'images/headers/header-home1.png' %}" data-fstransition="fade"
-                    data-fsmasterspeed="1000" data-fsslotamount="7" data-saveperformance="off" data-title="dos">
-                    <img src="{% static 'images/headers/header-home1.png' %}" role="img"
-                         aria-label="first slider presented" alt="video_woman_cover3"
-                         data-bgposition="left center" data-bgfit="cover" data-bgrepeat="no-repeat">
-
-                    <div class="tp-caption ltl tp-resizeme revo-slider-emphasis-text nopadding noborder"
-                         data-x="['center','center','center','center']"
-                         data-y="['center','center','center','center']"
-                         data-transform_in="x:5;y:0;z:0;rotationZ:0;scaleX:1;scaleY:1;skewX:5;skewY:0;opacity:0;s:800;transformPerspective:200;transformOrigin:50% 0%;"
-                         data-speed="800"
-                         data-fontsize="['35','30','30','25']"
-                         data-lineheight="['50','45','45','40']"
-                         data-start="1400"
-                         data-splitout="none"
-                         data-voffset="['70','70','20','30']"
-                         data-elementdelay="0.1"
-                         data-endelementdelay="0.1"
-                         data-endspeed="1000"
-                         data-width="[1000, 700, 500, 320]"
-                         data-endeasing="Power4.easeIn" style="z-index: 11; white-space:revert;">
-                        {% trans 'Decidimos avanzar en sostenibilidad porque, para nosotros, liderar exige ser conscientes de lo que nos aporta el entorno y gestionar los recursos naturales con prudencia y responsabilidad.' %}<br/>
-                        <a href="{% url 'ambiental' %}"
-                        class="button button-border button-rounded button-large noleftmargin topmargin-sm mb-5 border-white text-white">{% trans 'Quiero conocer más' %}</a>
-
-{#                        <a href="{% url 'nuestro-enfoque-asg' %}"#}
-{#                           class="button button-border button-rounded button-large noleftmargin topmargin-sm mb-5 border-white text-white">{% trans 'Quiero conocer más' %}#}
-{#                        </a>#}
-                    </div>
-                </li>
-                <li class="dark" data-transition="fade" data-slotamount="1" data-masterspeed="1500" data-delay="9000"
-                    data-thumb="{% static 'images/headers/header-home2.png' %}" data-fstransition="fade"
-                    data-fsmasterspeed="1000" data-fsslotamount="7" data-saveperformance="off" data-title="dos">
-                    <img src="{% static 'images/headers/header-home2.png' %}" alt="video_woman_cover3"
-                         data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat">
-
-                    <div class="tp-caption ltl tp-resizeme revo-slider-emphasis-text nopadding noborder"
-                         data-x="['center','center','center','center']"
-                         data-y="['center','center','center','center']"
-                         data-transform_in="x:5;y:0;z:0;rotationZ:0;scaleX:1;scaleY:1;skewX:5;skewY:0;opacity:0;s:800;transformPerspective:200;transformOrigin:50% 0%;"
-                         data-speed="800"
-                         data-fontsize="['35','30','30','25']"
-                         data-lineheight="['50','45','45','40']"
-                         data-start="1400"
-                         data-splitout="none"
-                         data-voffset="['70','70','20','30']"
-                         data-elementdelay="0.1"
-                         data-endelementdelay="0.1"
-                         data-endspeed="1000"
-                         data-width="[1000, 700, 500, 320]"
-                         data-endeasing="Power4.easeIn" style="z-index: 11; font-size: 30px;white-space:revert;">
-                        {% trans 'Crecer con nuestros equipos impulsa la mejora continua, sostiene nuestro liderazgo y amplía oportunidades de trabajo y desarrollo comunitario.' %}
-                        <br/>
-                        <a href="{% url 'responsabilidad_social' %}"
-                        class="button button-border button-rounded button-large noleftmargin topmargin-sm mb-5 border-white text-white">{% trans 'Quiero conocer más' %}</a>
-{#                        <a href="{% url 'grupos-interes' %}"#}
-{#                           class="button button-border button-rounded button-large noleftmargin topmargin-sm mb-5 border-white text-white">{% trans 'Quiero conocer más' %}#}
-{#                        </a>#}
-                    </div>
-                </li>
-                <li class="dark" data-transition="fade" data-slotamount="1" data-masterspeed="1500" data-delay="9000"
-                    data-thumb="{% static 'images/headers/header-home2.png' %}" data-fstransition="fade"
-                    data-fsmasterspeed="1000" data-fsslotamount="7" data-saveperformance="off" data-title="dos">
-                    <img src="{% static 'images/headers/header-home3.png' %}" alt="video_woman_cover3"
-                         data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat">
-
-                    <div class="tp-caption ltl tp-resizeme revo-slider-emphasis-text nopadding noborder"
-                         data-x="['center','center','center','center']"
-                         data-y="['center','center','center','center']"
-                         data-transform_in="x:5;y:0;z:0;rotationZ:0;scaleX:1;scaleY:1;skewX:5;skewY:0;opacity:0;s:800;transformPerspective:200;transformOrigin:50% 0%;"
-                         data-speed="800"
-                         data-fontsize="['35','30','30','25']"
-                         data-lineheight="['50','45','45','40']"
-                         data-start="1400"
-                         data-splitout="none"
-                         data-voffset="['70','70','20','30']"
-                         data-elementdelay="0.1"
-                         data-endelementdelay="0.1"
-                         data-endspeed="1000"
-                         data-width="[1000, 700, 500, 320]"
-                         data-endeasing="Power4.easeIn" style="z-index: 11; font-size: 30px;white-space:revert;">
-                        {% trans 'Aspiramos a un crecimiento sostenible, liderando a nuestros colaboradores con responsabilidad e integridad, tanto en la gestión de recursos como en la relación con nuestros grupos de interés.' %}
-                        <br/>
-                         <a href="{% url 'gobernanza' %}"
-                            class="button button-border button-rounded button-large noleftmargin topmargin-sm mb-5 border-white text-white">{% trans 'Quiero conocer más' %}</a>
-                    </div>
-                </li>
-            </ul>
-        </div>
+<section id="slider" class="slider-element clearfix">
+    <style>
+        #slider .video-hero {
+            position: relative;
+            width: 100%;
+            max-height: 420px;
+            aspect-ratio: 16 / 9;
+            overflow: hidden;
+        }
+        #slider .video-hero video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+        @media (max-width: 991.98px) {
+            #slider .video-hero { max-height: 300px; }
+        }
+        @media (max-width: 575.98px) {
+            #slider .video-hero { max-height: 240px; }
+        }
+    </style>
+    <div class="video-hero">
+        <video src="https://investorcloud.s3.amazonaws.com/Traxion/header-home-traxion-asg.mp4"
+               autoplay muted loop playsinline preload="auto" aria-label="Video institucional">
+        </video>
     </div>
 </section>
 {#<div class="display-banner-home">#}
