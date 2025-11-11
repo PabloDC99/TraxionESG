@@ -8,6 +8,7 @@
     <style>
         h1 {
             font-weight: bold;
+            color: #63666A !important;
         }
 
         .owl-carousel .owl-nav button.owl-prev,
@@ -52,6 +53,64 @@
             right: -30px;
             position: relative;
         }
+      .box-yellow {
+        background-color: #d0df00;
+        border: 1px solid #63666A;
+        border-radius: 28px;
+        padding: 24px;
+        height: 100%;
+        text-align: left;
+        position: relative;
+        transition: box-shadow .2s ease;
+        min-height: 160px;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .box-yellow h4 {
+        margin-bottom: 0.75rem;
+        font-weight: 700;
+        text-align: center;
+        cursor: pointer;
+      }
+
+      .box-yellow.open {
+        justify-content: flex-start;
+        align-items: stretch;
+      }
+
+      .box-yellow:hover {
+        box-shadow: 0 6px 18px rgba(0,0,0,.08);
+      }
+
+      .box-yellow ul {
+        padding-left: 1rem;
+        margin-bottom: 0;
+      }
+
+      .box-yellow p,
+      .box-yellow li {
+        text-align: justify;
+      }
+      
+      .box-yellow .comite-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height .35s ease;
+        width: 100%;
+      }
+      .box-yellow.open .comite-content {
+        max-height: 1200px;
+      }
+
+      .equal-height { display: flex; }
+      .equal-height > .col-12 { display: flex; flex-direction: column; }
+
+      @media (max-width: 767.98px) {
+        .box-yellow { padding: 16px; }
+        .box-yellow h4 { font-size: 1rem; }
+      }
+    
     </style>
 {% endblock %}
 
@@ -71,7 +130,7 @@
     </div>
     <div class="container pt-5 pb-5">
         <h1 id="consejo" class="text-center mb-5 wow fadeInUp" data-wow-duration="2s"
-            style="color: #d0df00;">
+            style="color: #63666A;">
             Estructura de gobierno corporativo</h1>
         <div class="row col-12">
             <div class="col-6">
@@ -125,80 +184,95 @@
                 </li>
             </ul>
             <div id="textoOculto" style="display: none; margin-top: 15px;">
-                <div class="row text-center">
-                    <div class="col-md-3">
-                        <h4 class="text-bold">Comité <br>Ejecutivo</h4>
-                        <ul class="list-styled">
-                            <li class="text-justify">El Comité Ejecutivo se encarga de dar seguimiento estratégico al
-                                desempeño de las unidades de negocio de Traxión. Analiza los resultados operativos,
-                                planes de negocio y temas estratégicos que presentan los Gerentes Generales, asegurando
-                                la alineación con los objetivos generales de la compañía.
-                            </li>
-                        </ul>
+                <div class="row g-4 text-center align-items-start justify-content-center">
+                    <div class="col-12 col-md-5 mb-4">
+                        <div class="box-yellow h-100 d-flex flex-column">
+                            <h4>Comité Ejecutivo</h4>
+                            <div class="comite-content">
+                                <ul class="list-styled">
+                                    <li>
+                                        El Comité Ejecutivo se encarga de dar seguimiento estratégico al desempeño de las
+                                        unidades de negocio de Traxión. Analiza los resultados operativos, planes de negocio
+                                        y temas estratégicos que presentan los Gerentes Generales, asegurando la alineación
+                                        con los objetivos generales de la compañía.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-md-3">
-                        <h4 class="text-bold">Comité de Nominaciones y Compensaciones</h4>
-                        <ul class="list-styled">
-                            <li class="text-justify">Este comité se encarga de identificar y proponer a los candidatos
-                                para integrar el Consejo de Administración cuando existe una vacante, ya sea por
-                                expansión del Consejo o porque alguno de los miembros no es ratificado. Sus
-                                recomendaciones se presentan a la Asamblea General de Accionistas para su aprobación.
-                            </li>
-                        </ul>
+
+                    <div class="col-12 col-md-5 mb-4">
+                        <div class="box-yellow h-100 d-flex flex-column">
+                            <h4>Comité de Nominaciones y Compensaciones</h4>
+                            <div class="comite-content">
+                                <ul class="list-styled">
+                                    <li>
+                                        Este comité se encarga de identificar y proponer a los candidatos para integrar el
+                                        Consejo de Administración cuando existe una vacante, ya sea por expansión del
+                                        Consejo o porque alguno de los miembros no es ratificado. Sus recomendaciones se
+                                        presentan a la Asamblea General de Accionistas para su aprobación.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-md-3">
-                        <h4 class="text-bold">Comité de Prácticas Societarias y Sostenibilidad</h4>
-                        <ul class="list-styled">
-                            <li class="text-justify">Este comité combina la supervisión del gobierno corporativo con la
-                                promoción de la estrategia de sostenibilidad de Traxión. Evalúa el desempeño y
-                                compensación del equipo directivo, supervisa operaciones con partes relacionadas y
-                                revisa exenciones conforme a la Ley del Mercado de Valores.
-                            </li>
-                            <li class="text-justify">También da seguimiento a la ejecución de la estrategia ASG, al
-                                desempeño social y ambiental, y a los riesgos y oportunidades climáticas, reportando sus
-                                avances al Consejo de Administración. La Estrategia de Sostenibilidad es aprobada por el
-                                Presidente Ejecutivo y ejecutada junto con las direcciones corporativas y el Comité de
-                                Sostenibilidad. Todos sus integrantes son consejeros independientes, en cumplimiento con
-                                la normativa aplicable.
-                            </li>
-                        </ul>
+
+                    <div class="col-12 col-md-5">
+                        <div class="box-yellow h-100 d-flex flex-column">
+                            <h4>Comité de Prácticas Societarias y Sostenibilidad</h4>
+                            <div class="comite-content">
+                                <ul class="list-styled">
+                                    <li>
+                                        Este comité combina la supervisión del gobierno corporativo con la promoción de la
+                                        estrategia de sostenibilidad de Traxión. Evalúa el desempeño y compensación del
+                                        equipo directivo, supervisa operaciones con partes relacionadas y revisa exenciones
+                                        conforme a la Ley del Mercado de Valores.
+                                    </li>
+                                    <li>
+                                        También da seguimiento a la ejecución de la estrategia ASG, al desempeño social y
+                                        ambiental, y a los riesgos y oportunidades climáticas, reportando sus avances al
+                                        Consejo de Administración. La Estrategia de Sostenibilidad es aprobada por el
+                                        Presidente Ejecutivo y ejecutada junto con las direcciones corporativas y el Comité
+                                        de Sostenibilidad.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-md-3">
-                        <h4 class="text-bold">Comité de <br>Auditoría</h4>
-                        <p class="text-justify">El Comité de Auditoría es responsable de proteger la integridad del
-                            sistema de control
-                            interno y de la información financiera de Traxión.
-                            Entre sus funciones principales se incluyen:
-                        </p>
-                        <ul class="list-styled">
-                            <li class="text-justify">Evaluar los sistemas de auditoría interna e identificar áreas de
-                                mejora.
-                            </li>
-                            <li class="text-justify">Monitorear la exposición y gestión de riesgos, incluyendo riesgos
-                                operativos, financieros, de ciberseguridad y relacionados con el clima.
-                            </li>
-                            <li class="text-justify">Revisar los estados financieros y recomendar su aprobación al
-                                Consejo.
-                            </li>
-                            <li class="text-justify">Evaluar el trabajo de los auditores externos y las implicaciones de
-                                cambios en las políticas contables.
-                            </li>
-                            <li class="text-justify">Supervisar el cumplimiento de lineamientos internos, obligaciones
-                                legales y resoluciones del Consejo y de la Asamblea de Accionistas.
-                            </li>
-                            <li class="text-justify">Dar seguimiento a inquietudes recibidas a través de canales
-                                anónimos o confidenciales relacionadas con auditorías, controles o irregularidades.
-                            </li>
-                        </ul>
+
+                    <div class="col-12 col-md-5">
+                        <div class="box-yellow h-100 d-flex flex-column">
+                            <h4>Comité de Auditoría</h4>
+                            <div class="comite-content">
+                                <p>El Comité de Auditoría es responsable de proteger la integridad del sistema de control
+                                    interno y de la información financiera de Traxión. Entre sus funciones principales se
+                                    incluyen:</p>
+                                <ul class="list-styled">
+                                    <li>Evaluar los sistemas de auditoría interna e identificar áreas de mejora.</li>
+                                    <li>Monitorear la exposición y gestión de riesgos, incluyendo riesgos operativos,
+                                        financieros, de ciberseguridad y relacionados con el clima.
+                                    </li>
+                                    <li>Revisar los estados financieros y recomendar su aprobación al Consejo.</li>
+                                    <li>Evaluar el trabajo de los auditores externos y las implicaciones de cambios en las
+                                        políticas contables.
+                                    </li>
+                                    <li>Supervisar el cumplimiento de lineamientos internos, obligaciones legales y
+                                        resoluciones del Consejo y de la Asamblea de Accionistas.
+                                    </li>
+                                    <li>Dar seguimiento a inquietudes recibidas a través de canales anónimos o
+                                        confidenciales relacionadas con auditorías, controles o irregularidades.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-
     </div>
     <section id="comite" class="py-5" data-wow-duration="2s" data-wow-delay="2s"
              style="background-image: url({% static 'images/gobernanza/auxiliares.png' %}); background-size: cover; background-repeat: no-repeat; background-position: center;">
-        <h1 class="text-center mt-5" style="color: white;">Comités auxiliares</h1>
+        <h1 class="text-center mt-5" style="color: white!important;">Comités auxiliares</h1>
         <div class="col-md-8 offset-md-2 pb-5">
             <div id="oc-clients"
                  class="nobgcolor notopmargin owl-carousel owl-carousel-full image-carousel carousel-widget"
@@ -436,6 +510,14 @@
             this.textContent = texto.style.display === 'block'
                 ? 'REGRESAR'
                 : 'PARA SABER MÁS DE NUESTROS COMITÉS';
+        });
+    </script>
+    <script>
+        document.querySelectorAll('#textoOculto .box-yellow h4').forEach(function (titulo) {
+            titulo.addEventListener('click', function () {
+                var contenedor = titulo.parentElement;
+                contenedor.classList.toggle('open');
+            });
         });
     </script>
 {% endblock %}

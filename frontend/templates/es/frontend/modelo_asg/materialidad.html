@@ -10,15 +10,7 @@
             height: 200px;
             display: block;
         }
-
-        #contribucion_ods .container {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
+        
         #contribucion_ods .card img.card-img-top,
         #contribucion_ods .card .card-body {
             position: absolute;
@@ -295,7 +287,7 @@
         }
 
         h1 {
-            color: #d0df00 !important;
+            color: #63666A !important;
         }
 
         #myModal .event-img {
@@ -634,7 +626,7 @@
                                data-target="#myModal"
                                data-title="Clientes"
                                data-img="{% static 'images/asg/clientes.jpg' %}"
-                               data-description="Cambios organizacionales, Nuevos negocios, Logros importantes, Temas ASG, Comunicados de prensa y Convocatorias a eventos y concursos."
+                               data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
                             >
                                 <img src="{% static 'images/asg/clientes.jpg' %}">
                                 <div class="overlay">
@@ -654,7 +646,7 @@
                                data-target="#myModal"
                                data-title="Colaboradores (incluyendo sindicatos)"
                                data-img="{% static 'images/asg/colaboradores.jpg' %}"
-                               data-description="Presentación de espacios disponibles, Reportes de avance de proyecto, Acontecimientos relevantes, Información comercial, Información técnica e Invitaciones a conferencias."
+                               data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
                             >
                                 <img src="{% static 'images/asg/colaboradores.jpg' %}">
                                 <div class="overlay">
@@ -673,7 +665,7 @@
                                data-target="#myModal"
                                data-title="Accionistas e Inversionistas"
                                data-img="{% static 'images/asg/accionistas.jpg' %}"
-                               data-description="Nuevos procesos, Licitaciones, Información técnica, Información comercial, Trámites de pago e Invitaciones a conferencias."
+                               data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
                             >
                                 <img src="{% static 'images/asg/accionistas.jpg' %}">
                                 <div class="overlay">
@@ -692,7 +684,7 @@
                                data-target="#myModal"
                                data-title="Autoridades y Reguladores"
                                data-img="{% static 'images/asg/autoridades.jpg' %}"
-                               data-description="Acontecimientos relevantes, Comunicados de prensa, Reportes financieros y Cuestionarios ASG"
+                               data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
                             >
                                 <img src="{% static 'images/asg/autoridades.jpg' %}">
                                 <div class="overlay">
@@ -710,7 +702,7 @@
                                data-target="#myModal"
                                data-title="Proveedores"
                                data-img="{% static 'images/asg/proveedores.jpg' %}"
-                               data-description="Acontecimientos relevantes, Comunicados de prensa, Reportes financieros y Cuestionarios ASG"
+                               data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
                             >
                                 <img src="{% static 'images/asg/proveedores.jpg' %}">
                                 <div class="overlay">
@@ -724,25 +716,7 @@
                 </div>
             </div>
         </section>
-
-        <div class="container-fluid" style="background-color: #efefef;">
-            <div id="actualizacion-sus" class="wow fadeInUp" data-wow-duration="1s">
-                <h1 class="text-center mt-5 mb-5" style="color: #012E81; padding-top: 50px;">Materialidad</h1>
-                <p class="text-justify">
-                    Para atender las expectativas de nuestros grupos de interés y priorizar los temas relevantes y
-                    estratégicos para la empresa, llevamos a cabo un <strong>análisis de doble materialidad: financiera
-                    y de impacto</strong>, que guía la definición de nuestras acciones.
-                </p>
-            </div>
-            <div class="container">
-                <div id="actualizacion-estudio">
-                    <div class=" wow fadeInLeft text-center d-flex">
-                        <img src="{% static 'images/asg/materialidad-traxion.png' %}"
-                             style="object-fit: cover; width: 100%;">
-                    </div>
-                </div>
-            </div>
-        </div>
+        
         <div class="modal fade popup" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content d-flex justify-content-center align-items-center">
@@ -766,39 +740,36 @@
             </div>
         </div>
     </div>
-
-
-    <div class="modal fade popup" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="card">
-                    <div class="card-body">
-                        <h2 class="event-title card-title mb-0 text-center text-bold tc-gray mt-5 mb-5">
-                        </h2>
-                        <p class="event-description card-text mt-5 text-justify">
-                        </p>
-                        <img class="cover event-img" src="">
-                    </div>
-                </div>
-                <div class="text-center py-3">
-                    <button type="button" class="btn btn-secondary close-btn card-link" data-mdb-dismiss="modal">
-                        Cerrar
-                    </button>
-                </div>
+    <section id="actualizacion-sus" class="py-1" style="background-color: #efefef;">
+        <div class="container">
+            <h1 class="text-center mt-5 " style="margin-bottom: 0;">Materialidad</h1>
+            <div class="container">
+                <p class="text-justify" style="padding-top: 30px">Para atender las expectativas de nuestros grupos de
+                    interés y priorizar los temas relevantes y
+                    estratégicos para la empresa, llevamos a cabo un <strong>análisis de doble materialidad: financiera
+                        y de impacto</strong>, que guía la definición de nuestras acciones.</p>
+            </div>
+            <div class=" wow fadeInLeft text-center d-flex">
+                <img src="{% static 'images/asg/materialidad-traxion.png' %}"
+                     style="object-fit: cover; width: 100%;">
             </div>
         </div>
-    </div>
-
+    </section>
+    
     <section id="contribucion_ods">
-        <h1 class="text-center tc-blue" style="margin-top: 30px;">Contribución a los ODS</h1>
-        <p style="text-align: justify; margin: 0 30px;">La Agenda 2030 de la ONU y sus 17 ODS son la base de nuestra
-            Estrategia de Sostenibilidad, guiando nuestros esfuerzos para el progreso económico y social, y la gestión
-            responsable de nuestro impacto ambiental y comunitario. Priorizamos los 10 ODS con mayor alineación a
-            nuestras operaciones y áreas de influencia, donde podemos generar un impacto significativo y duradero.
-            Nuestras acciones, desde la reducción de la huella ambiental hasta el avance en bienestar social y
-            responsabilidad empresarial, reflejan nuestro compromiso con un futuro resiliente y equitativo. Extendemos
-            este compromiso a toda nuestra cadena de valor, colaborando con clientes, proveedores y comunidades para
-            crear valor compartido e impulsar el progreso colectivo.</p>
+        <div class="container">
+            <h1 class="text-center tc-blue" style="margin-top: 30px;">Contribución a los ODS</h1>
+            <p style="text-align: justify; margin: 0 30px;">La Agenda 2030 de la ONU y sus 17 ODS son la base de nuestra
+                Estrategia de Sostenibilidad, guiando nuestros esfuerzos para el progreso económico y social, y la
+                gestión
+                responsable de nuestro impacto ambiental y comunitario. Priorizamos los 10 ODS con mayor alineación a
+                nuestras operaciones y áreas de influencia, donde podemos generar un impacto significativo y duradero.
+                Nuestras acciones, desde la reducción de la huella ambiental hasta el avance en bienestar social y
+                responsabilidad empresarial, reflejan nuestro compromiso con un futuro resiliente y equitativo.
+                Extendemos
+                este compromiso a toda nuestra cadena de valor, colaborando con clientes, proveedores y comunidades para
+                crear valor compartido e impulsar el progreso colectivo.</p>
+        </div>
         <div class="row">
             <div class="ods-cont">
                 <div class="card">
